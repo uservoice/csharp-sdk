@@ -27,7 +27,7 @@ namespace UservoiceSDK.Client
         /// Gets or sets the error content (body json object)
         /// </summary>
         /// <value>The error content (Http response body).</value>
-        public dynamic ErrorContent { get; private set; }
+        public dynamic ErrorContent { get; protected set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException"/> class.

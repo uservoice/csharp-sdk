@@ -97,6 +97,7 @@ namespace UservoiceSDK.Client
             int status = (int) response.StatusCode;
             if (status >= 400) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.Content), response.Content);
             if (status == 0) return new ApiException(status, String.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage);
+            if (status == 429) return new RateLimitException(status, String.Format("Error calling {0}: {1}", methodName, response.Content), response.Content);
             return null;
         };
 
