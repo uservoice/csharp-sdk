@@ -47,6 +47,26 @@ namespace UservoiceSDK.Client
         /// <param name="response">The RestSharp response object</param>
         partial void InterceptResponse(IRestRequest request, IRestResponse response);
 
+        /// <summary>
+		/// Rate limiting information from the last successful request
+		/// </summary>
+		private RateLimiting _RateLimiting;
+		public RateLimiting RateLimiting 
+		{ 
+			get 
+			{
+				if (_RateLimiting == null) 
+				{
+					_RateLimiting = new RateLimiting();
+				}
+				return _RateLimiting;
+			} 
+			set 
+			{
+				_RateLimiting = value;
+			} 
+		}
+
         private AttachmentsApi _Attachments;
         public AttachmentsApi Attachments 
         { 
@@ -476,6 +496,7 @@ namespace UservoiceSDK.Client
             InterceptRequest(request);
             var response = RestClient.Execute(request);
             InterceptResponse(request, response);
+            RateLimiting = new RateLimiting(response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()));
 
             return (Object) response;
         }
@@ -524,6 +545,8 @@ namespace UservoiceSDK.Client
             InterceptRequest(request);
             var response = await RestClient.ExecuteTaskAsync(request);
             InterceptResponse(request, response);
+            RateLimiting = new RateLimiting(response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()));
+            
             return (Object)response;
         }
 
