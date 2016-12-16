@@ -292,7 +292,7 @@ namespace UservoiceSDK.Client
 
         private static string BaseApiPath = "/api/v2";
 
-		public ApiClient(string subdomain,
+        public ApiClient(string subdomain,
 						 string clientId,
 		                 string scheme = "https",
 						 string domain = "uservoice.com",
@@ -444,9 +444,8 @@ namespace UservoiceSDK.Client
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
         {
-
             // Make sure user is logged in
-			// Don't verify if this is the oauth path
+            // Don't verify if this is the oauth path
 			if (!path.ToLower().Contains("oauth") && string.IsNullOrEmpty(this.Configuration.AccessToken)) 
 			{
 				Login(this.Configuration.ClientId, this.Configuration.ClientSecret);

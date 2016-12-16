@@ -40,13 +40,9 @@ namespace UservoiceSDK.Models
         /// <param name="LtvCents">LtvCents.</param>
         /// <param name="MrrCents">MrrCents.</param>
         /// <param name="Name">Name.</param>
-        /// <param name="NpsCount">NpsCount.</param>
         /// <param name="Plan">Plan.</param>
-        /// <param name="RequestsCount">RequestsCount.</param>
-        /// <param name="SupportedIdeasCount">SupportedIdeasCount.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        /// <param name="UsersCount">UsersCount.</param>
-        public ExternalAccount(DateTime? CreatedAt = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, DateTime? LastActiveAt = null, long? LtvCents = null, long? MrrCents = null, string Name = null, long? NpsCount = null, string Plan = null, long? RequestsCount = null, long? SupportedIdeasCount = null, DateTime? UpdatedAt = null, long? UsersCount = null)
+        public ExternalAccount(DateTime? CreatedAt = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, DateTime? LastActiveAt = null, long? LtvCents = null, long? MrrCents = null, string Name = null, string Plan = null, DateTime? UpdatedAt = null)
         {
             this.CreatedAt = CreatedAt;
             this.ExternalCreatedAt = ExternalCreatedAt;
@@ -56,12 +52,8 @@ namespace UservoiceSDK.Models
             this.LtvCents = LtvCents;
             this.MrrCents = MrrCents;
             this.Name = Name;
-            this.NpsCount = NpsCount;
             this.Plan = Plan;
-            this.RequestsCount = RequestsCount;
-            this.SupportedIdeasCount = SupportedIdeasCount;
             this.UpdatedAt = UpdatedAt;
-            this.UsersCount = UsersCount;
         }
         
         /// <summary>
@@ -105,35 +97,15 @@ namespace UservoiceSDK.Models
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
-        /// Gets or Sets NpsCount
-        /// </summary>
-        [DataMember(Name="nps_count", EmitDefaultValue=false)]
-        public long? NpsCount { get; set; }
-        /// <summary>
         /// Gets or Sets Plan
         /// </summary>
         [DataMember(Name="plan", EmitDefaultValue=false)]
         public string Plan { get; set; }
         /// <summary>
-        /// Gets or Sets RequestsCount
-        /// </summary>
-        [DataMember(Name="requests_count", EmitDefaultValue=false)]
-        public long? RequestsCount { get; set; }
-        /// <summary>
-        /// Gets or Sets SupportedIdeasCount
-        /// </summary>
-        [DataMember(Name="supported_ideas_count", EmitDefaultValue=false)]
-        public long? SupportedIdeasCount { get; set; }
-        /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
         public DateTime? UpdatedAt { get; set; }
-        /// <summary>
-        /// Gets or Sets UsersCount
-        /// </summary>
-        [DataMember(Name="users_count", EmitDefaultValue=false)]
-        public long? UsersCount { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -150,12 +122,8 @@ namespace UservoiceSDK.Models
             sb.Append("  LtvCents: ").Append(LtvCents).Append("\n");
             sb.Append("  MrrCents: ").Append(MrrCents).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  NpsCount: ").Append(NpsCount).Append("\n");
             sb.Append("  Plan: ").Append(Plan).Append("\n");
-            sb.Append("  RequestsCount: ").Append(RequestsCount).Append("\n");
-            sb.Append("  SupportedIdeasCount: ").Append(SupportedIdeasCount).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  UsersCount: ").Append(UsersCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -233,34 +201,14 @@ namespace UservoiceSDK.Models
                     this.Name.Equals(other.Name)
                 ) && 
                 (
-                    this.NpsCount == other.NpsCount ||
-                    this.NpsCount != null &&
-                    this.NpsCount.Equals(other.NpsCount)
-                ) && 
-                (
                     this.Plan == other.Plan ||
                     this.Plan != null &&
                     this.Plan.Equals(other.Plan)
                 ) && 
                 (
-                    this.RequestsCount == other.RequestsCount ||
-                    this.RequestsCount != null &&
-                    this.RequestsCount.Equals(other.RequestsCount)
-                ) && 
-                (
-                    this.SupportedIdeasCount == other.SupportedIdeasCount ||
-                    this.SupportedIdeasCount != null &&
-                    this.SupportedIdeasCount.Equals(other.SupportedIdeasCount)
-                ) && 
-                (
                     this.UpdatedAt == other.UpdatedAt ||
                     this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(other.UpdatedAt)
-                ) && 
-                (
-                    this.UsersCount == other.UsersCount ||
-                    this.UsersCount != null &&
-                    this.UsersCount.Equals(other.UsersCount)
                 );
         }
 
@@ -291,18 +239,10 @@ namespace UservoiceSDK.Models
                     hash = hash * 59 + this.MrrCents.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
-                if (this.NpsCount != null)
-                    hash = hash * 59 + this.NpsCount.GetHashCode();
                 if (this.Plan != null)
                     hash = hash * 59 + this.Plan.GetHashCode();
-                if (this.RequestsCount != null)
-                    hash = hash * 59 + this.RequestsCount.GetHashCode();
-                if (this.SupportedIdeasCount != null)
-                    hash = hash * 59 + this.SupportedIdeasCount.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
-                if (this.UsersCount != null)
-                    hash = hash * 59 + this.UsersCount.GetHashCode();
                 return hash;
             }
         }

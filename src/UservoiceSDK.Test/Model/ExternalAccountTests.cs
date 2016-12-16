@@ -129,14 +129,6 @@ namespace UservoiceSDK.Test
             // TODO unit test for the property 'Name'
         }
         /// <summary>
-        /// Test the property 'NpsCount'
-        /// </summary>
-        [Test]
-        public void NpsCountTest()
-        {
-            // TODO unit test for the property 'NpsCount'
-        }
-        /// <summary>
         /// Test the property 'Plan'
         /// </summary>
         [Test]
@@ -145,36 +137,12 @@ namespace UservoiceSDK.Test
             // TODO unit test for the property 'Plan'
         }
         /// <summary>
-        /// Test the property 'RequestsCount'
-        /// </summary>
-        [Test]
-        public void RequestsCountTest()
-        {
-            // TODO unit test for the property 'RequestsCount'
-        }
-        /// <summary>
-        /// Test the property 'SupportedIdeasCount'
-        /// </summary>
-        [Test]
-        public void SupportedIdeasCountTest()
-        {
-            // TODO unit test for the property 'SupportedIdeasCount'
-        }
-        /// <summary>
         /// Test the property 'UpdatedAt'
         /// </summary>
         [Test]
         public void UpdatedAtTest()
         {
             // TODO unit test for the property 'UpdatedAt'
-        }
-        /// <summary>
-        /// Test the property 'UsersCount'
-        /// </summary>
-        [Test]
-        public void UsersCountTest()
-        {
-            // TODO unit test for the property 'UsersCount'
         }
 
     }
