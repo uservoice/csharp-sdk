@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.UsersApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.UsersApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,33 +20,50 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class BlockByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                UserResponse result = apiInstance.BlockById(id, includes);
+                UserResponse result = client.BlockById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.BlockById: " + e.Message );
             }
@@ -89,32 +104,49 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class CurrentExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                UserResponse result = apiInstance.Current(includes);
+                UserResponse result = client.Current(includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.Current: " + e.Message );
             }
@@ -154,23 +186,35 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class FindOrCreateExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var name = name_example;  // string |  (optional) 
             var email = email_example;  // string |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -178,10 +222,15 @@ namespace Example
             try
             {
                 // # Create an user
-                UserResponse result = apiInstance.FindOrCreate(name, email, includes);
+                UserResponse result = client.FindOrCreate(name, email, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.FindOrCreate: " + e.Message );
             }
@@ -215,7 +264,7 @@ Name | Type | Description  | Notes
 
 <a name="get"></a>
 # **Get**
-> UserResponsePaginated Get (long? page = null, long? perPage = null, long? bulkPerPage = null, string sort = null, string q = null, List<string> emailAddress = null, List<string> allowedState = null, bool? internalUser = null, List<int?> team = null, List<string> includes = null)
+> UserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, string q = null, List<string> emailAddress = null, List<string> allowedState = null, bool? internalUser = null, List<int?> team = null, List<int?> externalAccount = null, List<int?> suggestion = null, List<int?> feature = null, List<string> includes = null)
 
 # List users
 
@@ -223,41 +272,60 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var bulkPerPage = 789;  // long? |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var q = q_example;  // string |  (optional) 
             var emailAddress = new List<string>(); // List<string> |  (optional) 
             var allowedState = new List<string>(); // List<string> |  (optional) 
             var internalUser = true;  // bool? |  (optional) 
             var team = new List<int?>(); // List<int?> |  (optional) 
+            var externalAccount = new List<int?>(); // List<int?> |  (optional) 
+            var suggestion = new List<int?>(); // List<int?> |  (optional) 
+            var feature = new List<int?>(); // List<int?> |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # List users
-                UserResponsePaginated result = apiInstance.Get(page, perPage, bulkPerPage, sort, q, emailAddress, allowedState, internalUser, team, includes);
+                UserResponsePaginated result = client.Get(page, perPage, sort, q, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.Get: " + e.Message );
             }
@@ -272,13 +340,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **bulkPerPage** | **long?**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **q** | **string**|  | [optional] 
  **emailAddress** | [**List<string>**](string.md)|  | [optional] 
  **allowedState** | [**List<string>**](string.md)|  | [optional] 
  **internalUser** | **bool?**|  | [optional] 
  **team** | [**List<int?>**](int?.md)|  | [optional] 
+ **externalAccount** | [**List<int?>**](int?.md)|  | [optional] 
+ **suggestion** | [**List<int?>**](int?.md)|  | [optional] 
+ **feature** | [**List<int?>**](int?.md)|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
 ### Return type
@@ -306,33 +376,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = new List<int?>(); // List<int?> | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Retrieve users by id
-                UserResponse result = apiInstance.GetById(id, includes);
+                UserResponse result = client.GetById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.GetById: " + e.Message );
             }
@@ -373,33 +460,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class UnblockByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new UsersApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                UserResponse result = apiInstance.UnblockById(id, includes);
+                UserResponse result = client.UnblockById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling UsersApi.UnblockById: " + e.Message );
             }

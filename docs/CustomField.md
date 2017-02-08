@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CustomField
+# UserVoiceSdk.Models.CustomField
 ## Properties
 
 Name | Type | Description | Notes

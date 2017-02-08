@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.FeedbackApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.FeedbackApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,23 +19,35 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class CreateExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new FeedbackApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var body = body_example;  // string | 
             var channel = channel_example;  // string |  (default to api)
             var linksSuggestion = 789;  // long? | 
@@ -53,10 +63,15 @@ namespace Example
             try
             {
                 // # Create a feedback
-                FeedbackResponse result = apiInstance.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
+                FeedbackResponse result = client.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling FeedbackApi.Create: " + e.Message );
             }
@@ -106,33 +121,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class DeleteByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new FeedbackApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Delete a feedback
-                FeedbackResponse result = apiInstance.DeleteById(id, includes);
+                FeedbackResponse result = client.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling FeedbackApi.DeleteById: " + e.Message );
             }
@@ -165,7 +197,7 @@ Name | Type | Description  | Notes
 
 <a name="get"></a>
 # **Get**
-> FeedbackResponsePaginated Get (long? page = null, long? perPage = null, long? bulkPerPage = null, string sort = null, string channel = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, List<int?> suggestion = null, List<int?> ticket = null, List<string> includes = null)
+> FeedbackResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, string channel = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, List<int?> suggestion = null, List<int?> ticket = null, List<string> includes = null)
 
 # List feedback
 
@@ -173,26 +205,37 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new FeedbackApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var bulkPerPage = 789;  // long? |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -updated_at)
             var channel = channel_example;  // string |  (optional) 
             var sourceUrl = sourceUrl_example;  // string |  (optional) 
@@ -205,10 +248,15 @@ namespace Example
             try
             {
                 // # List feedback
-                FeedbackResponsePaginated result = apiInstance.Get(page, perPage, bulkPerPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
+                FeedbackResponsePaginated result = client.Get(page, perPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling FeedbackApi.Get: " + e.Message );
             }
@@ -223,7 +271,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **bulkPerPage** | **long?**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -updated_at]
  **channel** | **string**|  | [optional] 
  **sourceUrl** | **string**|  | [optional] 
@@ -258,33 +305,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new FeedbackApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = new List<int?>(); // List<int?> | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Retrieve feedback by id
-                FeedbackResponse result = apiInstance.GetById(id, includes);
+                FeedbackResponse result = client.GetById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling FeedbackApi.GetById: " + e.Message );
             }
@@ -325,23 +389,35 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class UpdateByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new FeedbackApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var body = body_example;  // string |  (optional) 
             var bodyMimeType = bodyMimeType_example;  // string |  (optional) 
@@ -356,10 +432,15 @@ namespace Example
             try
             {
                 // # Update a feedback
-                FeedbackResponse result = apiInstance.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
+                FeedbackResponse result = client.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling FeedbackApi.UpdateById: " + e.Message );
             }

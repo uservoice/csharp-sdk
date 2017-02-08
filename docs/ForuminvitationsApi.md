@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.ForuminvitationsApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.ForuminvitationsApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,23 +18,35 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class CreateExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new ForuminvitationsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var email = new List<string>(); // List<string> | 
             var linksForum = 789;  // long? | 
             var subject = subject_example;  // string |  (optional) 
@@ -47,10 +57,15 @@ namespace Example
             try
             {
                 // # Create a forum invitation
-                ForumInvitationResponse result = apiInstance.Create(email, linksForum, subject, replyTo, message, includes);
+                ForumInvitationResponse result = client.Create(email, linksForum, subject, replyTo, message, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ForuminvitationsApi.Create: " + e.Message );
             }
@@ -95,33 +110,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class DeleteByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new ForuminvitationsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Delete a forum invitation
-                ForumInvitationResponse result = apiInstance.DeleteById(id, includes);
+                ForumInvitationResponse result = client.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ForuminvitationsApi.DeleteById: " + e.Message );
             }
@@ -154,7 +186,7 @@ Name | Type | Description  | Notes
 
 <a name="get"></a>
 # **Get**
-> ForumInvitationResponsePaginated Get (long? page = null, long? perPage = null, long? bulkPerPage = null, string sort = null, long? forum = null, bool? claimed = null, List<string> includes = null)
+> ForumInvitationResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, long? forum = null, bool? claimed = null, List<string> includes = null)
 
 # List forum invitations
 
@@ -162,26 +194,37 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new ForuminvitationsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var bulkPerPage = 789;  // long? |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var forum = 789;  // long? |  (optional) 
             var claimed = true;  // bool? |  (optional) 
@@ -190,10 +233,15 @@ namespace Example
             try
             {
                 // # List forum invitations
-                ForumInvitationResponsePaginated result = apiInstance.Get(page, perPage, bulkPerPage, sort, forum, claimed, includes);
+                ForumInvitationResponsePaginated result = client.Get(page, perPage, sort, forum, claimed, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ForuminvitationsApi.Get: " + e.Message );
             }
@@ -208,7 +256,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **bulkPerPage** | **long?**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **forum** | **long?**|  | [optional] 
  **claimed** | **bool?**|  | [optional] 
@@ -239,33 +286,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new ForuminvitationsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = new List<int?>(); // List<int?> | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Retrieve forum invitations by id
-                ForumInvitationResponse result = apiInstance.GetById(id, includes);
+                ForumInvitationResponse result = client.GetById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ForuminvitationsApi.GetById: " + e.Message );
             }

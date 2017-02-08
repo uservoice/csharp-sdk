@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Ticket
+# UserVoiceSdk.Models.Ticket
 ## Properties
 
 Name | Type | Description | Notes

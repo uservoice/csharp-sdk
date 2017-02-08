@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.SuggestionsApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.SuggestionsApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,33 +25,50 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class ApproveByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = apiInstance.ApproveById(id, includes);
+                SuggestionResponse result = client.ApproveById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.ApproveById: " + e.Message );
             }
@@ -94,33 +109,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class ConvertToTicketByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = apiInstance.ConvertToTicketById(id, includes);
+                SuggestionResponse result = client.ConvertToTicketById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.ConvertToTicketById: " + e.Message );
             }
@@ -161,23 +193,35 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class CreateExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var title = title_example;  // string | 
             var linksForum = 789;  // long? | 
             var body = body_example;  // string |  (optional) 
@@ -190,10 +234,15 @@ namespace Example
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = apiInstance.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.Create: " + e.Message );
             }
@@ -240,33 +289,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class DeleteByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Delete a suggestion
-                SuggestionResponse result = apiInstance.DeleteById(id, includes);
+                SuggestionResponse result = client.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.DeleteById: " + e.Message );
             }
@@ -299,7 +365,7 @@ Name | Type | Description  | Notes
 
 <a name="get"></a>
 # **Get**
-> SuggestionResponsePaginated Get (long? page = null, long? perPage = null, long? bulkPerPage = null, string sort = null, List<int?> forum = null, List<int?> creator = null, List<int?> uncategorizedInForum = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<string> state = null, List<int?> label = null, List<int?> supporter = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, DateTime? periodStart = null, DateTime? periodEnd = null, string q = null, List<string> includes = null)
+> SuggestionResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> creator = null, List<int?> uncategorizedInForum = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<string> state = null, List<int?> label = null, List<int?> supporter = null, List<int?> externalAccount = null, List<int?> feature = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, DateTime? periodStart = null, DateTime? periodEnd = null, string q = null, List<string> includes = null)
 
 # List suggestions  Returns a paginated list of suggestions.
 
@@ -307,26 +373,37 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var bulkPerPage = 789;  // long? |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var forum = new List<int?>(); // List<int?> |  (optional) 
             var creator = new List<int?>(); // List<int?> |  (optional) 
@@ -338,6 +415,8 @@ namespace Example
             var state = new List<string>(); // List<string> |  (optional) 
             var label = new List<int?>(); // List<int?> |  (optional) 
             var supporter = new List<int?>(); // List<int?> |  (optional) 
+            var externalAccount = new List<int?>(); // List<int?> |  (optional) 
+            var feature = new List<int?>(); // List<int?> |  (optional) 
             var hasResponse = true;  // bool? |  (optional) 
             var hasSmartvoteScore = true;  // bool? |  (optional) 
             var noEngagementSince = 2013-10-20;  // DateTime? |  (optional) 
@@ -350,10 +429,15 @@ namespace Example
             try
             {
                 // # List suggestions  Returns a paginated list of suggestions.
-                SuggestionResponsePaginated result = apiInstance.Get(page, perPage, bulkPerPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
+                SuggestionResponsePaginated result = client.Get(page, perPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.Get: " + e.Message );
             }
@@ -368,7 +452,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **bulkPerPage** | **long?**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **forum** | [**List<int?>**](int?.md)|  | [optional] 
  **creator** | [**List<int?>**](int?.md)|  | [optional] 
@@ -380,6 +463,8 @@ Name | Type | Description  | Notes
  **state** | [**List<string>**](string.md)|  | [optional] 
  **label** | [**List<int?>**](int?.md)|  | [optional] 
  **supporter** | [**List<int?>**](int?.md)|  | [optional] 
+ **externalAccount** | [**List<int?>**](int?.md)|  | [optional] 
+ **feature** | [**List<int?>**](int?.md)|  | [optional] 
  **hasResponse** | **bool?**|  | [optional] 
  **hasSmartvoteScore** | **bool?**|  | [optional] 
  **noEngagementSince** | **DateTime?**|  | [optional] 
@@ -414,33 +499,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = new List<int?>(); // List<int?> | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Retrieve suggestions by id
-                SuggestionResponse result = apiInstance.GetById(id, includes);
+                SuggestionResponse result = client.GetById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.GetById: " + e.Message );
             }
@@ -481,23 +583,35 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class ImportExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var title = title_example;  // string | 
             var linksForum = 789;  // long? | 
             var body = body_example;  // string |  (optional) 
@@ -514,10 +628,15 @@ namespace Example
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = apiInstance.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.Import: " + e.Message );
             }
@@ -568,33 +687,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class PublishByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = apiInstance.PublishById(id, includes);
+                SuggestionResponse result = client.PublishById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.PublishById: " + e.Message );
             }
@@ -635,33 +771,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class SpamByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = apiInstance.SpamById(id, includes);
+                SuggestionResponse result = client.SpamById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.SpamById: " + e.Message );
             }
@@ -702,33 +855,50 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class UnremoveByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = apiInstance.UnremoveById(id, includes);
+                SuggestionResponse result = client.UnremoveById(id, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.UnremoveById: " + e.Message );
             }
@@ -769,23 +939,35 @@ Name | Type | Description  | Notes
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class UpdateByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new SuggestionsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var title = title_example;  // string |  (optional) 
             var body = body_example;  // string |  (optional) 
@@ -799,10 +981,15 @@ namespace Example
             try
             {
                 // # Update a suggestion
-                SuggestionResponse result = apiInstance.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SuggestionsApi.UpdateById: " + e.Message );
             }

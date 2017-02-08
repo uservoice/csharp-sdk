@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Supporter
+# UserVoiceSdk.Models.Supporter
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.CustomfieldsApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.CustomfieldsApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,23 +19,35 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class CreateExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new CustomfieldsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var name = name_example;  // string | 
             var key = key_example;  // string | 
             var fieldType = fieldType_example;  // string | 
@@ -46,9 +56,14 @@ namespace Example
             try
             {
                 // # Create a custom field
-                apiInstance.Create(name, key, fieldType, objectType);
+                client.Create(name, key, fieldType, objectType);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling CustomfieldsApi.Create: " + e.Message );
             }
@@ -91,31 +106,48 @@ void (empty response body)
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class DeleteByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new CustomfieldsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
 
             try
             {
                 // # Delete a custom field
-                apiInstance.DeleteById(id);
+                client.DeleteById(id);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling CustomfieldsApi.DeleteById: " + e.Message );
             }
@@ -147,7 +179,7 @@ void (empty response body)
 
 <a name="get"></a>
 # **Get**
-> void Get (long? page = null, long? perPage = null, long? bulkPerPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+> void Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
 
 # List custom fields
 
@@ -155,26 +187,37 @@ void (empty response body)
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new CustomfieldsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var bulkPerPage = 789;  // long? |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var objectType = new List<string>(); // List<string> |  (optional) 
             var key = new List<string>(); // List<string> |  (optional) 
@@ -182,9 +225,14 @@ namespace Example
             try
             {
                 // # List custom fields
-                apiInstance.Get(page, perPage, bulkPerPage, sort, objectType, key);
+                client.Get(page, perPage, sort, objectType, key);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling CustomfieldsApi.Get: " + e.Message );
             }
@@ -199,7 +247,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **bulkPerPage** | **long?**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **objectType** | [**List<string>**](string.md)|  | [optional] 
  **key** | [**List<string>**](string.md)|  | [optional] 
@@ -229,31 +276,48 @@ void (empty response body)
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class GetByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new CustomfieldsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = new List<int?>(); // List<int?> | 
 
             try
             {
                 // # Retrieve custom fields by id
-                apiInstance.GetById(id);
+                client.GetById(id);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling CustomfieldsApi.GetById: " + e.Message );
             }
@@ -293,23 +357,35 @@ void (empty response body)
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class UpdateByIdExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new CustomfieldsApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var id = 789;  // long? | 
             var name = name_example;  // string |  (optional) 
             var key = key_example;  // string |  (optional) 
@@ -317,9 +393,14 @@ namespace Example
             try
             {
                 // # Update a custom field
-                apiInstance.UpdateById(id, name, key);
+                client.UpdateById(id, name, key);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling CustomfieldsApi.UpdateById: " + e.Message );
             }

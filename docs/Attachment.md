@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Attachment
+# UserVoiceSdk.Models.Attachment
 ## Properties
 
 Name | Type | Description | Notes

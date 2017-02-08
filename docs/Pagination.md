@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Pagination
+# UserVoiceSdk.Models.Pagination
 ## Properties
 
 Name | Type | Description | Notes

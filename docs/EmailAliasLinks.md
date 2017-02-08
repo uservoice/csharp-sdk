@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.EmailAliasLinks
+# UserVoiceSdk.Models.EmailAliasLinks
 ## Properties
 
 Name | Type | Description | Notes

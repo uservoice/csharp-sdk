@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Status
+# UserVoiceSdk.Models.Status
 ## Properties
 
 Name | Type | Description | Notes

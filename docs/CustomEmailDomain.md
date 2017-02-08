@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CustomEmailDomain
+# UserVoiceSdk.Models.CustomEmailDomain
 ## Properties
 
 Name | Type | Description | Notes

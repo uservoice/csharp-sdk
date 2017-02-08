@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CustomerAccount
+# UserVoiceSdk.Models.CustomerAccount
 ## Properties
 
 Name | Type | Description | Notes

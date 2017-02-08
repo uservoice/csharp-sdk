@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.LabelLinks
+# UserVoiceSdk.Models.LabelLinks
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,10 +1,12 @@
-# UservoiceSDK.Models.User
+# UserVoiceSdk.Models.User
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowedState** | **string** |  | [optional] 
 **AvatarUrl** | **string** |  | [optional] 
+**City** | **string** |  | [optional] 
+**Country** | **string** |  | [optional] 
 **CreatedAt** | **DateTime?** |  | [optional] 
 **EmailAddress** | **string** |  | [optional] 
 **Guid** | **string** |  | [optional] 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **LastLogin** | **DateTime?** |  | [optional] 
 **Links** | [**UserLinks**](UserLinks.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
+**Region** | **string** |  | [optional] 
 **SatisfactionScore** | **long?** |  | [optional] 
 **SupportedSuggestionsCount** | **long?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 

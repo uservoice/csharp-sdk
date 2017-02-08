@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SuggestionActivityEntry
+# UserVoiceSdk.Models.SuggestionActivityEntry
 ## Properties
 
 Name | Type | Description | Notes

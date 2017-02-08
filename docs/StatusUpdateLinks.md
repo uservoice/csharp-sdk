@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.StatusUpdateLinks
+# UserVoiceSdk.Models.StatusUpdateLinks
 ## Properties
 
 Name | Type | Description | Notes

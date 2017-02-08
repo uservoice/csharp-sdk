@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Merge
+# UserVoiceSdk.Models.Merge
 ## Properties
 
 Name | Type | Description | Notes

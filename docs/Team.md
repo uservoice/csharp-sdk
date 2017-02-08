@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Team
+# UserVoiceSdk.Models.Team
 ## Properties
 
 Name | Type | Description | Notes

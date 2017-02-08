@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ExternalUser
+# UserVoiceSdk.Models.ExternalUser
 ## Properties
 
 Name | Type | Description | Notes

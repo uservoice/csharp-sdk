@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Token
+# UserVoiceSdk.Models.Token
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ExternalAccountResponsePaginated
+# UserVoiceSdk.Models.ExternalAccountResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

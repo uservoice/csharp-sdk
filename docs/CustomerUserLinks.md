@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CustomerUserLinks
+# UserVoiceSdk.Models.CustomerUserLinks
 ## Properties
 
 Name | Type | Description | Notes

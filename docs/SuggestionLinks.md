@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SuggestionLinks
+# UserVoiceSdk.Models.SuggestionLinks
 ## Properties
 
 Name | Type | Description | Notes

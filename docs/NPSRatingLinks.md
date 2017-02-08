@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.NPSRatingLinks
+# UserVoiceSdk.Models.NPSRatingLinks
 ## Properties
 
 Name | Type | Description | Notes

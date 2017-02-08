@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.NPSRatingResponsePaginated
+# UserVoiceSdk.Models.NPSRatingResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,4 @@
-# UservoiceSDK.Api.IdentityApi
-
-All URIs are relative to *https://localhost/api/v2*
+# UserVoiceSdk.Api.IdentityApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,23 +15,35 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using UservoiceSDK.Api;
-using UservoiceSDK.Client;
-using UservoiceSDK.Models;
+using UserVoiceSdk.Api;
+using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace Example
 {
     public class BulkIdentifyExample
     {
+        pprivate string ApiKey = "some_key";
+        private string ApiSecret = "some_secret";
+        private string Subdomain = "sub";
+        private string Domain = "uservoice.com";
+
+		// Credentials for authenticating as a user
+		private string Username = "some.user@uservoice.com";
+		private string Password = "Somepassword1234!";
+
         public void main()
         {
-            
-            // Configure OAuth2 access token for authorization: oauth2_password
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            var client = new ApiClient(subdomain: Subdomain,
+									   clientId: ApiKey,
+									   domain: Domain,
+									   clientSecret: ApiSecret);
 
-            var apiInstance = new IdentityApi();
+			// Authentication takes place on request when a token is not available
+			// However, you can explicitly login using the functions below
+			//client.Login(ApiKey, ApiSecret);
+			//client.LoginAsUser(ApiKey, Username, Password);
+
             var identities = new List<string>(); // List<string> | Each element with index i has these fields:
             var identitiesIId = identitiesIId_example;  // string | external identifier for this user (optional) 
             var identitiesIEmail = identitiesIEmail_example;  // string | required to match a user in the UserVoice database (optional) 
@@ -50,9 +60,14 @@ namespace Example
             try
             {
                 // # Add or update traits for a batch of users.
-                apiInstance.BulkIdentify(identities, identitiesIId, identitiesIEmail, identitiesIName, identitiesICreatedAt, identitiesIType, identitiesIAccountId, identitiesIAccountName, identitiesIAccountCreatedAt, identitiesIAccountMonthlyRate, identitiesIAccountLtv, identitiesIAccountPlan);
+                client.BulkIdentify(identities, identitiesIId, identitiesIEmail, identitiesIName, identitiesICreatedAt, identitiesIType, identitiesIAccountId, identitiesIAccountName, identitiesIAccountCreatedAt, identitiesIAccountMonthlyRate, identitiesIAccountLtv, identitiesIAccountPlan);
             }
-            catch (Exception e)
+            catch (RateLimitException rle)
+            {
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+            }
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling IdentityApi.BulkIdentify: " + e.Message );
             }

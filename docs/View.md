@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.View
+# UserVoiceSdk.Models.View
 ## Properties
 
 Name | Type | Description | Notes

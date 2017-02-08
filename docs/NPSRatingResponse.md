@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.NPSRatingResponse
+# UserVoiceSdk.Models.NPSRatingResponse
 ## Properties
 
 Name | Type | Description | Notes

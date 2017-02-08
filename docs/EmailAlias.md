@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.EmailAlias
+# UserVoiceSdk.Models.EmailAlias
 ## Properties
 
 Name | Type | Description | Notes

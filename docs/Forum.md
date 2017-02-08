@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Forum
+# UserVoiceSdk.Models.Forum
 ## Properties
 
 Name | Type | Description | Notes

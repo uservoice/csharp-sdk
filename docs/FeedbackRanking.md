@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.FeedbackRanking
+# UserVoiceSdk.Models.FeedbackRanking
 ## Properties
 
 Name | Type | Description | Notes

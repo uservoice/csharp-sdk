@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CategoryLinks
+# UserVoiceSdk.Models.CategoryLinks
 ## Properties
 
 Name | Type | Description | Notes
