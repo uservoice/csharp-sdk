@@ -54,7 +54,7 @@ namespace Example
             try
             {
                 // # Create a message
-                MessageResponse result = client.Create(body, linksSuggestion, notificationEmailAddress, includes);
+                MessageResponse result = client.Messages.Create(body, linksSuggestion, notificationEmailAddress, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -142,7 +142,7 @@ namespace Example
             try
             {
                 // # List messages
-                MessageResponsePaginated result = client.Get(page, perPage, sort, includes);
+                MessageResponsePaginated result = client.Messages.Get(page, perPage, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -228,7 +228,7 @@ namespace Example
             try
             {
                 // # Retrieve messages by id
-                MessageResponse result = client.GetById(id, includes);
+                MessageResponse result = client.Messages.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

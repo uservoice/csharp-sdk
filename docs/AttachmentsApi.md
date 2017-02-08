@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // 
-                AttachmentResponse result = client.Create(file, includes);
+                AttachmentResponse result = client.Attachments.Create(file, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -137,7 +137,7 @@ namespace Example
             try
             {
                 // # Delete an attachment
-                AttachmentResponse result = client.DeleteById(id, includes);
+                AttachmentResponse result = client.Attachments.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -225,7 +225,7 @@ namespace Example
             try
             {
                 // # List attachments
-                AttachmentResponsePaginated result = client.Get(page, perPage, sort, suggestion, note, includes);
+                AttachmentResponsePaginated result = client.Attachments.Get(page, perPage, sort, suggestion, note, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -313,7 +313,7 @@ namespace Example
             try
             {
                 // # Retrieve attachments by id
-                AttachmentResponse result = client.GetById(id, includes);
+                AttachmentResponse result = client.Attachments.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

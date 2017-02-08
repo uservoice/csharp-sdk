@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // # Bulk delete external users by ID
-                ExternalUserResponse result = client.BulkDelete(ids);
+                ExternalUserResponse result = client.External_users.BulkDelete(ids);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -135,7 +135,7 @@ namespace Example
             try
             {
                 // # Bulk delete external users by external ID
-                ExternalUserResponse result = client.BulkDeleteByExternalId(externalIds);
+                ExternalUserResponse result = client.External_users.BulkDeleteByExternalId(externalIds);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -221,7 +221,7 @@ namespace Example
             try
             {
                 // # List external users
-                ExternalUserResponsePaginated result = client.Get(page, perPage, sort, externalId, includes);
+                ExternalUserResponsePaginated result = client.External_users.Get(page, perPage, sort, externalId, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -308,7 +308,7 @@ namespace Example
             try
             {
                 // # Retrieve external users by id
-                ExternalUserResponse result = client.GetById(id, includes);
+                ExternalUserResponse result = client.External_users.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -408,7 +408,7 @@ namespace Example
             try
             {
                 // # Import external users
-                ExternalUserResponse result = client.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
+                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

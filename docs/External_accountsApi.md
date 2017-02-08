@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // # Bulk delete external accounts by ID
-                ExternalAccountResponse result = client.BulkDelete(ids);
+                ExternalAccountResponse result = client.External_accounts.BulkDelete(ids);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -135,7 +135,7 @@ namespace Example
             try
             {
                 // # Bulk delete external accounts by external ID
-                ExternalAccountResponse result = client.BulkDeleteByExternalId(externalIds);
+                ExternalAccountResponse result = client.External_accounts.BulkDeleteByExternalId(externalIds);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -223,7 +223,7 @@ namespace Example
             try
             {
                 // # List external accounts
-                ExternalAccountResponsePaginated result = client.Get(page, perPage, sort, externalId, suggestion, feature, q);
+                ExternalAccountResponsePaginated result = client.External_accounts.Get(page, perPage, sort, externalId, suggestion, feature, q);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -311,7 +311,7 @@ namespace Example
             try
             {
                 // # Retrieve external accounts by id
-                ExternalAccountResponse result = client.GetById(id);
+                ExternalAccountResponse result = client.External_accounts.GetById(id);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -400,7 +400,7 @@ namespace Example
             try
             {
                 // 
-                ExternalAccountResponse result = client.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
+                ExternalAccountResponse result = client.External_accounts.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

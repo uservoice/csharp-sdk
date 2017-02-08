@@ -56,7 +56,7 @@ namespace Example
             try
             {
                 // # Create a note
-                NoteResponse result = client.Create(body, linksSuggestion, bodyMimeType, attachmentTokens, includes);
+                NoteResponse result = client.Notes.Create(body, linksSuggestion, bodyMimeType, attachmentTokens, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -146,7 +146,7 @@ namespace Example
             try
             {
                 // # List notes
-                NoteResponsePaginated result = client.Get(page, perPage, sort, suggestion, includes);
+                NoteResponsePaginated result = client.Notes.Get(page, perPage, sort, suggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -233,7 +233,7 @@ namespace Example
             try
             {
                 // # Retrieve notes by id
-                NoteResponse result = client.GetById(id, includes);
+                NoteResponse result = client.Notes.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -318,7 +318,7 @@ namespace Example
             try
             {
                 // # Update a note
-                NoteResponse result = client.UpdateById(id, body, includes);
+                NoteResponse result = client.Notes.UpdateById(id, body, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

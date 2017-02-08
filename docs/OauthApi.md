@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // 
-                Token result = client.GetOauthToken(grantType, clientId, username, password, clientSecret);
+                Token result = client.Oauth.GetOauthToken(grantType, clientId, username, password, clientSecret);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

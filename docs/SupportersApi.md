@@ -60,7 +60,7 @@ namespace Example
             try
             {
                 // # List supporters
-                SupporterResponsePaginated result = client.Get(page, perPage, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
+                SupporterResponsePaginated result = client.Supporters.Get(page, perPage, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -153,7 +153,7 @@ namespace Example
             try
             {
                 // # Retrieve supporters by id
-                SupporterResponse result = client.GetById(id, includes);
+                SupporterResponse result = client.Supporters.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

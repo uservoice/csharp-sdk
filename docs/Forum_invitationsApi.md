@@ -57,7 +57,7 @@ namespace Example
             try
             {
                 // # Create a forum invitation
-                ForumInvitationResponse result = client.Create(email, linksForum, subject, replyTo, message, includes);
+                ForumInvitationResponse result = client.Forum_invitations.Create(email, linksForum, subject, replyTo, message, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -145,7 +145,7 @@ namespace Example
             try
             {
                 // # Delete a forum invitation
-                ForumInvitationResponse result = client.DeleteById(id, includes);
+                ForumInvitationResponse result = client.Forum_invitations.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -233,7 +233,7 @@ namespace Example
             try
             {
                 // # List forum invitations
-                ForumInvitationResponsePaginated result = client.Get(page, perPage, sort, forum, claimed, includes);
+                ForumInvitationResponsePaginated result = client.Forum_invitations.Get(page, perPage, sort, forum, claimed, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -321,7 +321,7 @@ namespace Example
             try
             {
                 // # Retrieve forum invitations by id
-                ForumInvitationResponse result = client.GetById(id, includes);
+                ForumInvitationResponse result = client.Forum_invitations.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

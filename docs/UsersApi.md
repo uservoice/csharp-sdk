@@ -55,7 +55,7 @@ namespace Example
             try
             {
                 // 
-                UserResponse result = client.BlockById(id, includes);
+                UserResponse result = client.Users.BlockById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -138,7 +138,7 @@ namespace Example
             try
             {
                 // 
-                UserResponse result = client.Current(includes);
+                UserResponse result = client.Users.Current(includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -222,7 +222,7 @@ namespace Example
             try
             {
                 // # Create an user
-                UserResponse result = client.FindOrCreate(name, email, includes);
+                UserResponse result = client.Users.FindOrCreate(name, email, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -317,7 +317,7 @@ namespace Example
             try
             {
                 // # List users
-                UserResponsePaginated result = client.Get(page, perPage, sort, q, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
+                UserResponsePaginated result = client.Users.Get(page, perPage, sort, q, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -411,7 +411,7 @@ namespace Example
             try
             {
                 // # Retrieve users by id
-                UserResponse result = client.GetById(id, includes);
+                UserResponse result = client.Users.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -495,7 +495,7 @@ namespace Example
             try
             {
                 // 
-                UserResponse result = client.UnblockById(id, includes);
+                UserResponse result = client.Users.UnblockById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

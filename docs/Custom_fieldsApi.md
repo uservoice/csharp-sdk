@@ -56,7 +56,7 @@ namespace Example
             try
             {
                 // # Create a custom field
-                client.Create(name, key, fieldType, objectType);
+                client.Custom_fields.Create(name, key, fieldType, objectType);
             }
             catch (RateLimitException rle)
             {
@@ -140,7 +140,7 @@ namespace Example
             try
             {
                 // # Delete a custom field
-                client.DeleteById(id);
+                client.Custom_fields.DeleteById(id);
             }
             catch (RateLimitException rle)
             {
@@ -225,7 +225,7 @@ namespace Example
             try
             {
                 // # List custom fields
-                client.Get(page, perPage, sort, objectType, key);
+                client.Custom_fields.Get(page, perPage, sort, objectType, key);
             }
             catch (RateLimitException rle)
             {
@@ -310,7 +310,7 @@ namespace Example
             try
             {
                 // # Retrieve custom fields by id
-                client.GetById(id);
+                client.Custom_fields.GetById(id);
             }
             catch (RateLimitException rle)
             {
@@ -393,7 +393,7 @@ namespace Example
             try
             {
                 // # Update a custom field
-                client.UpdateById(id, name, key);
+                client.Custom_fields.UpdateById(id, name, key);
             }
             catch (RateLimitException rle)
             {

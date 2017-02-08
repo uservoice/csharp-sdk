@@ -63,7 +63,7 @@ namespace Example
             try
             {
                 // # Create a feedback
-                FeedbackResponse result = client.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
+                FeedbackResponse result = client.Feedback.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -156,7 +156,7 @@ namespace Example
             try
             {
                 // # Delete a feedback
-                FeedbackResponse result = client.DeleteById(id, includes);
+                FeedbackResponse result = client.Feedback.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -248,7 +248,7 @@ namespace Example
             try
             {
                 // # List feedback
-                FeedbackResponsePaginated result = client.Get(page, perPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
+                FeedbackResponsePaginated result = client.Feedback.Get(page, perPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -340,7 +340,7 @@ namespace Example
             try
             {
                 // # Retrieve feedback by id
-                FeedbackResponse result = client.GetById(id, includes);
+                FeedbackResponse result = client.Feedback.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -432,7 +432,7 @@ namespace Example
             try
             {
                 // # Update a feedback
-                FeedbackResponse result = client.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
+                FeedbackResponse result = client.Feedback.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

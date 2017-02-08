@@ -54,7 +54,7 @@ namespace Example
             try
             {
                 // # List forums
-                ForumResponsePaginated result = client.Get(page, perPage, sort, open, includes);
+                ForumResponsePaginated result = client.Forums.Get(page, perPage, sort, open, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -141,7 +141,7 @@ namespace Example
             try
             {
                 // # Retrieve forums by id
-                ForumResponse result = client.GetById(id, includes);
+                ForumResponse result = client.Forums.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

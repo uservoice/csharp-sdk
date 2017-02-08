@@ -62,7 +62,7 @@ namespace Example
             try
             {
                 // # Create a view
-                ViewResponse result = client.Create(kind, name, subKind, _params, subscribed, subscriptionParams, linksSuggestion, linksSmartvoteExperiment, linksUser, includes);
+                ViewResponse result = client.Views.Create(kind, name, subKind, _params, subscribed, subscriptionParams, linksSuggestion, linksSmartvoteExperiment, linksUser, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -154,7 +154,7 @@ namespace Example
             try
             {
                 // # Delete a view
-                ViewResponse result = client.DeleteById(id, includes);
+                ViewResponse result = client.Views.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -242,7 +242,7 @@ namespace Example
             try
             {
                 // # List views
-                ViewResponsePaginated result = client.Get(user, page, perPage, kind, sort, includes);
+                ViewResponsePaginated result = client.Views.Get(user, page, perPage, kind, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -330,7 +330,7 @@ namespace Example
             try
             {
                 // # Retrieve views by id
-                ViewResponse result = client.GetById(id, includes);
+                ViewResponse result = client.Views.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -419,7 +419,7 @@ namespace Example
             try
             {
                 // # Update a view
-                ViewResponse result = client.UpdateById(id, name, subscribed, subscriptionParams, _params, position, includes);
+                ViewResponse result = client.Views.UpdateById(id, name, subscribed, subscriptionParams, _params, position, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

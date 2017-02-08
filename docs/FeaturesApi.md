@@ -56,7 +56,7 @@ namespace Example
             try
             {
                 // # Create a feature
-                FeatureResponse result = client.Create(name, description, , includes);
+                FeatureResponse result = client.Features.Create(name, description, , includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -142,7 +142,7 @@ namespace Example
             try
             {
                 // # Delete a feature
-                FeatureResponse result = client.DeleteById(id, includes);
+                FeatureResponse result = client.Features.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -231,7 +231,7 @@ namespace Example
             try
             {
                 // # List features
-                FeatureResponsePaginated result = client.Get(page, perPage, sort, user, account, suggestion, includes);
+                FeatureResponsePaginated result = client.Features.Get(page, perPage, sort, user, account, suggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -320,7 +320,7 @@ namespace Example
             try
             {
                 // # Retrieve features by id
-                FeatureResponse result = client.GetById(id, includes);
+                FeatureResponse result = client.Features.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -407,7 +407,7 @@ namespace Example
             try
             {
                 // # Update a feature
-                FeatureResponse result = client.UpdateById(id, name, description, , includes);
+                FeatureResponse result = client.Features.UpdateById(id, name, description, , includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

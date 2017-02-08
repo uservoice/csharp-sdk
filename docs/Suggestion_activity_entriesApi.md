@@ -73,7 +73,7 @@ namespace Example
             try
             {
                 // # List suggestion activity entries
-                SuggestionActivityEntryResponsePaginated result = client.Get(page, perPage, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
+                SuggestionActivityEntryResponsePaginated result = client.Suggestion_activity_entries.Get(page, perPage, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

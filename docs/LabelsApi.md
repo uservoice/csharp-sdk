@@ -57,7 +57,7 @@ namespace Example
             try
             {
                 // # Create a label
-                LabelResponse result = client.Attach(linksLabel, linksSuggestion, includes);
+                LabelResponse result = client.Labels.Attach(linksLabel, linksSuggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -143,7 +143,7 @@ namespace Example
             try
             {
                 // # Create a label
-                LabelResponse result = client.Create(name, linksParent, includes);
+                LabelResponse result = client.Labels.Create(name, linksParent, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -228,7 +228,7 @@ namespace Example
             try
             {
                 // # Delete a label
-                LabelResponse result = client.DeleteById(id, includes);
+                LabelResponse result = client.Labels.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -313,7 +313,7 @@ namespace Example
             try
             {
                 // # Create a label
-                LabelResponse result = client.Detach(linksLabel, linksSuggestion, includes);
+                LabelResponse result = client.Labels.Detach(linksLabel, linksSuggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -400,7 +400,7 @@ namespace Example
             try
             {
                 // # List labels
-                LabelResponsePaginated result = client.Get(page, perPage, sort, includes);
+                LabelResponsePaginated result = client.Labels.Get(page, perPage, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -486,7 +486,7 @@ namespace Example
             try
             {
                 // # Retrieve labels by id
-                LabelResponse result = client.GetById(id, includes);
+                LabelResponse result = client.Labels.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -572,7 +572,7 @@ namespace Example
             try
             {
                 // # Update a label
-                LabelResponse result = client.UpdateById(id, name, linksParent, includes);
+                LabelResponse result = client.Labels.UpdateById(id, name, linksParent, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

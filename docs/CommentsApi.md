@@ -56,7 +56,7 @@ namespace Example
             try
             {
                 // 
-                CommentResponse result = client.ApproveById(id, includes);
+                CommentResponse result = client.Comments.ApproveById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -142,7 +142,7 @@ namespace Example
             try
             {
                 // # Create a comment
-                CommentResponse result = client.Create(body, linksSuggestion, bodyMimeType, includes);
+                CommentResponse result = client.Comments.Create(body, linksSuggestion, bodyMimeType, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -228,7 +228,7 @@ namespace Example
             try
             {
                 // # Delete a comment
-                CommentResponse result = client.DeleteById(id, includes);
+                CommentResponse result = client.Comments.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -315,7 +315,7 @@ namespace Example
             try
             {
                 // # List comments
-                CommentResponsePaginated result = client.Get(page, perPage, sort, state, includes);
+                CommentResponsePaginated result = client.Comments.Get(page, perPage, sort, state, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -402,7 +402,7 @@ namespace Example
             try
             {
                 // # Retrieve comments by id
-                CommentResponse result = client.GetById(id, includes);
+                CommentResponse result = client.Comments.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -486,7 +486,7 @@ namespace Example
             try
             {
                 // 
-                CommentResponse result = client.SpamById(id, includes);
+                CommentResponse result = client.Comments.SpamById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -570,7 +570,7 @@ namespace Example
             try
             {
                 // 
-                CommentResponse result = client.UnremoveById(id, includes);
+                CommentResponse result = client.Comments.UnremoveById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

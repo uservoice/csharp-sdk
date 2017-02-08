@@ -55,7 +55,7 @@ namespace Example
             try
             {
                 // # Create a category
-                CategoryResponse result = client.Create(name, linksForum, includes);
+                CategoryResponse result = client.Categories.Create(name, linksForum, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -140,7 +140,7 @@ namespace Example
             try
             {
                 // # Delete a category
-                CategoryResponse result = client.DeleteById(id, includes);
+                CategoryResponse result = client.Categories.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -227,7 +227,7 @@ namespace Example
             try
             {
                 // # List categories
-                CategoryResponsePaginated result = client.Get(page, perPage, sort, forum, includes);
+                CategoryResponsePaginated result = client.Categories.Get(page, perPage, sort, forum, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -314,7 +314,7 @@ namespace Example
             try
             {
                 // # Retrieve categories by id
-                CategoryResponse result = client.GetById(id, includes);
+                CategoryResponse result = client.Categories.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -400,7 +400,7 @@ namespace Example
             try
             {
                 // # Update a category
-                CategoryResponse result = client.UpdateById(id, name, linksForum, includes);
+                CategoryResponse result = client.Categories.UpdateById(id, name, linksForum, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

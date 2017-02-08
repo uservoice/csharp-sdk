@@ -56,7 +56,7 @@ namespace Example
             try
             {
                 // # Create a nps rating
-                NPSRatingResponse result = client.Create(rating, linksUser, prompt, body, date, includes);
+                NPSRatingResponse result = client.Nps_ratings.Create(rating, linksUser, prompt, body, date, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -150,7 +150,7 @@ namespace Example
             try
             {
                 // # List nps ratings
-                NPSRatingResponsePaginated result = client.Get(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
+                NPSRatingResponsePaginated result = client.Nps_ratings.Get(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -240,7 +240,7 @@ namespace Example
             try
             {
                 // # Retrieve nps ratings by id
-                NPSRatingResponse result = client.GetById(id, includes);
+                NPSRatingResponse result = client.Nps_ratings.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

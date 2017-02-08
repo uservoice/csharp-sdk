@@ -53,7 +53,7 @@ namespace Example
             try
             {
                 // # List statuses
-                StatusResponsePaginated result = client.Get(page, perPage, sort, includes);
+                StatusResponsePaginated result = client.Statuses.Get(page, perPage, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -139,7 +139,7 @@ namespace Example
             try
             {
                 // # Retrieve statuses by id
-                StatusResponse result = client.GetById(id, includes);
+                StatusResponse result = client.Statuses.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)

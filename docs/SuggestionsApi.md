@@ -60,7 +60,7 @@ namespace Example
             try
             {
                 // 
-                SuggestionResponse result = client.ApproveById(id, includes);
+                SuggestionResponse result = client.Suggestions.ApproveById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -144,7 +144,7 @@ namespace Example
             try
             {
                 // 
-                SuggestionResponse result = client.ConvertToTicketById(id, includes);
+                SuggestionResponse result = client.Suggestions.ConvertToTicketById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -234,7 +234,7 @@ namespace Example
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = client.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -324,7 +324,7 @@ namespace Example
             try
             {
                 // # Delete a suggestion
-                SuggestionResponse result = client.DeleteById(id, includes);
+                SuggestionResponse result = client.Suggestions.DeleteById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -429,7 +429,7 @@ namespace Example
             try
             {
                 // # List suggestions  Returns a paginated list of suggestions.
-                SuggestionResponsePaginated result = client.Get(page, perPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
+                SuggestionResponsePaginated result = client.Suggestions.Get(page, perPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -534,7 +534,7 @@ namespace Example
             try
             {
                 // # Retrieve suggestions by id
-                SuggestionResponse result = client.GetById(id, includes);
+                SuggestionResponse result = client.Suggestions.GetById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -628,7 +628,7 @@ namespace Example
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = client.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -722,7 +722,7 @@ namespace Example
             try
             {
                 // 
-                SuggestionResponse result = client.PublishById(id, includes);
+                SuggestionResponse result = client.Suggestions.PublishById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -806,7 +806,7 @@ namespace Example
             try
             {
                 // 
-                SuggestionResponse result = client.SpamById(id, includes);
+                SuggestionResponse result = client.Suggestions.SpamById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -890,7 +890,7 @@ namespace Example
             try
             {
                 // 
-                SuggestionResponse result = client.UnremoveById(id, includes);
+                SuggestionResponse result = client.Suggestions.UnremoveById(id, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -981,7 +981,7 @@ namespace Example
             try
             {
                 // # Update a suggestion
-                SuggestionResponse result = client.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
