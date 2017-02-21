@@ -1,5 +1,5 @@
 using System;
-namespace UservoiceSDK.Client
+namespace UserVoiceSdk.Client
 {
 	public class RateLimitException : ApiException
 	{

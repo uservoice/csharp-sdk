@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> FeatureResponse Create (string name, string description = null, string  = null, List<string> includes = null)
+> FeatureResponse Create (string name, string description = null, string customFields = null, List<string> includes = null)
 
 # Create a feature
 
@@ -50,13 +50,13 @@ namespace Example
 
             var name = name_example;  // string | 
             var description = description_example;  // string |  (optional) 
-            var  = _example;  // string |  (optional) 
+            var customFields = customFields_example;  // string |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Create a feature
-                FeatureResponse result = client.Features.Create(name, description, , includes);
+                FeatureResponse result = client.Features.Create(name, description, customFields, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**|  | 
  **description** | **string**|  | [optional] 
- **** | **string**|  | [optional] 
+ **customFields** | **string**|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
 ### Return type
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> FeatureResponse UpdateById (long? id, string name = null, string description = null, string  = null, List<string> includes = null)
+> FeatureResponse UpdateById (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
 
 # Update a feature
 
@@ -401,13 +401,13 @@ namespace Example
             var id = 789;  // long? | 
             var name = name_example;  // string |  (optional) 
             var description = description_example;  // string |  (optional) 
-            var  = _example;  // string |  (optional) 
+            var customFields = customFields_example;  // string |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # Update a feature
-                FeatureResponse result = client.Features.UpdateById(id, name, description, , includes);
+                FeatureResponse result = client.Features.UpdateById(id, name, description, customFields, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
  **id** | **long?**|  | 
  **name** | **string**|  | [optional] 
  **description** | **string**|  | [optional] 
- **** | **string**|  | [optional] 
+ **customFields** | **string**|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
 ### Return type

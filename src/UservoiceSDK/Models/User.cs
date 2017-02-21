@@ -49,9 +49,10 @@ namespace UserVoiceSdk.Models
         /// <param name="Name">Name.</param>
         /// <param name="Region">Region.</param>
         /// <param name="SatisfactionScore">SatisfactionScore.</param>
+        /// <param name="SuggestionVotes">SuggestionVotes.</param>
         /// <param name="SupportedSuggestionsCount">SupportedSuggestionsCount.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public User(string AllowedState = null, string AvatarUrl = null, string City = null, string Country = null, DateTime? CreatedAt = null, string EmailAddress = null, string Guid = null, long? Id = null, bool? IsAdmin = null, bool? IsOwner = null, string JobTitle = null, string LastIp = null, DateTime? LastLogin = null, UserLinks Links = null, string Name = null, string Region = null, long? SatisfactionScore = null, long? SupportedSuggestionsCount = null, DateTime? UpdatedAt = null)
+        public User(string AllowedState = null, string AvatarUrl = null, string City = null, string Country = null, DateTime? CreatedAt = null, string EmailAddress = null, string Guid = null, long? Id = null, bool? IsAdmin = null, bool? IsOwner = null, string JobTitle = null, string LastIp = null, DateTime? LastLogin = null, UserLinks Links = null, string Name = null, string Region = null, long? SatisfactionScore = null, long? SuggestionVotes = null, long? SupportedSuggestionsCount = null, DateTime? UpdatedAt = null)
         {
             this.AllowedState = AllowedState;
             this.AvatarUrl = AvatarUrl;
@@ -70,6 +71,7 @@ namespace UserVoiceSdk.Models
             this.Name = Name;
             this.Region = Region;
             this.SatisfactionScore = SatisfactionScore;
+            this.SuggestionVotes = SuggestionVotes;
             this.SupportedSuggestionsCount = SupportedSuggestionsCount;
             this.UpdatedAt = UpdatedAt;
         }
@@ -160,6 +162,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="satisfaction_score", EmitDefaultValue=false)]
         public long? SatisfactionScore { get; set; }
         /// <summary>
+        /// Gets or Sets SuggestionVotes
+        /// </summary>
+        [DataMember(Name="suggestion_votes", EmitDefaultValue=false)]
+        public long? SuggestionVotes { get; set; }
+        /// <summary>
         /// Gets or Sets SupportedSuggestionsCount
         /// </summary>
         [DataMember(Name="supported_suggestions_count", EmitDefaultValue=false)]
@@ -194,6 +201,7 @@ namespace UserVoiceSdk.Models
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("  SatisfactionScore: ").Append(SatisfactionScore).Append("\n");
+            sb.Append("  SuggestionVotes: ").Append(SuggestionVotes).Append("\n");
             sb.Append("  SupportedSuggestionsCount: ").Append(SupportedSuggestionsCount).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -318,6 +326,11 @@ namespace UserVoiceSdk.Models
                     this.SatisfactionScore.Equals(other.SatisfactionScore)
                 ) && 
                 (
+                    this.SuggestionVotes == other.SuggestionVotes ||
+                    this.SuggestionVotes != null &&
+                    this.SuggestionVotes.Equals(other.SuggestionVotes)
+                ) && 
+                (
                     this.SupportedSuggestionsCount == other.SupportedSuggestionsCount ||
                     this.SupportedSuggestionsCount != null &&
                     this.SupportedSuggestionsCount.Equals(other.SupportedSuggestionsCount)
@@ -374,6 +387,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.Region.GetHashCode();
                 if (this.SatisfactionScore != null)
                     hash = hash * 59 + this.SatisfactionScore.GetHashCode();
+                if (this.SuggestionVotes != null)
+                    hash = hash * 59 + this.SuggestionVotes.GetHashCode();
                 if (this.SupportedSuggestionsCount != null)
                     hash = hash * 59 + this.SupportedSuggestionsCount.GetHashCode();
                 if (this.UpdatedAt != null)

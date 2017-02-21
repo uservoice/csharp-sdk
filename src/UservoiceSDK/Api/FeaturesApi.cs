@@ -33,10 +33,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>FeatureResponse</returns>
-        FeatureResponse Create (string name, string description = null, string  = null, List<string> includes = null);
+        FeatureResponse Create (string name, string description = null, string customFields = null, List<string> includes = null);
 
         /// <summary>
         /// # Create a feature
@@ -47,10 +47,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of FeatureResponse</returns>
-        ApiResponse<FeatureResponse> CreateWithHttpInfo (string name, string description = null, string  = null, List<string> includes = null);
+        ApiResponse<FeatureResponse> CreateWithHttpInfo (string name, string description = null, string customFields = null, List<string> includes = null);
         /// <summary>
         /// # Delete a feature
         /// </summary>
@@ -140,10 +140,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>FeatureResponse</returns>
-        FeatureResponse UpdateById (long? id, string name = null, string description = null, string  = null, List<string> includes = null);
+        FeatureResponse UpdateById (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null);
 
         /// <summary>
         /// # Update a feature
@@ -155,10 +155,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of FeatureResponse</returns>
-        ApiResponse<FeatureResponse> UpdateByIdWithHttpInfo (long? id, string name = null, string description = null, string  = null, List<string> includes = null);
+        ApiResponse<FeatureResponse> UpdateByIdWithHttpInfo (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -170,10 +170,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of FeatureResponse</returns>
-        System.Threading.Tasks.Task<FeatureResponse> CreateAsync (string name, string description = null, string  = null, List<string> includes = null);
+        System.Threading.Tasks.Task<FeatureResponse> CreateAsync (string name, string description = null, string customFields = null, List<string> includes = null);
 
         /// <summary>
         /// # Create a feature
@@ -184,10 +184,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (FeatureResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> CreateAsyncWithHttpInfo (string name, string description = null, string  = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> CreateAsyncWithHttpInfo (string name, string description = null, string customFields = null, List<string> includes = null);
         /// <summary>
         /// # Delete a feature
         /// </summary>
@@ -277,10 +277,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of FeatureResponse</returns>
-        System.Threading.Tasks.Task<FeatureResponse> UpdateByIdAsync (long? id, string name = null, string description = null, string  = null, List<string> includes = null);
+        System.Threading.Tasks.Task<FeatureResponse> UpdateByIdAsync (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null);
 
         /// <summary>
         /// # Update a feature
@@ -292,10 +292,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (FeatureResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string description = null, string  = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null);
         #endregion Asynchronous Operations
     }
 
@@ -394,12 +394,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>FeatureResponse</returns>
-        public FeatureResponse Create (string name, string description = null, string  = null, List<string> includes = null)
+        public FeatureResponse Create (string name, string description = null, string customFields = null, List<string> includes = null)
         {
-             ApiResponse<FeatureResponse> localVarResponse = CreateWithHttpInfo(name, description, , includes);
+             ApiResponse<FeatureResponse> localVarResponse = CreateWithHttpInfo(name, description, customFields, includes);
              return localVarResponse.Data;
         }
 
@@ -409,10 +409,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of FeatureResponse</returns>
-        public ApiResponse< FeatureResponse > CreateWithHttpInfo (string name, string description = null, string  = null, List<string> includes = null)
+        public ApiResponse< FeatureResponse > CreateWithHttpInfo (string name, string description = null, string customFields = null, List<string> includes = null)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -444,7 +444,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
             if (description != null) localVarFormParams.Add("description", Configuration.ApiClient.ParameterToString(description)); // form parameter
-            if ( != null) localVarFormParams.Add("*", Configuration.ApiClient.ParameterToString()); // form parameter
+            if (customFields != null) localVarFormParams.Add("custom_fields", Configuration.ApiClient.ParameterToString(customFields)); // form parameter
             if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
 
             // make the HTTP request
@@ -472,12 +472,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of FeatureResponse</returns>
-        public async System.Threading.Tasks.Task<FeatureResponse> CreateAsync (string name, string description = null, string  = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<FeatureResponse> CreateAsync (string name, string description = null, string customFields = null, List<string> includes = null)
         {
-             ApiResponse<FeatureResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, description, , includes);
+             ApiResponse<FeatureResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, description, customFields, includes);
              return localVarResponse.Data;
 
         }
@@ -488,10 +488,10 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (FeatureResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> CreateAsyncWithHttpInfo (string name, string description = null, string  = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> CreateAsyncWithHttpInfo (string name, string description = null, string customFields = null, List<string> includes = null)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -523,7 +523,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
             if (description != null) localVarFormParams.Add("description", Configuration.ApiClient.ParameterToString(description)); // form parameter
-            if ( != null) localVarFormParams.Add("*", Configuration.ApiClient.ParameterToString()); // form parameter
+            if (customFields != null) localVarFormParams.Add("custom_fields", Configuration.ApiClient.ParameterToString(customFields)); // form parameter
             if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
 
             // authentication (oauth2_password) required
@@ -1063,12 +1063,12 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>FeatureResponse</returns>
-        public FeatureResponse UpdateById (long? id, string name = null, string description = null, string  = null, List<string> includes = null)
+        public FeatureResponse UpdateById (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
         {
-             ApiResponse<FeatureResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, description, , includes);
+             ApiResponse<FeatureResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, description, customFields, includes);
              return localVarResponse.Data;
         }
 
@@ -1079,10 +1079,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of FeatureResponse</returns>
-        public ApiResponse< FeatureResponse > UpdateByIdWithHttpInfo (long? id, string name = null, string description = null, string  = null, List<string> includes = null)
+        public ApiResponse< FeatureResponse > UpdateByIdWithHttpInfo (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1115,7 +1115,7 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
             if (description != null) localVarFormParams.Add("description", Configuration.ApiClient.ParameterToString(description)); // form parameter
-            if ( != null) localVarFormParams.Add("*", Configuration.ApiClient.ParameterToString()); // form parameter
+            if (customFields != null) localVarFormParams.Add("custom_fields", Configuration.ApiClient.ParameterToString(customFields)); // form parameter
             if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
 
             // make the HTTP request
@@ -1144,12 +1144,12 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of FeatureResponse</returns>
-        public async System.Threading.Tasks.Task<FeatureResponse> UpdateByIdAsync (long? id, string name = null, string description = null, string  = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<FeatureResponse> UpdateByIdAsync (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
         {
-             ApiResponse<FeatureResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, description, , includes);
+             ApiResponse<FeatureResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, description, customFields, includes);
              return localVarResponse.Data;
 
         }
@@ -1161,10 +1161,10 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="description"> (optional)</param>
-        /// <param name=""> (optional)</param>
+        /// <param name="customFields"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (FeatureResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string description = null, string  = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<FeatureResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1197,7 +1197,7 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
             if (description != null) localVarFormParams.Add("description", Configuration.ApiClient.ParameterToString(description)); // form parameter
-            if ( != null) localVarFormParams.Add("*", Configuration.ApiClient.ParameterToString()); // form parameter
+            if (customFields != null) localVarFormParams.Add("custom_fields", Configuration.ApiClient.ParameterToString(customFields)); // form parameter
             if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
 
             // authentication (oauth2_password) required

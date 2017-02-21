@@ -201,6 +201,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'SatisfactionScore'
         }
         /// <summary>
+        /// Test the property 'SuggestionVotes'
+        /// </summary>
+        [Test]
+        public void SuggestionVotesTest()
+        {
+            // TODO unit test for the property 'SuggestionVotes'
+        }
+        /// <summary>
         /// Test the property 'SupportedSuggestionsCount'
         /// </summary>
         [Test]

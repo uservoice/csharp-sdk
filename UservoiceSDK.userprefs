@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{19F1DEBC-DE5E-4517-8062-F000CD499087}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/UserVoiceSdk/Api/FeaturesApi.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/UserVoiceSdk/Client/ApiException.cs">
     <Files>
-      <File FileName="src/UserVoiceSdk/Api/FeaturesApi.cs" Line="20" Column="2" />
+      <File FileName="src/UserVoiceSdk/Api/FeaturesApi.cs" Line="1" Column="1" />
+      <File FileName="src/UserVoiceSdk/Client/RateLimitException.cs" Line="1" Column="1" />
+      <File FileName="src/UserVoiceSdk/Client/ApiException.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

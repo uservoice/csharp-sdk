@@ -136,15 +136,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null);
+        ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
 
         /// <summary>
         /// # Import external users
@@ -164,15 +164,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null);
+        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -287,15 +287,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null);
+        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
 
         /// <summary>
         /// # Import external users
@@ -315,15 +315,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
         #endregion Asynchronous Operations
     }
 
@@ -1063,17 +1063,17 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        public ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null)
+        public ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
+             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
              return localVarResponse.Data;
         }
 
@@ -1092,15 +1092,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null)
+        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
             // verify the required parameter 'users' is set
             if (users == null)
@@ -1149,14 +1149,14 @@ namespace UserVoiceSdk.Api
             if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
             if (usersILastSeenAt != null) localVarFormParams.Add("users[i].last_seen_at", Configuration.ApiClient.ParameterToString(usersILastSeenAt)); // form parameter
             if (usersISeenDays != null) localVarFormParams.Add("users[i].seen_days", Configuration.ApiClient.ParameterToString(usersISeenDays)); // form parameter
-            if (usersI_ != null) localVarFormParams.Add("users[i].*", Configuration.ApiClient.ParameterToString(usersI_)); // form parameter
+            if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
             if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
             if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter
             if (usersIAccountPlan != null) localVarFormParams.Add("users[i].account.plan", Configuration.ApiClient.ParameterToString(usersIAccountPlan)); // form parameter
             if (usersIAccountMrrCents != null) localVarFormParams.Add("users[i].account.mrr_cents", Configuration.ApiClient.ParameterToString(usersIAccountMrrCents)); // form parameter
             if (usersIAccountLtvCents != null) localVarFormParams.Add("users[i].account.ltv_cents", Configuration.ApiClient.ParameterToString(usersIAccountLtvCents)); // form parameter
             if (usersIAccountExternalCreatedAt != null) localVarFormParams.Add("users[i].account.external_created_at", Configuration.ApiClient.ParameterToString(usersIAccountExternalCreatedAt)); // form parameter
-            if (usersIAccount_ != null) localVarFormParams.Add("users[i].account.*", Configuration.ApiClient.ParameterToString(usersIAccount_)); // form parameter
+            if (usersIAccountCustomFields != null) localVarFormParams.Add("users[i].account.custom_fields", Configuration.ApiClient.ParameterToString(usersIAccountCustomFields)); // form parameter
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1192,17 +1192,17 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null)
+        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
+             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
              return localVarResponse.Data;
 
         }
@@ -1222,15 +1222,15 @@ namespace UserVoiceSdk.Api
         /// <param name="usersIType"> (optional)</param>
         /// <param name="usersILastSeenAt"> (optional)</param>
         /// <param name="usersISeenDays"> (optional)</param>
-        /// <param name="usersI_"> (optional)</param>
+        /// <param name="usersICustomFields"> (optional)</param>
         /// <param name="usersIAccountName"> (optional)</param>
         /// <param name="usersIAccountPlan"> (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccount_"> (optional)</param>
+        /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
             // verify the required parameter 'users' is set
             if (users == null)
@@ -1279,14 +1279,14 @@ namespace UserVoiceSdk.Api
             if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
             if (usersILastSeenAt != null) localVarFormParams.Add("users[i].last_seen_at", Configuration.ApiClient.ParameterToString(usersILastSeenAt)); // form parameter
             if (usersISeenDays != null) localVarFormParams.Add("users[i].seen_days", Configuration.ApiClient.ParameterToString(usersISeenDays)); // form parameter
-            if (usersI_ != null) localVarFormParams.Add("users[i].*", Configuration.ApiClient.ParameterToString(usersI_)); // form parameter
+            if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
             if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
             if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter
             if (usersIAccountPlan != null) localVarFormParams.Add("users[i].account.plan", Configuration.ApiClient.ParameterToString(usersIAccountPlan)); // form parameter
             if (usersIAccountMrrCents != null) localVarFormParams.Add("users[i].account.mrr_cents", Configuration.ApiClient.ParameterToString(usersIAccountMrrCents)); // form parameter
             if (usersIAccountLtvCents != null) localVarFormParams.Add("users[i].account.ltv_cents", Configuration.ApiClient.ParameterToString(usersIAccountLtvCents)); // form parameter
             if (usersIAccountExternalCreatedAt != null) localVarFormParams.Add("users[i].account.external_created_at", Configuration.ApiClient.ParameterToString(usersIAccountExternalCreatedAt)); // form parameter
-            if (usersIAccount_ != null) localVarFormParams.Add("users[i].account.*", Configuration.ApiClient.ParameterToString(usersIAccount_)); // form parameter
+            if (usersIAccountCustomFields != null) localVarFormParams.Add("users[i].account.custom_fields", Configuration.ApiClient.ParameterToString(usersIAccountCustomFields)); // form parameter
 
             // authentication (oauth2_password) required
             // oauth required

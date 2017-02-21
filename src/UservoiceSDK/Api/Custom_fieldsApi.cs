@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace UserVoiceSdk.Api
 {
@@ -34,8 +35,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns></returns>
-        void Create (string name, string key, string fieldType, string objectType);
+        /// <returns>CustomFieldResponse</returns>
+        CustomFieldResponse Create (string name, string key, string fieldType, string objectType);
 
         /// <summary>
         /// # Create a custom field
@@ -48,8 +49,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateWithHttpInfo (string name, string key, string fieldType, string objectType);
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        ApiResponse<CustomFieldResponse> CreateWithHttpInfo (string name, string key, string fieldType, string objectType);
         /// <summary>
         /// # Delete a custom field
         /// </summary>
@@ -58,8 +59,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        void DeleteById (long? id);
+        /// <returns>CustomFieldResponse</returns>
+        CustomFieldResponse DeleteById (long? id);
 
         /// <summary>
         /// # Delete a custom field
@@ -69,8 +70,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteByIdWithHttpInfo (long? id);
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        ApiResponse<CustomFieldResponse> DeleteByIdWithHttpInfo (long? id);
         /// <summary>
         /// # List custom fields
         /// </summary>
@@ -83,8 +84,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns></returns>
-        void Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        /// <returns>CustomFieldResponsePaginated</returns>
+        CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
 
         /// <summary>
         /// # List custom fields
@@ -98,8 +99,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        /// <returns>ApiResponse of CustomFieldResponsePaginated</returns>
+        ApiResponse<CustomFieldResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
         /// <summary>
         /// # Retrieve custom fields by id
         /// </summary>
@@ -108,8 +109,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        void GetById (List<int?> id);
+        /// <returns>CustomFieldResponse</returns>
+        CustomFieldResponse GetById (List<int?> id);
 
         /// <summary>
         /// # Retrieve custom fields by id
@@ -119,8 +120,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetByIdWithHttpInfo (List<int?> id);
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        ApiResponse<CustomFieldResponse> GetByIdWithHttpInfo (List<int?> id);
         /// <summary>
         /// # Update a custom field
         /// </summary>
@@ -131,8 +132,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns></returns>
-        void UpdateById (long? id, string name = null, string key = null);
+        /// <returns>CustomFieldResponse</returns>
+        CustomFieldResponse UpdateById (long? id, string name = null, string key = null);
 
         /// <summary>
         /// # Update a custom field
@@ -144,8 +145,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateByIdWithHttpInfo (long? id, string name = null, string key = null);
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        ApiResponse<CustomFieldResponse> UpdateByIdWithHttpInfo (long? id, string name = null, string key = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -159,8 +160,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateAsync (string name, string key, string fieldType, string objectType);
+        /// <returns>Task of CustomFieldResponse</returns>
+        System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType);
 
         /// <summary>
         /// # Create a custom field
@@ -173,8 +174,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType);
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType);
         /// <summary>
         /// # Delete a custom field
         /// </summary>
@@ -183,8 +184,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteByIdAsync (long? id);
+        /// <returns>Task of CustomFieldResponse</returns>
+        System.Threading.Tasks.Task<CustomFieldResponse> DeleteByIdAsync (long? id);
 
         /// <summary>
         /// # Delete a custom field
@@ -194,8 +195,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByIdAsyncWithHttpInfo (long? id);
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> DeleteByIdAsyncWithHttpInfo (long? id);
         /// <summary>
         /// # List custom fields
         /// </summary>
@@ -208,8 +209,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        /// <returns>Task of CustomFieldResponsePaginated</returns>
+        System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
 
         /// <summary>
         /// # List custom fields
@@ -223,8 +224,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        /// <returns>Task of ApiResponse (CustomFieldResponsePaginated)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
         /// <summary>
         /// # Retrieve custom fields by id
         /// </summary>
@@ -233,8 +234,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetByIdAsync (List<int?> id);
+        /// <returns>Task of CustomFieldResponse</returns>
+        System.Threading.Tasks.Task<CustomFieldResponse> GetByIdAsync (List<int?> id);
 
         /// <summary>
         /// # Retrieve custom fields by id
@@ -244,8 +245,8 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetByIdAsyncWithHttpInfo (List<int?> id);
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> GetByIdAsyncWithHttpInfo (List<int?> id);
         /// <summary>
         /// # Update a custom field
         /// </summary>
@@ -256,8 +257,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateByIdAsync (long? id, string name = null, string key = null);
+        /// <returns>Task of CustomFieldResponse</returns>
+        System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, string name = null, string key = null);
 
         /// <summary>
         /// # Update a custom field
@@ -269,8 +270,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null);
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null);
         #endregion Asynchronous Operations
     }
 
@@ -371,10 +372,11 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns></returns>
-        public void Create (string name, string key, string fieldType, string objectType)
+        /// <returns>CustomFieldResponse</returns>
+        public CustomFieldResponse Create (string name, string key, string fieldType, string objectType)
         {
-             CreateWithHttpInfo(name, key, fieldType, objectType);
+             ApiResponse<CustomFieldResponse> localVarResponse = CreateWithHttpInfo(name, key, fieldType, objectType);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -385,8 +387,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> CreateWithHttpInfo (string name, string key, string fieldType, string objectType)
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        public ApiResponse< CustomFieldResponse > CreateWithHttpInfo (string name, string key, string fieldType, string objectType)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -443,10 +445,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -457,10 +459,11 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateAsync (string name, string key, string fieldType, string objectType)
+        /// <returns>Task of CustomFieldResponse</returns>
+        public async System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType)
         {
-             await CreateAsyncWithHttpInfo(name, key, fieldType, objectType);
+             ApiResponse<CustomFieldResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, key, fieldType, objectType);
+             return localVarResponse.Data;
 
         }
 
@@ -472,8 +475,8 @@ namespace UserVoiceSdk.Api
         /// <param name="key"></param>
         /// <param name="fieldType"></param>
         /// <param name="objectType"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType)
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType)
         {
             // verify the required parameter 'name' is set
             if (name == null)
@@ -543,10 +546,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -554,10 +557,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        public void DeleteById (long? id)
+        /// <returns>CustomFieldResponse</returns>
+        public CustomFieldResponse DeleteById (long? id)
         {
-             DeleteByIdWithHttpInfo(id);
+             ApiResponse<CustomFieldResponse> localVarResponse = DeleteByIdWithHttpInfo(id);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -565,8 +569,8 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteByIdWithHttpInfo (long? id)
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        public ApiResponse< CustomFieldResponse > DeleteByIdWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -611,10 +615,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -622,10 +626,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteByIdAsync (long? id)
+        /// <returns>Task of CustomFieldResponse</returns>
+        public async System.Threading.Tasks.Task<CustomFieldResponse> DeleteByIdAsync (long? id)
         {
-             await DeleteByIdAsyncWithHttpInfo(id);
+             ApiResponse<CustomFieldResponse> localVarResponse = await DeleteByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
 
         }
 
@@ -634,8 +639,8 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteByIdAsyncWithHttpInfo (long? id)
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> DeleteByIdAsyncWithHttpInfo (long? id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -693,10 +698,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -708,10 +713,11 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns></returns>
-        public void Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        /// <returns>CustomFieldResponsePaginated</returns>
+        public CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
-             GetWithHttpInfo(page, perPage, sort, objectType, key);
+             ApiResponse<CustomFieldResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, objectType, key);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -723,8 +729,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        /// <returns>ApiResponse of CustomFieldResponsePaginated</returns>
+        public ApiResponse< CustomFieldResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
 
             var localVarPath = "/admin/custom_fields";
@@ -770,10 +776,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponsePaginated>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponsePaginated) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponsePaginated)));
+            
         }
 
         /// <summary>
@@ -785,10 +791,11 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        /// <returns>Task of CustomFieldResponsePaginated</returns>
+        public async System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
-             await GetAsyncWithHttpInfo(page, perPage, sort, objectType, key);
+             ApiResponse<CustomFieldResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, objectType, key);
+             return localVarResponse.Data;
 
         }
 
@@ -801,8 +808,8 @@ namespace UserVoiceSdk.Api
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        /// <returns>Task of ApiResponse (CustomFieldResponsePaginated)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
 
             var localVarPath = "/admin/custom_fields";
@@ -861,10 +868,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponsePaginated>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponsePaginated) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponsePaginated)));
+            
         }
 
         /// <summary>
@@ -872,10 +879,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        public void GetById (List<int?> id)
+        /// <returns>CustomFieldResponse</returns>
+        public CustomFieldResponse GetById (List<int?> id)
         {
-             GetByIdWithHttpInfo(id);
+             ApiResponse<CustomFieldResponse> localVarResponse = GetByIdWithHttpInfo(id);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -883,8 +891,8 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetByIdWithHttpInfo (List<int?> id)
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        public ApiResponse< CustomFieldResponse > GetByIdWithHttpInfo (List<int?> id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -929,10 +937,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -940,10 +948,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetByIdAsync (List<int?> id)
+        /// <returns>Task of CustomFieldResponse</returns>
+        public async System.Threading.Tasks.Task<CustomFieldResponse> GetByIdAsync (List<int?> id)
         {
-             await GetByIdAsyncWithHttpInfo(id);
+             ApiResponse<CustomFieldResponse> localVarResponse = await GetByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
 
         }
 
@@ -952,8 +961,8 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetByIdAsyncWithHttpInfo (List<int?> id)
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> GetByIdAsyncWithHttpInfo (List<int?> id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1011,10 +1020,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -1024,10 +1033,11 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateById (long? id, string name = null, string key = null)
+        /// <returns>CustomFieldResponse</returns>
+        public CustomFieldResponse UpdateById (long? id, string name = null, string key = null)
         {
-             UpdateByIdWithHttpInfo(id, name, key);
+             ApiResponse<CustomFieldResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, key);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1037,8 +1047,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> UpdateByIdWithHttpInfo (long? id, string name = null, string key = null)
+        /// <returns>ApiResponse of CustomFieldResponse</returns>
+        public ApiResponse< CustomFieldResponse > UpdateByIdWithHttpInfo (long? id, string name = null, string key = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1085,10 +1095,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
         /// <summary>
@@ -1098,10 +1108,11 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateByIdAsync (long? id, string name = null, string key = null)
+        /// <returns>Task of CustomFieldResponse</returns>
+        public async System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, string name = null, string key = null)
         {
-             await UpdateByIdAsyncWithHttpInfo(id, name, key);
+             ApiResponse<CustomFieldResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, key);
+             return localVarResponse.Data;
 
         }
 
@@ -1112,8 +1123,8 @@ namespace UserVoiceSdk.Api
         /// <param name="id"></param>
         /// <param name="name"> (optional)</param>
         /// <param name="key"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null)
+        /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1173,10 +1184,10 @@ namespace UserVoiceSdk.Api
                 if (exception != null) throw exception;
             }
 
-            
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<CustomFieldResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
+                (CustomFieldResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CustomFieldResponse)));
+            
         }
 
     }

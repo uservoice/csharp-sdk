@@ -140,14 +140,14 @@ namespace UserVoiceSdk.Test
             //string usersIType = null;
             //DateTime? usersILastSeenAt = null;
             //long? usersISeenDays = null;
-            //string usersI_ = null;
+            //string usersICustomFields = null;
             //string usersIAccountName = null;
             //string usersIAccountPlan = null;
             //long? usersIAccountMrrCents = null;
             //long? usersIAccountLtvCents = null;
             //DateTime? usersIAccountExternalCreatedAt = null;
-            //string usersIAccount_ = null;
-            //var response = instance.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
+            //string usersIAccountCustomFields = null;
+            //var response = instance.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
             //Assert.IsInstanceOf<ExternalUserResponse> (response, "response is ExternalUserResponse");
         }
         

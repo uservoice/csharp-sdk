@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **Region** | **string** |  | [optional] 
 **SatisfactionScore** | **long?** |  | [optional] 
+**SuggestionVotes** | **long?** |  | [optional] 
 **SupportedSuggestionsCount** | **long?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
 

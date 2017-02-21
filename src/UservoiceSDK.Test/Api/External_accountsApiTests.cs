@@ -137,8 +137,8 @@ namespace UserVoiceSdk.Test
             //long? accountsIMrrCents = null;
             //long? accountsILtvCents = null;
             //DateTime? accountsIExternalCreatedAt = null;
-            //string accountsI_ = null;
-            //var response = instance.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
+            //string accountsICustomFields = null;
+            //var response = instance.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
             //Assert.IsInstanceOf<ExternalAccountResponse> (response, "response is ExternalAccountResponse");
         }
         

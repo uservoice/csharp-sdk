@@ -225,6 +225,8 @@ Class | Method | HTTP request | Description
  - [Models.CommentResponsePaginated](docs/CommentResponsePaginated.md)
  - [Models.CustomEmailDomain](docs/CustomEmailDomain.md)
  - [Models.CustomField](docs/CustomField.md)
+ - [Models.CustomFieldResponse](docs/CustomFieldResponse.md)
+ - [Models.CustomFieldResponsePaginated](docs/CustomFieldResponsePaginated.md)
  - [Models.CustomerAccount](docs/CustomerAccount.md)
  - [Models.CustomerUser](docs/CustomerUser.md)
  - [Models.CustomerUserLinks](docs/CustomerUserLinks.md)

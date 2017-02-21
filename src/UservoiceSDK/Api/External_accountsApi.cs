@@ -134,9 +134,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null);
+        ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
 
         /// <summary>
         /// 
@@ -152,9 +152,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        ApiResponse<ExternalAccountResponse> ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null);
+        ApiResponse<ExternalAccountResponse> ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -267,9 +267,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null);
+        System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
 
         /// <summary>
         /// 
@@ -285,9 +285,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
         #endregion Asynchronous Operations
     }
 
@@ -1029,11 +1029,11 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        public ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null)
+        public ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = ImportWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
+             ApiResponse<ExternalAccountResponse> localVarResponse = ImportWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
              return localVarResponse.Data;
         }
 
@@ -1048,9 +1048,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        public ApiResponse< ExternalAccountResponse > ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null)
+        public ApiResponse< ExternalAccountResponse > ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
         {
             // verify the required parameter 'accounts' is set
             if (accounts == null)
@@ -1090,7 +1090,7 @@ namespace UserVoiceSdk.Api
             if (accountsIMrrCents != null) localVarFormParams.Add("accounts[i].mrr_cents", Configuration.ApiClient.ParameterToString(accountsIMrrCents)); // form parameter
             if (accountsILtvCents != null) localVarFormParams.Add("accounts[i].ltv_cents", Configuration.ApiClient.ParameterToString(accountsILtvCents)); // form parameter
             if (accountsIExternalCreatedAt != null) localVarFormParams.Add("accounts[i].external_created_at", Configuration.ApiClient.ParameterToString(accountsIExternalCreatedAt)); // form parameter
-            if (accountsI_ != null) localVarFormParams.Add("accounts[i].*", Configuration.ApiClient.ParameterToString(accountsI_)); // form parameter
+            if (accountsICustomFields != null) localVarFormParams.Add("accounts[i].custom_fields", Configuration.ApiClient.ParameterToString(accountsICustomFields)); // form parameter
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1122,11 +1122,11 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null)
+        public async System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = await ImportAsyncWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
+             ApiResponse<ExternalAccountResponse> localVarResponse = await ImportAsyncWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
              return localVarResponse.Data;
 
         }
@@ -1142,9 +1142,9 @@ namespace UserVoiceSdk.Api
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsI_"> (optional)</param>
+        /// <param name="accountsICustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
         {
             // verify the required parameter 'accounts' is set
             if (accounts == null)
@@ -1184,7 +1184,7 @@ namespace UserVoiceSdk.Api
             if (accountsIMrrCents != null) localVarFormParams.Add("accounts[i].mrr_cents", Configuration.ApiClient.ParameterToString(accountsIMrrCents)); // form parameter
             if (accountsILtvCents != null) localVarFormParams.Add("accounts[i].ltv_cents", Configuration.ApiClient.ParameterToString(accountsILtvCents)); // form parameter
             if (accountsIExternalCreatedAt != null) localVarFormParams.Add("accounts[i].external_created_at", Configuration.ApiClient.ParameterToString(accountsIExternalCreatedAt)); // form parameter
-            if (accountsI_ != null) localVarFormParams.Add("accounts[i].*", Configuration.ApiClient.ParameterToString(accountsI_)); // form parameter
+            if (accountsICustomFields != null) localVarFormParams.Add("accounts[i].custom_fields", Configuration.ApiClient.ParameterToString(accountsICustomFields)); // form parameter
 
             // authentication (oauth2_password) required
             // oauth required

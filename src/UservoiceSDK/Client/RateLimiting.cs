@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace UservoiceSDK.Client
+namespace UserVoiceSdk.Client
 {
 	/// <summary>
 	/// Object to store rate limiting information

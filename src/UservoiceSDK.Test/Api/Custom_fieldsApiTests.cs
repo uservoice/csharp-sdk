@@ -19,6 +19,7 @@ using NUnit.Framework;
 
 using UserVoiceSdk.Client;
 using UserVoiceSdk.Api;
+using UserVoiceSdk.Models;
 
 namespace UserVoiceSdk.Test
 {
@@ -79,8 +80,8 @@ namespace UserVoiceSdk.Test
             //string key = null;
             //string fieldType = null;
             //string objectType = null;
-            //instance.Create(name, key, fieldType, objectType);
-            
+            //var response = instance.Create(name, key, fieldType, objectType);
+            //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         
         /// <summary>
@@ -91,8 +92,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //instance.DeleteById(id);
-            
+            //var response = instance.DeleteById(id);
+            //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         
         /// <summary>
@@ -107,8 +108,8 @@ namespace UserVoiceSdk.Test
             //string sort = null;
             //List<string> objectType = null;
             //List<string> key = null;
-            //instance.Get(page, perPage, sort, objectType, key);
-            
+            //var response = instance.Get(page, perPage, sort, objectType, key);
+            //Assert.IsInstanceOf<CustomFieldResponsePaginated> (response, "response is CustomFieldResponsePaginated");
         }
         
         /// <summary>
@@ -119,8 +120,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //List<int?> id = null;
-            //instance.GetById(id);
-            
+            //var response = instance.GetById(id);
+            //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         
         /// <summary>
@@ -133,8 +134,8 @@ namespace UserVoiceSdk.Test
             //long? id = null;
             //string name = null;
             //string key = null;
-            //instance.UpdateById(id, name, key);
-            
+            //var response = instance.UpdateById(id, name, key);
+            //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         
     }

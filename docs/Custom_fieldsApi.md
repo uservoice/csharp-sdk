@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> void Create (string name, string key, string fieldType, string objectType)
+> CustomFieldResponse Create (string name, string key, string fieldType, string objectType)
 
 # Create a custom field
 
@@ -56,7 +56,8 @@ namespace Example
             try
             {
                 // # Create a custom field
-                client.Custom_fields.Create(name, key, fieldType, objectType);
+                CustomFieldResponse result = client.Custom_fields.Create(name, key, fieldType, objectType);
+                Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
@@ -83,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 
@@ -98,7 +99,7 @@ void (empty response body)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> void DeleteById (long? id)
+> CustomFieldResponse DeleteById (long? id)
 
 # Delete a custom field
 
@@ -140,7 +141,8 @@ namespace Example
             try
             {
                 // # Delete a custom field
-                client.Custom_fields.DeleteById(id);
+                CustomFieldResponse result = client.Custom_fields.DeleteById(id);
+                Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
@@ -164,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 
@@ -179,7 +181,7 @@ void (empty response body)
 
 <a name="get"></a>
 # **Get**
-> void Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+> CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
 
 # List custom fields
 
@@ -225,7 +227,8 @@ namespace Example
             try
             {
                 // # List custom fields
-                client.Custom_fields.Get(page, perPage, sort, objectType, key);
+                CustomFieldResponsePaginated result = client.Custom_fields.Get(page, perPage, sort, objectType, key);
+                Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
@@ -253,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CustomFieldResponsePaginated**](CustomFieldResponsePaginated.md)
 
 ### Authorization
 
@@ -268,7 +271,7 @@ void (empty response body)
 
 <a name="getbyid"></a>
 # **GetById**
-> void GetById (List<int?> id)
+> CustomFieldResponse GetById (List<int?> id)
 
 # Retrieve custom fields by id
 
@@ -310,7 +313,8 @@ namespace Example
             try
             {
                 // # Retrieve custom fields by id
-                client.Custom_fields.GetById(id);
+                CustomFieldResponse result = client.Custom_fields.GetById(id);
+                Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
@@ -334,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 
@@ -349,7 +353,7 @@ void (empty response body)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> void UpdateById (long? id, string name = null, string key = null)
+> CustomFieldResponse UpdateById (long? id, string name = null, string key = null)
 
 # Update a custom field
 
@@ -393,7 +397,8 @@ namespace Example
             try
             {
                 // # Update a custom field
-                client.Custom_fields.UpdateById(id, name, key);
+                CustomFieldResponse result = client.Custom_fields.UpdateById(id, name, key);
+                Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
@@ -419,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CustomFieldResponse**](CustomFieldResponse.md)
 
 ### Authorization
 

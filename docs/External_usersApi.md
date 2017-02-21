@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="import"></a>
 # **Import**
-> ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersI_ = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccount_ = null)
+> ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
 
 # Import external users
 
@@ -397,18 +397,18 @@ namespace Example
             var usersIType = usersIType_example;  // string |  (optional) 
             var usersILastSeenAt = 2013-10-20;  // DateTime? |  (optional) 
             var usersISeenDays = 789;  // long? |  (optional) 
-            var usersI_ = usersI__example;  // string |  (optional) 
+            var usersICustomFields = usersICustomFields_example;  // string |  (optional) 
             var usersIAccountName = usersIAccountName_example;  // string |  (optional) 
             var usersIAccountPlan = usersIAccountPlan_example;  // string |  (optional) 
             var usersIAccountMrrCents = 789;  // long? |  (optional) 
             var usersIAccountLtvCents = 789;  // long? |  (optional) 
             var usersIAccountExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
-            var usersIAccount_ = usersIAccount__example;  // string |  (optional) 
+            var usersIAccountCustomFields = usersIAccountCustomFields_example;  // string |  (optional) 
 
             try
             {
                 // # Import external users
-                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersI_, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccount_);
+                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -440,13 +440,13 @@ Name | Type | Description  | Notes
  **usersIType** | **string**|  | [optional] 
  **usersILastSeenAt** | **DateTime?**|  | [optional] 
  **usersISeenDays** | **long?**|  | [optional] 
- **usersI_** | **string**|  | [optional] 
+ **usersICustomFields** | **string**|  | [optional] 
  **usersIAccountName** | **string**|  | [optional] 
  **usersIAccountPlan** | **string**|  | [optional] 
  **usersIAccountMrrCents** | **long?**|  | [optional] 
  **usersIAccountLtvCents** | **long?**|  | [optional] 
  **usersIAccountExternalCreatedAt** | **DateTime?**|  | [optional] 
- **usersIAccount_** | **string**|  | [optional] 
+ **usersIAccountCustomFields** | **string**|  | [optional] 
 
 ### Return type
 

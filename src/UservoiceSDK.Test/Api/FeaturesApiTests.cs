@@ -78,9 +78,9 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string name = null;
             //string description = null;
-            //string  = null;
+            //string customFields = null;
             //List<string> includes = null;
-            //var response = instance.Create(name, description, , includes);
+            //var response = instance.Create(name, description, customFields, includes);
             //Assert.IsInstanceOf<FeatureResponse> (response, "response is FeatureResponse");
         }
         
@@ -138,9 +138,9 @@ namespace UserVoiceSdk.Test
             //long? id = null;
             //string name = null;
             //string description = null;
-            //string  = null;
+            //string customFields = null;
             //List<string> includes = null;
-            //var response = instance.UpdateById(id, name, description, , includes);
+            //var response = instance.UpdateById(id, name, description, customFields, includes);
             //Assert.IsInstanceOf<FeatureResponse> (response, "response is FeatureResponse");
         }
         

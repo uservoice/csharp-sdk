@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="import"></a>
 # **Import**
-> ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsI_ = null)
+> ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
 
 
 
@@ -395,12 +395,12 @@ namespace Example
             var accountsIMrrCents = 789;  // long? |  (optional) 
             var accountsILtvCents = 789;  // long? |  (optional) 
             var accountsIExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
-            var accountsI_ = accountsI__example;  // string |  (optional) 
+            var accountsICustomFields = accountsICustomFields_example;  // string |  (optional) 
 
             try
             {
                 // 
-                ExternalAccountResponse result = client.External_accounts.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsI_);
+                ExternalAccountResponse result = client.External_accounts.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
  **accountsIMrrCents** | **long?**|  | [optional] 
  **accountsILtvCents** | **long?**|  | [optional] 
  **accountsIExternalCreatedAt** | **DateTime?**|  | [optional] 
- **accountsI_** | **string**|  | [optional] 
+ **accountsICustomFields** | **string**|  | [optional] 
 
 ### Return type
 
