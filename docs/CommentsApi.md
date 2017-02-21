@@ -29,7 +29,7 @@ namespace Example
 {
     public class ApproveByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -113,7 +113,7 @@ namespace Example
 {
     public class CreateExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -201,7 +201,7 @@ namespace Example
 {
     public class DeleteByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -285,7 +285,7 @@ namespace Example
 {
     public class GetExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -375,7 +375,7 @@ namespace Example
 {
     public class GetByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -459,7 +459,7 @@ namespace Example
 {
     public class SpamByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -543,7 +543,7 @@ namespace Example
 {
     public class UnremoveByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";

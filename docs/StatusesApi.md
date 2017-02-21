@@ -24,7 +24,7 @@ namespace Example
 {
     public class GetExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
@@ -112,7 +112,7 @@ namespace Example
 {
     public class GetByIdExample
     {
-        pprivate string ApiKey = "some_key";
+        private string ApiKey = "some_key";
         private string ApiSecret = "some_secret";
         private string Subdomain = "sub";
         private string Domain = "uservoice.com";
