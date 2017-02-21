@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.BlacklistedIp
+# UserVoiceSdk.Models.BlacklistedIp
 ## Properties
 
 Name | Type | Description | Notes

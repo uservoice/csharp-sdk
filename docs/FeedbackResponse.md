@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.FeedbackResponse
+# UserVoiceSdk.Models.FeedbackResponse
 ## Properties
 
 Name | Type | Description | Notes

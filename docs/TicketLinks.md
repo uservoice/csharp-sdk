@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.TicketLinks
+# UserVoiceSdk.Models.TicketLinks
 ## Properties
 
 Name | Type | Description | Notes

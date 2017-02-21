@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Suggestion
+# UserVoiceSdk.Models.Suggestion
 ## Properties
 
 Name | Type | Description | Notes
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **CreatorOs** | **string** |  | [optional] 
 **CreatorReferrer** | **string** |  | [optional] 
 **CreatorUserAgent** | **string** |  | [optional] 
+**FirstSupportAt** | **DateTime?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
 **InappropriateFlagsCount** | **long?** |  | [optional] 
 **Links** | [**SuggestionLinks**](SuggestionLinks.md) |  | [optional] 

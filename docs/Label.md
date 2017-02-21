@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Label
+# UserVoiceSdk.Models.Label
 ## Properties
 
 Name | Type | Description | Notes

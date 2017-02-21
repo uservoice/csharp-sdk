@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Category
+# UserVoiceSdk.Models.Category
 ## Properties
 
 Name | Type | Description | Notes

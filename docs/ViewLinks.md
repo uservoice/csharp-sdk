@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ViewLinks
+# UserVoiceSdk.Models.ViewLinks
 ## Properties
 
 Name | Type | Description | Notes

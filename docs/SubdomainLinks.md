@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SubdomainLinks
+# UserVoiceSdk.Models.SubdomainLinks
 ## Properties
 
 Name | Type | Description | Notes

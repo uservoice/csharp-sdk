@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.NPSRating
+# UserVoiceSdk.Models.NPSRating
 ## Properties
 
 Name | Type | Description | Notes

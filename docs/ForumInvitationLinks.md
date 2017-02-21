@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ForumInvitationLinks
+# UserVoiceSdk.Models.ForumInvitationLinks
 ## Properties
 
 Name | Type | Description | Notes

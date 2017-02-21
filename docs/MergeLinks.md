@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.MergeLinks
+# UserVoiceSdk.Models.MergeLinks
 ## Properties
 
 Name | Type | Description | Notes

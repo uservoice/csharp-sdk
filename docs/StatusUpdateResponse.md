@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.StatusUpdateResponse
+# UserVoiceSdk.Models.StatusUpdateResponse
 ## Properties
 
 Name | Type | Description | Notes

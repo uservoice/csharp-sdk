@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Comment
+# UserVoiceSdk.Models.Comment
 ## Properties
 
 Name | Type | Description | Notes

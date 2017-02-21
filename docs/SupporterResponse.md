@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SupporterResponse
+# UserVoiceSdk.Models.SupporterResponse
 ## Properties
 
 Name | Type | Description | Notes

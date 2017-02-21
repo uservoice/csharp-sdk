@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ForumResponse
+# UserVoiceSdk.Models.ForumResponse
 ## Properties
 
 Name | Type | Description | Notes

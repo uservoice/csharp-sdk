@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.CommentLinks
+# UserVoiceSdk.Models.CommentLinks
 ## Properties
 
 Name | Type | Description | Notes

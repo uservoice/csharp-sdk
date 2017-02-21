@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.PermissionLinks
+# UserVoiceSdk.Models.PermissionLinks
 ## Properties
 
 Name | Type | Description | Notes

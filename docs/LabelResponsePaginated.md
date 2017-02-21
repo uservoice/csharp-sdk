@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.LabelResponsePaginated
+# UserVoiceSdk.Models.LabelResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

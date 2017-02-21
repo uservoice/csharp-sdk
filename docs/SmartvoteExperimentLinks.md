@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SmartvoteExperimentLinks
+# UserVoiceSdk.Models.SmartvoteExperimentLinks
 ## Properties
 
 Name | Type | Description | Notes

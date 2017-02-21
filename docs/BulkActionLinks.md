@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.BulkActionLinks
+# UserVoiceSdk.Models.BulkActionLinks
 ## Properties
 
 Name | Type | Description | Notes

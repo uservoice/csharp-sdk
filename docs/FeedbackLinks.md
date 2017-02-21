@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.FeedbackLinks
+# UserVoiceSdk.Models.FeedbackLinks
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SuggestionResponsePaginated
+# UserVoiceSdk.Models.SuggestionResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

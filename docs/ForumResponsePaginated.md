@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.ForumResponsePaginated
+# UserVoiceSdk.Models.ForumResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

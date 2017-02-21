@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.SuggestionActivityEntryResponsePaginated
+# UserVoiceSdk.Models.SuggestionActivityEntryResponsePaginated
 ## Properties
 
 Name | Type | Description | Notes

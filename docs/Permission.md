@@ -1,4 +1,4 @@
-# UservoiceSDK.Models.Permission
+# UserVoiceSdk.Models.Permission
 ## Properties
 
 Name | Type | Description | Notes
