@@ -128,9 +128,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -146,9 +146,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -261,9 +261,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -279,9 +279,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -1023,9 +1023,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -1042,9 +1042,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -1116,9 +1116,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>
@@ -1136,9 +1136,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId"></param>
-        /// <param name="accountsIName"> (optional)</param>
-        /// <param name="accountsIPlan"> (optional)</param>
+        /// <param name="accountsIExternalId">Account ID in your system.</param>
+        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="accountsIMrrCents"> (optional)</param>
         /// <param name="accountsILtvCents"> (optional)</param>
         /// <param name="accountsIExternalCreatedAt"> (optional)</param>

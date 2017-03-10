@@ -113,6 +113,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Ip'
         }
         /// <summary>
+        /// Test the property 'LastSeenAt'
+        /// </summary>
+        [Test]
+        public void LastSeenAtTest()
+        {
+            // TODO unit test for the property 'LastSeenAt'
+        }
+        /// <summary>
         /// Test the property 'Links'
         /// </summary>
         [Test]

@@ -33,7 +33,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>CustomFieldResponse</returns>
         CustomFieldResponse Create (string name, string key, string fieldType, string objectType);
@@ -47,7 +47,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
         ApiResponse<CustomFieldResponse> CreateWithHttpInfo (string name, string key, string fieldType, string objectType);
@@ -158,7 +158,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>Task of CustomFieldResponse</returns>
         System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType);
@@ -172,7 +172,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType);
@@ -370,7 +370,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>CustomFieldResponse</returns>
         public CustomFieldResponse Create (string name, string key, string fieldType, string objectType)
@@ -385,7 +385,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
         public ApiResponse< CustomFieldResponse > CreateWithHttpInfo (string name, string key, string fieldType, string objectType)
@@ -457,7 +457,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>Task of CustomFieldResponse</returns>
         public async System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType)
@@ -473,7 +473,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
         /// <param name="key"></param>
-        /// <param name="fieldType"></param>
+        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
         /// <param name="objectType"></param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType)

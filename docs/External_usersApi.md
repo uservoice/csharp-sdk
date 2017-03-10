@@ -58,8 +58,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -140,8 +140,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="get"></a>
 # **Get**
-> ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null)
+> ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
 
 # List external users
 
@@ -216,18 +216,19 @@ namespace Example
             var perPage = 789;  // long? |  (optional)  (default to 20)
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var externalId = new List<string>(); // List<string> |  (optional) 
+            var user = new List<int?>(); // List<int?> |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # List external users
-                ExternalUserResponsePaginated result = client.External_users.Get(page, perPage, sort, externalId, includes);
+                ExternalUserResponsePaginated result = client.External_users.Get(page, perPage, sort, externalId, user, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -246,6 +247,7 @@ Name | Type | Description  | Notes
  **perPage** | **long?**|  | [optional] [default to 20]
  **sort** | **string**|  | [optional] [default to -id]
  **externalId** | [**List<string>**](string.md)|  | [optional] 
+ **user** | [**List<int?>**](int?.md)|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
 ### Return type
@@ -313,8 +315,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -349,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="import"></a>
 # **Import**
-> ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+> ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
 
 # Import external users
 
@@ -387,19 +389,17 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var users = new List<string>(); // List<string> | Each element with index i has these fields:
-            var usersIExternalId = usersIExternalId_example;  // string | 
-            var usersIEmail = usersIEmail_example;  // string | 
-            var usersIAccountExternalId = usersIAccountExternalId_example;  // string | 
-            var usersIUserId = 789;  // long? |  (optional) 
-            var usersIName = usersIName_example;  // string |  (optional) 
-            var usersIExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
-            var usersIIp = usersIIp_example;  // string |  (optional) 
-            var usersIType = usersIType_example;  // string |  (optional) 
-            var usersILastSeenAt = 2013-10-20;  // DateTime? |  (optional) 
-            var usersISeenDays = 789;  // long? |  (optional) 
+            var usersIExternalId = usersIExternalId_example;  // string | User ID in your system. Recommended length: 128 or fewer characters.
+            var usersIEmail = usersIEmail_example;  // string | Primary way we link the external user to the user's UV profile. Recommended length: 128 or fewer characters.
+            var usersIAccountExternalId = usersIAccountExternalId_example;  // string | Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.
+            var usersIUserId = 789;  // long? | User's ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional) 
+            var usersIName = usersIName_example;  // string | Name of the user. Recommended length: 128 or fewer characters. (optional) 
+            var usersIExternalCreatedAt = 2013-10-20;  // DateTime? | Date user was created in your system. (optional) 
+            var usersIIp = usersIIp_example;  // string | Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional) 
+            var usersIType = usersIType_example;  // string | Type for the user, e.g. 'admin' or 'owner'. Recommended length: 128 or fewer characters. (optional) 
             var usersICustomFields = usersICustomFields_example;  // string |  (optional) 
-            var usersIAccountName = usersIAccountName_example;  // string |  (optional) 
-            var usersIAccountPlan = usersIAccountPlan_example;  // string |  (optional) 
+            var usersIAccountName = usersIAccountName_example;  // string | Name of the account. Recommended length: 128 or fewer characters. (optional) 
+            var usersIAccountPlan = usersIAccountPlan_example;  // string | Plan name of account. Recommended length: 128 or fewer characters. (optional) 
             var usersIAccountMrrCents = 789;  // long? |  (optional) 
             var usersIAccountLtvCents = 789;  // long? |  (optional) 
             var usersIAccountExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
@@ -408,13 +408,13 @@ namespace Example
             try
             {
                 // # Import external users
-                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -430,19 +430,17 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **users** | [**List<string>**](string.md)| Each element with index i has these fields: | 
- **usersIExternalId** | **string**|  | 
- **usersIEmail** | **string**|  | 
- **usersIAccountExternalId** | **string**|  | 
- **usersIUserId** | **long?**|  | [optional] 
- **usersIName** | **string**|  | [optional] 
- **usersIExternalCreatedAt** | **DateTime?**|  | [optional] 
- **usersIIp** | **string**|  | [optional] 
- **usersIType** | **string**|  | [optional] 
- **usersILastSeenAt** | **DateTime?**|  | [optional] 
- **usersISeenDays** | **long?**|  | [optional] 
+ **usersIExternalId** | **string**| User ID in your system. Recommended length: 128 or fewer characters. | 
+ **usersIEmail** | **string**| Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters. | 
+ **usersIAccountExternalId** | **string**| Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters. | 
+ **usersIUserId** | **long?**| User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. | [optional] 
+ **usersIName** | **string**| Name of the user. Recommended length: 128 or fewer characters. | [optional] 
+ **usersIExternalCreatedAt** | **DateTime?**| Date user was created in your system. | [optional] 
+ **usersIIp** | **string**| Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. | [optional] 
+ **usersIType** | **string**| Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. | [optional] 
  **usersICustomFields** | **string**|  | [optional] 
- **usersIAccountName** | **string**|  | [optional] 
- **usersIAccountPlan** | **string**|  | [optional] 
+ **usersIAccountName** | **string**| Name of the account. Recommended length: 128 or fewer characters. | [optional] 
+ **usersIAccountPlan** | **string**| Plan name of account. Recommended length: 128 or fewer characters. | [optional] 
  **usersIAccountMrrCents** | **long?**|  | [optional] 
  **usersIAccountLtvCents** | **long?**|  | [optional] 
  **usersIAccountExternalCreatedAt** | **DateTime?**|  | [optional] 

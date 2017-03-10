@@ -38,11 +38,12 @@ namespace UserVoiceSdk.Models
         /// <param name="ExternalId">ExternalId.</param>
         /// <param name="Id">Id.</param>
         /// <param name="Ip">Ip.</param>
+        /// <param name="LastSeenAt">LastSeenAt.</param>
         /// <param name="Links">Links.</param>
         /// <param name="Name">Name.</param>
         /// <param name="Type">Type.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public ExternalUser(DateTime? CreatedAt = null, string Email = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, string Ip = null, ExternalUserLinks Links = null, string Name = null, string Type = null, DateTime? UpdatedAt = null)
+        public ExternalUser(DateTime? CreatedAt = null, string Email = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, string Ip = null, DateTime? LastSeenAt = null, ExternalUserLinks Links = null, string Name = null, string Type = null, DateTime? UpdatedAt = null)
         {
             this.CreatedAt = CreatedAt;
             this.Email = Email;
@@ -50,6 +51,7 @@ namespace UserVoiceSdk.Models
             this.ExternalId = ExternalId;
             this.Id = Id;
             this.Ip = Ip;
+            this.LastSeenAt = LastSeenAt;
             this.Links = Links;
             this.Name = Name;
             this.Type = Type;
@@ -87,6 +89,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="ip", EmitDefaultValue=false)]
         public string Ip { get; set; }
         /// <summary>
+        /// Gets or Sets LastSeenAt
+        /// </summary>
+        [DataMember(Name="last_seen_at", EmitDefaultValue=false)]
+        public DateTime? LastSeenAt { get; set; }
+        /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
@@ -120,6 +127,7 @@ namespace UserVoiceSdk.Models
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Ip: ").Append(Ip).Append("\n");
+            sb.Append("  LastSeenAt: ").Append(LastSeenAt).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -191,6 +199,11 @@ namespace UserVoiceSdk.Models
                     this.Ip.Equals(other.Ip)
                 ) && 
                 (
+                    this.LastSeenAt == other.LastSeenAt ||
+                    this.LastSeenAt != null &&
+                    this.LastSeenAt.Equals(other.LastSeenAt)
+                ) && 
+                (
                     this.Links == other.Links ||
                     this.Links != null &&
                     this.Links.Equals(other.Links)
@@ -235,6 +248,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.Ip != null)
                     hash = hash * 59 + this.Ip.GetHashCode();
+                if (this.LastSeenAt != null)
+                    hash = hash * 59 + this.LastSeenAt.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
                 if (this.Name != null)

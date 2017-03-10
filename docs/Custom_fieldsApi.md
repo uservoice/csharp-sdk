@@ -50,7 +50,7 @@ namespace Example
 
             var name = name_example;  // string | 
             var key = key_example;  // string | 
-            var fieldType = fieldType_example;  // string | 
+            var fieldType = fieldType_example;  // string | boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.
             var objectType = objectType_example;  // string | 
 
             try
@@ -61,8 +61,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**|  | 
  **key** | **string**|  | 
- **fieldType** | **string**|  | 
+ **fieldType** | **string**| boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers. | 
  **objectType** | **string**|  | 
 
 ### Return type
@@ -146,8 +146,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -232,8 +232,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -318,8 +318,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -402,8 +402,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {

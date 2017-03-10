@@ -58,8 +58,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -140,8 +140,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -228,8 +228,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -316,8 +316,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -389,9 +389,9 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var accounts = new List<string>(); // List<string> | Each element with index i has these fields:
-            var accountsIExternalId = accountsIExternalId_example;  // string | 
-            var accountsIName = accountsIName_example;  // string |  (optional) 
-            var accountsIPlan = accountsIPlan_example;  // string |  (optional) 
+            var accountsIExternalId = accountsIExternalId_example;  // string | Account ID in your system.
+            var accountsIName = accountsIName_example;  // string | Account name in your system. Recommended length: 128 or fewer characters. (optional) 
+            var accountsIPlan = accountsIPlan_example;  // string | Plan name of account. Recommended length: 128 or fewer characters. (optional) 
             var accountsIMrrCents = 789;  // long? |  (optional) 
             var accountsILtvCents = 789;  // long? |  (optional) 
             var accountsIExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
@@ -405,8 +405,8 @@ namespace Example
             }
             catch (RateLimitException rle)
             {
-                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset);
-                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt());
+                Debug.Print(string.Format("Rate limit exceeded. Limit: {0}, Remaining: {1}, Reset: {2}", client.RateLimiting.Limit, client.RateLimiting.Remaining, client.RateLimiting.Reset));
+                Debug.Print(string.Format("Reset in {0} seconds. Reset at {1} UTC", client.RateLimiting.ResetIn(), client.RateLimiting.ResetAt()));
             }
             catch (ApiException e)
             {
@@ -422,9 +422,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accounts** | [**List<string>**](string.md)| Each element with index i has these fields: | 
- **accountsIExternalId** | **string**|  | 
- **accountsIName** | **string**|  | [optional] 
- **accountsIPlan** | **string**|  | [optional] 
+ **accountsIExternalId** | **string**| Account ID in your system. | 
+ **accountsIName** | **string**| Account name in your system. Recommended length: 128 or fewer characters. | [optional] 
+ **accountsIPlan** | **string**| Plan name of account. Recommended length: 128 or fewer characters. | [optional] 
  **accountsIMrrCents** | **long?**|  | [optional] 
  **accountsILtvCents** | **long?**|  | [optional] 
  **accountsIExternalCreatedAt** | **DateTime?**|  | [optional] 

@@ -77,9 +77,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ExternalUserResponsePaginated</returns>
-        ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null);
+        ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
 
         /// <summary>
         /// # List external users
@@ -92,9 +93,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponsePaginated</returns>
-        ApiResponse<ExternalUserResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null);
+        ApiResponse<ExternalUserResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve external users by id
         /// </summary>
@@ -126,25 +128,23 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
 
         /// <summary>
         /// # Import external users
@@ -154,25 +154,23 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -228,9 +226,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ExternalUserResponsePaginated</returns>
-        System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
 
         /// <summary>
         /// # List external users
@@ -243,9 +242,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve external users by id
         /// </summary>
@@ -277,25 +277,23 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
 
         /// <summary>
         /// # Import external users
@@ -305,25 +303,23 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
         #endregion Asynchronous Operations
     }
 
@@ -728,11 +724,12 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ExternalUserResponsePaginated</returns>
-        public ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null)
+        public ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
-             ApiResponse<ExternalUserResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, externalId, includes);
+             ApiResponse<ExternalUserResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, externalId, user, includes);
              return localVarResponse.Data;
         }
 
@@ -744,9 +741,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponsePaginated</returns>
-        public ApiResponse< ExternalUserResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null)
+        public ApiResponse< ExternalUserResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/external_users";
@@ -777,6 +775,7 @@ namespace UserVoiceSdk.Api
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
+            if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
             // make the HTTP request
@@ -806,11 +805,12 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ExternalUserResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
-             ApiResponse<ExternalUserResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, externalId, includes);
+             ApiResponse<ExternalUserResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, externalId, user, includes);
              return localVarResponse.Data;
 
         }
@@ -823,9 +823,10 @@ namespace UserVoiceSdk.Api
         /// <param name="perPage"> (optional, default to 20)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
+        /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/external_users";
@@ -856,6 +857,7 @@ namespace UserVoiceSdk.Api
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
+            if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
             // authentication (oauth2_password) required
@@ -1053,27 +1055,25 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        public ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
              return localVarResponse.Data;
         }
 
@@ -1082,25 +1082,23 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
             // verify the required parameter 'users' is set
             if (users == null)
@@ -1147,8 +1145,6 @@ namespace UserVoiceSdk.Api
             if (usersIExternalCreatedAt != null) localVarFormParams.Add("users[i].external_created_at", Configuration.ApiClient.ParameterToString(usersIExternalCreatedAt)); // form parameter
             if (usersIIp != null) localVarFormParams.Add("users[i].ip", Configuration.ApiClient.ParameterToString(usersIIp)); // form parameter
             if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
-            if (usersILastSeenAt != null) localVarFormParams.Add("users[i].last_seen_at", Configuration.ApiClient.ParameterToString(usersILastSeenAt)); // form parameter
-            if (usersISeenDays != null) localVarFormParams.Add("users[i].seen_days", Configuration.ApiClient.ParameterToString(usersISeenDays)); // form parameter
             if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
             if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
             if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter
@@ -1182,27 +1178,25 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
              return localVarResponse.Data;
 
         }
@@ -1212,25 +1206,23 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId"></param>
-        /// <param name="usersIEmail"></param>
-        /// <param name="usersIAccountExternalId"></param>
-        /// <param name="usersIUserId"> (optional)</param>
-        /// <param name="usersIName"> (optional)</param>
-        /// <param name="usersIExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIIp"> (optional)</param>
-        /// <param name="usersIType"> (optional)</param>
-        /// <param name="usersILastSeenAt"> (optional)</param>
-        /// <param name="usersISeenDays"> (optional)</param>
+        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
+        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
+        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
+        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName"> (optional)</param>
-        /// <param name="usersIAccountPlan"> (optional)</param>
+        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
+        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
         /// <param name="usersIAccountMrrCents"> (optional)</param>
         /// <param name="usersIAccountLtvCents"> (optional)</param>
         /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
         /// <param name="usersIAccountCustomFields"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, DateTime? usersILastSeenAt = null, long? usersISeenDays = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
         {
             // verify the required parameter 'users' is set
             if (users == null)
@@ -1277,8 +1269,6 @@ namespace UserVoiceSdk.Api
             if (usersIExternalCreatedAt != null) localVarFormParams.Add("users[i].external_created_at", Configuration.ApiClient.ParameterToString(usersIExternalCreatedAt)); // form parameter
             if (usersIIp != null) localVarFormParams.Add("users[i].ip", Configuration.ApiClient.ParameterToString(usersIIp)); // form parameter
             if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
-            if (usersILastSeenAt != null) localVarFormParams.Add("users[i].last_seen_at", Configuration.ApiClient.ParameterToString(usersILastSeenAt)); // form parameter
-            if (usersISeenDays != null) localVarFormParams.Add("users[i].seen_days", Configuration.ApiClient.ParameterToString(usersISeenDays)); // form parameter
             if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
             if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
             if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter

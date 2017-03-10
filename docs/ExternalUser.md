@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ExternalId** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 
 **Ip** | **string** |  | [optional] 
+**LastSeenAt** | **DateTime?** |  | [optional] 
 **Links** | [**ExternalUserLinks**](ExternalUserLinks.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 

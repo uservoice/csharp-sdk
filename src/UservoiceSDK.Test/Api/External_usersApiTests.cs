@@ -104,8 +104,9 @@ namespace UserVoiceSdk.Test
             //long? perPage = null;
             //string sort = null;
             //List<string> externalId = null;
+            //List<int?> user = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, externalId, includes);
+            //var response = instance.Get(page, perPage, sort, externalId, user, includes);
             //Assert.IsInstanceOf<ExternalUserResponsePaginated> (response, "response is ExternalUserResponsePaginated");
         }
         
@@ -138,8 +139,6 @@ namespace UserVoiceSdk.Test
             //DateTime? usersIExternalCreatedAt = null;
             //string usersIIp = null;
             //string usersIType = null;
-            //DateTime? usersILastSeenAt = null;
-            //long? usersISeenDays = null;
             //string usersICustomFields = null;
             //string usersIAccountName = null;
             //string usersIAccountPlan = null;
@@ -147,7 +146,7 @@ namespace UserVoiceSdk.Test
             //long? usersIAccountLtvCents = null;
             //DateTime? usersIAccountExternalCreatedAt = null;
             //string usersIAccountCustomFields = null;
-            //var response = instance.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersILastSeenAt, usersISeenDays, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+            //var response = instance.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
             //Assert.IsInstanceOf<ExternalUserResponse> (response, "response is ExternalUserResponse");
         }
         
