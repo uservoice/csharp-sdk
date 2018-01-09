@@ -31,9 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        ExternalAccountResponse BulkDelete (List<int?> ids);
+        ExternalAccountResponse BulkDelete (Request13 request = null);
 
         /// <summary>
         /// # Bulk delete external accounts by ID
@@ -42,9 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        ApiResponse<ExternalAccountResponse> BulkDeleteWithHttpInfo (List<int?> ids);
+        ApiResponse<ExternalAccountResponse> BulkDeleteWithHttpInfo (Request13 request = null);
         /// <summary>
         /// # Bulk delete external accounts by external ID
         /// </summary>
@@ -52,9 +52,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        ExternalAccountResponse BulkDeleteByExternalId (List<string> externalIds);
+        ExternalAccountResponse BulkDeleteByExternalId (Request14 request = null);
 
         /// <summary>
         /// # Bulk delete external accounts by external ID
@@ -63,9 +63,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        ApiResponse<ExternalAccountResponse> BulkDeleteByExternalIdWithHttpInfo (List<string> externalIds);
+        ApiResponse<ExternalAccountResponse> BulkDeleteByExternalIdWithHttpInfo (Request14 request = null);
         /// <summary>
         /// # List external accounts
         /// </summary>
@@ -75,13 +75,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>ExternalAccountResponsePaginated</returns>
-        ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
+        ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
 
         /// <summary>
         /// # List external accounts
@@ -92,13 +93,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponsePaginated</returns>
-        ApiResponse<ExternalAccountResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
+        ApiResponse<ExternalAccountResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
         /// <summary>
         /// # Retrieve external accounts by id
         /// </summary>
@@ -127,16 +129,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
+        ExternalAccountResponse Import (ExternalAccountsImportRequest request = null);
 
         /// <summary>
         /// 
@@ -145,16 +140,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        ApiResponse<ExternalAccountResponse> ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
+        ApiResponse<ExternalAccountResponse> ImportWithHttpInfo (ExternalAccountsImportRequest request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -164,9 +152,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteAsync (List<int?> ids);
+        System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteAsync (Request13 request = null);
 
         /// <summary>
         /// # Bulk delete external accounts by ID
@@ -175,9 +163,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteAsyncWithHttpInfo (List<int?> ids);
+        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteAsyncWithHttpInfo (Request13 request = null);
         /// <summary>
         /// # Bulk delete external accounts by external ID
         /// </summary>
@@ -185,9 +173,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteByExternalIdAsync (List<string> externalIds);
+        System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteByExternalIdAsync (Request14 request = null);
 
         /// <summary>
         /// # Bulk delete external accounts by external ID
@@ -196,9 +184,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (List<string> externalIds);
+        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (Request14 request = null);
         /// <summary>
         /// # List external accounts
         /// </summary>
@@ -208,13 +196,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>Task of ExternalAccountResponsePaginated</returns>
-        System.Threading.Tasks.Task<ExternalAccountResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
+        System.Threading.Tasks.Task<ExternalAccountResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
 
         /// <summary>
         /// # List external accounts
@@ -225,13 +214,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null);
         /// <summary>
         /// # Retrieve external accounts by id
         /// </summary>
@@ -260,16 +250,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
+        System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (ExternalAccountsImportRequest request = null);
 
         /// <summary>
         /// 
@@ -278,16 +261,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (ExternalAccountsImportRequest request = null);
         #endregion Asynchronous Operations
     }
 
@@ -384,11 +360,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        public ExternalAccountResponse BulkDelete (List<int?> ids)
+        public ExternalAccountResponse BulkDelete (Request13 request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = BulkDeleteWithHttpInfo(ids);
+             ApiResponse<ExternalAccountResponse> localVarResponse = BulkDeleteWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -396,13 +372,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        public ApiResponse< ExternalAccountResponse > BulkDeleteWithHttpInfo (List<int?> ids)
+        public ApiResponse< ExternalAccountResponse > BulkDeleteWithHttpInfo (Request13 request = null)
         {
-            // verify the required parameter 'ids' is set
-            if (ids == null)
-                throw new ApiException(400, "Missing required parameter 'ids' when calling External_accountsApi->BulkDelete");
 
             var localVarPath = "/admin/external_accounts/bulk_delete";
             var localVarPathParams = new Dictionary<String, String>();
@@ -414,7 +387,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -428,7 +401,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (ids != null) localVarFormParams.Add("ids", Configuration.ApiClient.ParameterToString(ids)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -453,11 +433,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteAsync (List<int?> ids)
+        public async System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteAsync (Request13 request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = await BulkDeleteAsyncWithHttpInfo(ids);
+             ApiResponse<ExternalAccountResponse> localVarResponse = await BulkDeleteAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -466,13 +446,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteAsyncWithHttpInfo (List<int?> ids)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteAsyncWithHttpInfo (Request13 request = null)
         {
-            // verify the required parameter 'ids' is set
-            if (ids == null)
-                throw new ApiException(400, "Missing required parameter 'ids' when calling External_accountsApi->BulkDelete");
 
             var localVarPath = "/admin/external_accounts/bulk_delete";
             var localVarPathParams = new Dictionary<String, String>();
@@ -484,7 +461,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -498,15 +475,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (ids != null) localVarFormParams.Add("ids", Configuration.ApiClient.ParameterToString(ids)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -536,11 +520,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        public ExternalAccountResponse BulkDeleteByExternalId (List<string> externalIds)
+        public ExternalAccountResponse BulkDeleteByExternalId (Request14 request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = BulkDeleteByExternalIdWithHttpInfo(externalIds);
+             ApiResponse<ExternalAccountResponse> localVarResponse = BulkDeleteByExternalIdWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -548,13 +532,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        public ApiResponse< ExternalAccountResponse > BulkDeleteByExternalIdWithHttpInfo (List<string> externalIds)
+        public ApiResponse< ExternalAccountResponse > BulkDeleteByExternalIdWithHttpInfo (Request14 request = null)
         {
-            // verify the required parameter 'externalIds' is set
-            if (externalIds == null)
-                throw new ApiException(400, "Missing required parameter 'externalIds' when calling External_accountsApi->BulkDeleteByExternalId");
 
             var localVarPath = "/admin/external_accounts/bulk_delete_by_external_id";
             var localVarPathParams = new Dictionary<String, String>();
@@ -566,7 +547,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -580,7 +561,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (externalIds != null) localVarFormParams.Add("external_ids", Configuration.ApiClient.ParameterToString(externalIds)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -605,11 +593,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteByExternalIdAsync (List<string> externalIds)
+        public async System.Threading.Tasks.Task<ExternalAccountResponse> BulkDeleteByExternalIdAsync (Request14 request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = await BulkDeleteByExternalIdAsyncWithHttpInfo(externalIds);
+             ApiResponse<ExternalAccountResponse> localVarResponse = await BulkDeleteByExternalIdAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -618,13 +606,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external accounts by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (List<string> externalIds)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (Request14 request = null)
         {
-            // verify the required parameter 'externalIds' is set
-            if (externalIds == null)
-                throw new ApiException(400, "Missing required parameter 'externalIds' when calling External_accountsApi->BulkDeleteByExternalId");
 
             var localVarPath = "/admin/external_accounts/bulk_delete_by_external_id";
             var localVarPathParams = new Dictionary<String, String>();
@@ -636,7 +621,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -650,15 +635,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (externalIds != null) localVarFormParams.Add("external_ids", Configuration.ApiClient.ParameterToString(externalIds)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -690,15 +682,16 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>ExternalAccountResponsePaginated</returns>
-        public ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
+        public ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
         {
-             ApiResponse<ExternalAccountResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, externalId, suggestion, feature, q);
+             ApiResponse<ExternalAccountResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, externalId, suggestion, feature, q);
              return localVarResponse.Data;
         }
 
@@ -708,13 +701,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponsePaginated</returns>
-        public ApiResponse< ExternalAccountResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
+        public ApiResponse< ExternalAccountResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
         {
 
             var localVarPath = "/admin/external_accounts";
@@ -727,7 +721,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -743,6 +737,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
@@ -774,15 +769,16 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>Task of ExternalAccountResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<ExternalAccountResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
+        public async System.Threading.Tasks.Task<ExternalAccountResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
         {
-             ApiResponse<ExternalAccountResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, externalId, suggestion, feature, q);
+             ApiResponse<ExternalAccountResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, externalId, suggestion, feature, q);
              return localVarResponse.Data;
 
         }
@@ -793,13 +789,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
-        /// <param name="sort"> (optional, default to -last_active_at)</param>
+        /// <param name="pageToken"> (optional)</param>
+        /// <param name="sort">Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. (optional, default to -last_active_at)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="feature"> (optional)</param>
         /// <param name="q"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
         {
 
             var localVarPath = "/admin/external_accounts";
@@ -812,7 +809,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -828,19 +825,20 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
             if (feature != null) localVarQueryParams.Add("feature", Configuration.ApiClient.ParameterToString(feature)); // query parameter
             if (q != null) localVarQueryParams.Add("q", Configuration.ApiClient.ParameterToString(q)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -900,7 +898,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -970,7 +968,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -986,13 +984,13 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1022,18 +1020,11 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalAccountResponse</returns>
-        public ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
+        public ExternalAccountResponse Import (ExternalAccountsImportRequest request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = ImportWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
+             ApiResponse<ExternalAccountResponse> localVarResponse = ImportWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -1041,23 +1032,10 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalAccountResponse</returns>
-        public ApiResponse< ExternalAccountResponse > ImportWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
+        public ApiResponse< ExternalAccountResponse > ImportWithHttpInfo (ExternalAccountsImportRequest request = null)
         {
-            // verify the required parameter 'accounts' is set
-            if (accounts == null)
-                throw new ApiException(400, "Missing required parameter 'accounts' when calling External_accountsApi->Import");
-            // verify the required parameter 'accountsIExternalId' is set
-            if (accountsIExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'accountsIExternalId' when calling External_accountsApi->Import");
 
             var localVarPath = "/admin/external_accounts/import";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1069,7 +1047,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1083,14 +1061,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accounts != null) localVarFormParams.Add("accounts", Configuration.ApiClient.ParameterToString(accounts)); // form parameter
-            if (accountsIExternalId != null) localVarFormParams.Add("accounts[i].external_id", Configuration.ApiClient.ParameterToString(accountsIExternalId)); // form parameter
-            if (accountsIName != null) localVarFormParams.Add("accounts[i].name", Configuration.ApiClient.ParameterToString(accountsIName)); // form parameter
-            if (accountsIPlan != null) localVarFormParams.Add("accounts[i].plan", Configuration.ApiClient.ParameterToString(accountsIPlan)); // form parameter
-            if (accountsIMrrCents != null) localVarFormParams.Add("accounts[i].mrr_cents", Configuration.ApiClient.ParameterToString(accountsIMrrCents)); // form parameter
-            if (accountsILtvCents != null) localVarFormParams.Add("accounts[i].ltv_cents", Configuration.ApiClient.ParameterToString(accountsILtvCents)); // form parameter
-            if (accountsIExternalCreatedAt != null) localVarFormParams.Add("accounts[i].external_created_at", Configuration.ApiClient.ParameterToString(accountsIExternalCreatedAt)); // form parameter
-            if (accountsICustomFields != null) localVarFormParams.Add("accounts[i].custom_fields", Configuration.ApiClient.ParameterToString(accountsICustomFields)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1115,18 +1093,11 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalAccountResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
+        public async System.Threading.Tasks.Task<ExternalAccountResponse> ImportAsync (ExternalAccountsImportRequest request = null)
         {
-             ApiResponse<ExternalAccountResponse> localVarResponse = await ImportAsyncWithHttpInfo(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
+             ApiResponse<ExternalAccountResponse> localVarResponse = await ImportAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -1135,23 +1106,10 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accounts">Each element with index i has these fields:</param>
-        /// <param name="accountsIExternalId">Account ID in your system.</param>
-        /// <param name="accountsIName">Account name in your system. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="accountsIMrrCents"> (optional)</param>
-        /// <param name="accountsILtvCents"> (optional)</param>
-        /// <param name="accountsIExternalCreatedAt"> (optional)</param>
-        /// <param name="accountsICustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalAccountResponse>> ImportAsyncWithHttpInfo (ExternalAccountsImportRequest request = null)
         {
-            // verify the required parameter 'accounts' is set
-            if (accounts == null)
-                throw new ApiException(400, "Missing required parameter 'accounts' when calling External_accountsApi->Import");
-            // verify the required parameter 'accountsIExternalId' is set
-            if (accountsIExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'accountsIExternalId' when calling External_accountsApi->Import");
 
             var localVarPath = "/admin/external_accounts/import";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1163,7 +1121,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1177,22 +1135,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accounts != null) localVarFormParams.Add("accounts", Configuration.ApiClient.ParameterToString(accounts)); // form parameter
-            if (accountsIExternalId != null) localVarFormParams.Add("accounts[i].external_id", Configuration.ApiClient.ParameterToString(accountsIExternalId)); // form parameter
-            if (accountsIName != null) localVarFormParams.Add("accounts[i].name", Configuration.ApiClient.ParameterToString(accountsIName)); // form parameter
-            if (accountsIPlan != null) localVarFormParams.Add("accounts[i].plan", Configuration.ApiClient.ParameterToString(accountsIPlan)); // form parameter
-            if (accountsIMrrCents != null) localVarFormParams.Add("accounts[i].mrr_cents", Configuration.ApiClient.ParameterToString(accountsIMrrCents)); // form parameter
-            if (accountsILtvCents != null) localVarFormParams.Add("accounts[i].ltv_cents", Configuration.ApiClient.ParameterToString(accountsILtvCents)); // form parameter
-            if (accountsIExternalCreatedAt != null) localVarFormParams.Add("accounts[i].external_created_at", Configuration.ApiClient.ParameterToString(accountsIExternalCreatedAt)); // form parameter
-            if (accountsICustomFields != null) localVarFormParams.Add("accounts[i].custom_fields", Configuration.ApiClient.ParameterToString(accountsICustomFields)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

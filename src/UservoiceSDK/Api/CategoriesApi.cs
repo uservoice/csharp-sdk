@@ -31,11 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        CategoryResponse Create (string name, long? linksForum, List<string> includes = null);
+        CategoryResponse Create (Request3 request = null);
 
         /// <summary>
         /// # Create a category
@@ -44,11 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        ApiResponse<CategoryResponse> CreateWithHttpInfo (string name, long? linksForum, List<string> includes = null);
+        ApiResponse<CategoryResponse> CreateWithHttpInfo (Request3 request = null);
         /// <summary>
         /// # Delete a category
         /// </summary>
@@ -57,9 +53,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        CategoryResponse DeleteById (long? id, List<string> includes = null);
+        CategoryResponse DeleteById (long? id, Request5 request = null);
 
         /// <summary>
         /// # Delete a category
@@ -69,9 +65,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        ApiResponse<CategoryResponse> DeleteByIdWithHttpInfo (long? id, List<string> includes = null);
+        ApiResponse<CategoryResponse> DeleteByIdWithHttpInfo (long? id, Request5 request = null);
         /// <summary>
         /// # List categories
         /// </summary>
@@ -81,11 +77,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>CategoryResponsePaginated</returns>
-        CategoryResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null);
+        CategoryResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null);
 
         /// <summary>
         /// # List categories
@@ -96,11 +93,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of CategoryResponsePaginated</returns>
-        ApiResponse<CategoryResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null);
+        ApiResponse<CategoryResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve categories by id
         /// </summary>
@@ -132,11 +130,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        CategoryResponse UpdateById (long? id, string name = null, long? linksForum = null, List<string> includes = null);
+        CategoryResponse UpdateById (long? id, Request4 request = null);
 
         /// <summary>
         /// # Update a category
@@ -146,11 +142,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        ApiResponse<CategoryResponse> UpdateByIdWithHttpInfo (long? id, string name = null, long? linksForum = null, List<string> includes = null);
+        ApiResponse<CategoryResponse> UpdateByIdWithHttpInfo (long? id, Request4 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -160,11 +154,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        System.Threading.Tasks.Task<CategoryResponse> CreateAsync (string name, long? linksForum, List<string> includes = null);
+        System.Threading.Tasks.Task<CategoryResponse> CreateAsync (Request3 request = null);
 
         /// <summary>
         /// # Create a category
@@ -173,11 +165,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> CreateAsyncWithHttpInfo (string name, long? linksForum, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> CreateAsyncWithHttpInfo (Request3 request = null);
         /// <summary>
         /// # Delete a category
         /// </summary>
@@ -186,9 +176,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        System.Threading.Tasks.Task<CategoryResponse> DeleteByIdAsync (long? id, List<string> includes = null);
+        System.Threading.Tasks.Task<CategoryResponse> DeleteByIdAsync (long? id, Request5 request = null);
 
         /// <summary>
         /// # Delete a category
@@ -198,9 +188,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> DeleteByIdAsyncWithHttpInfo (long? id, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> DeleteByIdAsyncWithHttpInfo (long? id, Request5 request = null);
         /// <summary>
         /// # List categories
         /// </summary>
@@ -210,11 +200,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of CategoryResponsePaginated</returns>
-        System.Threading.Tasks.Task<CategoryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null);
+        System.Threading.Tasks.Task<CategoryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null);
 
         /// <summary>
         /// # List categories
@@ -225,11 +216,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategoryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<CategoryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve categories by id
         /// </summary>
@@ -261,11 +253,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        System.Threading.Tasks.Task<CategoryResponse> UpdateByIdAsync (long? id, string name = null, long? linksForum = null, List<string> includes = null);
+        System.Threading.Tasks.Task<CategoryResponse> UpdateByIdAsync (long? id, Request4 request = null);
 
         /// <summary>
         /// # Update a category
@@ -275,11 +265,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, long? linksForum = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request4 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -376,13 +364,11 @@ namespace UserVoiceSdk.Api
         /// # Create a category 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        public CategoryResponse Create (string name, long? linksForum, List<string> includes = null)
+        public CategoryResponse Create (Request3 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = CreateWithHttpInfo(name, linksForum, includes);
+             ApiResponse<CategoryResponse> localVarResponse = CreateWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -390,18 +376,10 @@ namespace UserVoiceSdk.Api
         /// # Create a category 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        public ApiResponse< CategoryResponse > CreateWithHttpInfo (string name, long? linksForum, List<string> includes = null)
+        public ApiResponse< CategoryResponse > CreateWithHttpInfo (Request3 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling CategoriesApi->Create");
-            // verify the required parameter 'linksForum' is set
-            if (linksForum == null)
-                throw new ApiException(400, "Missing required parameter 'linksForum' when calling CategoriesApi->Create");
 
             var localVarPath = "/admin/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -413,7 +391,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -427,9 +405,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksForum != null) localVarFormParams.Add("links.forum", Configuration.ApiClient.ParameterToString(linksForum)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -454,13 +437,11 @@ namespace UserVoiceSdk.Api
         /// # Create a category 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        public async System.Threading.Tasks.Task<CategoryResponse> CreateAsync (string name, long? linksForum, List<string> includes = null)
+        public async System.Threading.Tasks.Task<CategoryResponse> CreateAsync (Request3 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, linksForum, includes);
+             ApiResponse<CategoryResponse> localVarResponse = await CreateAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -469,18 +450,10 @@ namespace UserVoiceSdk.Api
         /// # Create a category 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksForum"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> CreateAsyncWithHttpInfo (string name, long? linksForum, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> CreateAsyncWithHttpInfo (Request3 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling CategoriesApi->Create");
-            // verify the required parameter 'linksForum' is set
-            if (linksForum == null)
-                throw new ApiException(400, "Missing required parameter 'linksForum' when calling CategoriesApi->Create");
 
             var localVarPath = "/admin/categories";
             var localVarPathParams = new Dictionary<String, String>();
@@ -492,7 +465,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -506,17 +479,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksForum != null) localVarFormParams.Add("links.forum", Configuration.ApiClient.ParameterToString(linksForum)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -547,11 +525,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        public CategoryResponse DeleteById (long? id, List<string> includes = null)
+        public CategoryResponse DeleteById (long? id, Request5 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = DeleteByIdWithHttpInfo(id, includes);
+             ApiResponse<CategoryResponse> localVarResponse = DeleteByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -560,9 +538,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        public ApiResponse< CategoryResponse > DeleteByIdWithHttpInfo (long? id, List<string> includes = null)
+        public ApiResponse< CategoryResponse > DeleteByIdWithHttpInfo (long? id, Request5 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -578,7 +556,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -593,7 +571,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -619,11 +604,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        public async System.Threading.Tasks.Task<CategoryResponse> DeleteByIdAsync (long? id, List<string> includes = null)
+        public async System.Threading.Tasks.Task<CategoryResponse> DeleteByIdAsync (long? id, Request5 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = await DeleteByIdAsyncWithHttpInfo(id, includes);
+             ApiResponse<CategoryResponse> localVarResponse = await DeleteByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -633,9 +618,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> DeleteByIdAsyncWithHttpInfo (long? id, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> DeleteByIdAsyncWithHttpInfo (long? id, Request5 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -651,7 +636,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -666,15 +651,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -706,13 +698,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>CategoryResponsePaginated</returns>
-        public CategoryResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null)
+        public CategoryResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null)
         {
-             ApiResponse<CategoryResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, forum, includes);
+             ApiResponse<CategoryResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, forum, includes);
              return localVarResponse.Data;
         }
 
@@ -722,11 +715,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of CategoryResponsePaginated</returns>
-        public ApiResponse< CategoryResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null)
+        public ApiResponse< CategoryResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/categories";
@@ -739,7 +733,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -755,6 +749,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (forum != null) localVarQueryParams.Add("forum", Configuration.ApiClient.ParameterToString(forum)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
@@ -784,13 +779,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of CategoryResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<CategoryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<CategoryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null)
         {
-             ApiResponse<CategoryResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, forum, includes);
+             ApiResponse<CategoryResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, forum, includes);
              return localVarResponse.Data;
 
         }
@@ -801,11 +797,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/categories";
@@ -818,7 +815,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -834,17 +831,18 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (forum != null) localVarQueryParams.Add("forum", Configuration.ApiClient.ParameterToString(forum)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -906,7 +904,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -979,7 +977,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -996,13 +994,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1033,13 +1031,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CategoryResponse</returns>
-        public CategoryResponse UpdateById (long? id, string name = null, long? linksForum = null, List<string> includes = null)
+        public CategoryResponse UpdateById (long? id, Request4 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, linksForum, includes);
+             ApiResponse<CategoryResponse> localVarResponse = UpdateByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -1048,11 +1044,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CategoryResponse</returns>
-        public ApiResponse< CategoryResponse > UpdateByIdWithHttpInfo (long? id, string name = null, long? linksForum = null, List<string> includes = null)
+        public ApiResponse< CategoryResponse > UpdateByIdWithHttpInfo (long? id, Request4 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1068,7 +1062,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1083,9 +1077,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksForum != null) localVarFormParams.Add("links.forum", Configuration.ApiClient.ParameterToString(linksForum)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1111,13 +1110,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CategoryResponse</returns>
-        public async System.Threading.Tasks.Task<CategoryResponse> UpdateByIdAsync (long? id, string name = null, long? linksForum = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<CategoryResponse> UpdateByIdAsync (long? id, Request4 request = null)
         {
-             ApiResponse<CategoryResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, linksForum, includes);
+             ApiResponse<CategoryResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -1127,11 +1124,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksForum"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CategoryResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, long? linksForum = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CategoryResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request4 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1147,7 +1142,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1162,17 +1157,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksForum != null) localVarFormParams.Add("links.forum", Configuration.ApiClient.ParameterToString(linksForum)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

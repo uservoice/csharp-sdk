@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> StatusUpdateResponse Create (string body, long? linksSuggestion, bool? notifySupporters = null, string notificationEmailAddress = null, long? linksStatus = null, List<string> includes = null)
+> StatusUpdateResponse Create (Request37 request = null)
 
 # Create a status update
 
@@ -48,17 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var body = body_example;  // string | 
-            var linksSuggestion = 789;  // long? | 
-            var notifySupporters = true;  // bool? |  (optional)  (default to false)
-            var notificationEmailAddress = notificationEmailAddress_example;  // string |  (optional) 
-            var linksStatus = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request37(); // Request37 | Payload for this request (optional) 
 
             try
             {
                 // # Create a status update
-                StatusUpdateResponse result = client.Status_updates.Create(body, linksSuggestion, notifySupporters, notificationEmailAddress, linksStatus, includes);
+                StatusUpdateResponse result = client.Status_updates.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -79,12 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**|  | 
- **linksSuggestion** | **long?**|  | 
- **notifySupporters** | **bool?**|  | [optional] [default to false]
- **notificationEmailAddress** | **string**|  | [optional] 
- **linksStatus** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request37**](request_37.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -92,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> StatusUpdateResponse DeleteById (long? id, List<string> includes = null)
+> StatusUpdateResponse DeleteById (long? id, Request39 request = null)
 
 # Delete a status update
 
@@ -141,12 +131,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request39(); // Request39 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a status update
-                StatusUpdateResponse result = client.Status_updates.DeleteById(id, includes);
+                StatusUpdateResponse result = client.Status_updates.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -168,7 +158,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request39**](request_39.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -176,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> StatusUpdateResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<string> includes = null)
+> StatusUpdateResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<string> includes = null)
 
 # List status updates
 
@@ -226,6 +216,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var suggestion = new List<int?>(); // List<int?> |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -233,7 +224,7 @@ namespace Example
             try
             {
                 // # List status updates
-                StatusUpdateResponsePaginated result = client.Status_updates.Get(page, perPage, sort, suggestion, includes);
+                StatusUpdateResponsePaginated result = client.Status_updates.Get(page, perPage, pageToken, sort, suggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -256,6 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **suggestion** | [**List<int?>**](int?.md)|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
@@ -266,11 +258,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -350,18 +342,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> StatusUpdateResponse UpdateById (long? id, string body, List<string> includes = null)
+> StatusUpdateResponse UpdateById (long? id, Request38 request = null)
 
 # Update a status update
 
@@ -399,13 +391,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var body = body_example;  // string | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request38(); // Request38 | Payload for this request (optional) 
 
             try
             {
                 // # Update a status update
-                StatusUpdateResponse result = client.Status_updates.UpdateById(id, body, includes);
+                StatusUpdateResponse result = client.Status_updates.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -427,8 +418,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **body** | **string**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request38**](request_38.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -436,11 +426,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -33,11 +33,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ForumResponsePaginated</returns>
-        ForumResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null);
+        ForumResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null);
 
         /// <summary>
         /// # List forums
@@ -48,11 +49,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ForumResponsePaginated</returns>
-        ApiResponse<ForumResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null);
+        ApiResponse<ForumResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve forums by id
         /// </summary>
@@ -87,11 +89,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ForumResponsePaginated</returns>
-        System.Threading.Tasks.Task<ForumResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ForumResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null);
 
         /// <summary>
         /// # List forums
@@ -102,11 +105,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ForumResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ForumResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<ForumResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve forums by id
         /// </summary>
@@ -228,13 +232,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ForumResponsePaginated</returns>
-        public ForumResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null)
+        public ForumResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null)
         {
-             ApiResponse<ForumResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, open, includes);
+             ApiResponse<ForumResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, open, includes);
              return localVarResponse.Data;
         }
 
@@ -244,11 +249,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ForumResponsePaginated</returns>
-        public ApiResponse< ForumResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null)
+        public ApiResponse< ForumResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/forums";
@@ -261,7 +267,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -277,6 +283,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (open != null) localVarQueryParams.Add("open", Configuration.ApiClient.ParameterToString(open)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
@@ -306,13 +313,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ForumResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<ForumResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ForumResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null)
         {
-             ApiResponse<ForumResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, open, includes);
+             ApiResponse<ForumResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, open, includes);
              return localVarResponse.Data;
 
         }
@@ -323,11 +331,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="open"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ForumResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ForumResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, bool? open = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ForumResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, bool? open = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/forums";
@@ -340,7 +349,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -356,17 +365,18 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (open != null) localVarQueryParams.Add("open", Configuration.ApiClient.ParameterToString(open)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -428,7 +438,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -501,7 +511,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -518,13 +528,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

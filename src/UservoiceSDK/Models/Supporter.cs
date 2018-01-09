@@ -40,8 +40,9 @@ namespace UserVoiceSdk.Models
         /// <param name="Id">Id.</param>
         /// <param name="IsSubscribed">IsSubscribed.</param>
         /// <param name="Links">Links.</param>
+        /// <param name="Traits">Traits.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public Supporter(string Channel = null, long? CommentsCount = null, DateTime? CreatedAt = null, long? FeedbackCount = null, string How = null, long? Id = null, bool? IsSubscribed = null, SupporterLinks Links = null, DateTime? UpdatedAt = null)
+        public Supporter(string Channel = null, long? CommentsCount = null, DateTime? CreatedAt = null, long? FeedbackCount = null, string How = null, long? Id = null, bool? IsSubscribed = null, SupporterLinks Links = null, SupporterTraits Traits = null, DateTime? UpdatedAt = null)
         {
             this.Channel = Channel;
             this.CommentsCount = CommentsCount;
@@ -51,6 +52,7 @@ namespace UserVoiceSdk.Models
             this.Id = Id;
             this.IsSubscribed = IsSubscribed;
             this.Links = Links;
+            this.Traits = Traits;
             this.UpdatedAt = UpdatedAt;
         }
         
@@ -95,6 +97,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="links", EmitDefaultValue=false)]
         public SupporterLinks Links { get; set; }
         /// <summary>
+        /// Gets or Sets Traits
+        /// </summary>
+        [DataMember(Name="traits", EmitDefaultValue=false)]
+        public SupporterTraits Traits { get; set; }
+        /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
@@ -115,6 +122,7 @@ namespace UserVoiceSdk.Models
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsSubscribed: ").Append(IsSubscribed).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Traits: ").Append(Traits).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -193,6 +201,11 @@ namespace UserVoiceSdk.Models
                     this.Links.Equals(other.Links)
                 ) && 
                 (
+                    this.Traits == other.Traits ||
+                    this.Traits != null &&
+                    this.Traits.Equals(other.Traits)
+                ) && 
+                (
                     this.UpdatedAt == other.UpdatedAt ||
                     this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(other.UpdatedAt)
@@ -226,6 +239,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.IsSubscribed.GetHashCode();
                 if (this.Links != null)
                     hash = hash * 59 + this.Links.GetHashCode();
+                if (this.Traits != null)
+                    hash = hash * 59 + this.Traits.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 return hash;

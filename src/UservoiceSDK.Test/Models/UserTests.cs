@@ -89,6 +89,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'City'
         }
         /// <summary>
+        /// Test the property 'CommentNotifications'
+        /// </summary>
+        [Test]
+        public void CommentNotificationsTest()
+        {
+            // TODO unit test for the property 'CommentNotifications'
+        }
+        /// <summary>
         /// Test the property 'Country'
         /// </summary>
         [Test]
@@ -111,6 +119,14 @@ namespace UserVoiceSdk.Test
         public void EmailAddressTest()
         {
             // TODO unit test for the property 'EmailAddress'
+        }
+        /// <summary>
+        /// Test the property 'EmailConfirmed'
+        /// </summary>
+        [Test]
+        public void EmailConfirmedTest()
+        {
+            // TODO unit test for the property 'EmailConfirmed'
         }
         /// <summary>
         /// Test the property 'Guid'
@@ -143,6 +159,14 @@ namespace UserVoiceSdk.Test
         public void IsOwnerTest()
         {
             // TODO unit test for the property 'IsOwner'
+        }
+        /// <summary>
+        /// Test the property 'IsSubscribed'
+        /// </summary>
+        [Test]
+        public void IsSubscribedTest()
+        {
+            // TODO unit test for the property 'IsSubscribed'
         }
         /// <summary>
         /// Test the property 'JobTitle'
@@ -185,6 +209,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Name'
         }
         /// <summary>
+        /// Test the property 'Permissions'
+        /// </summary>
+        [Test]
+        public void PermissionsTest()
+        {
+            // TODO unit test for the property 'Permissions'
+        }
+        /// <summary>
         /// Test the property 'Region'
         /// </summary>
         [Test]
@@ -201,6 +233,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'SatisfactionScore'
         }
         /// <summary>
+        /// Test the property 'StatusNotifications'
+        /// </summary>
+        [Test]
+        public void StatusNotificationsTest()
+        {
+            // TODO unit test for the property 'StatusNotifications'
+        }
+        /// <summary>
         /// Test the property 'SuggestionVotes'
         /// </summary>
         [Test]
@@ -209,12 +249,28 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'SuggestionVotes'
         }
         /// <summary>
+        /// Test the property 'SupportCreatedAt'
+        /// </summary>
+        [Test]
+        public void SupportCreatedAtTest()
+        {
+            // TODO unit test for the property 'SupportCreatedAt'
+        }
+        /// <summary>
         /// Test the property 'SupportedSuggestionsCount'
         /// </summary>
         [Test]
         public void SupportedSuggestionsCountTest()
         {
             // TODO unit test for the property 'SupportedSuggestionsCount'
+        }
+        /// <summary>
+        /// Test the property 'Traits'
+        /// </summary>
+        [Test]
+        public void TraitsTest()
+        {
+            // TODO unit test for the property 'Traits'
         }
         /// <summary>
         /// Test the property 'UpdatedAt'

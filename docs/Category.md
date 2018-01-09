@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | **DateTime?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
-**Links** | [**CategoryLinks**](CategoryLinks.md) |  | [optional] 
+**Links** | [**AdmincategoriesLinks**](AdmincategoriesLinks.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **OpenSuggestionsCount** | **long?** |  | [optional] 
 **SuggestionsCount** | **long?** |  | [optional] 

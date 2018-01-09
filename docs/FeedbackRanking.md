@@ -5,9 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountDelta** | **long?** |  | [optional] 
 **CountLifetime** | **long?** |  | [optional] 
+**CountPercentDelta** | **decimal?** |  | [optional] 
 **CountPeriod1** | **long?** |  | [optional] 
 **CountPeriod2** | **long?** |  | [optional] 
-**Links** | [**FeedbackRankingLinks**](FeedbackRankingLinks.md) |  | [optional] 
+**Links** | [**AdmincommentsLinks**](AdmincommentsLinks.md) |  | [optional] 
 **RankDelta** | **long?** |  | [optional] 
 **RankPeriod1** | **long?** |  | [optional] 
 **RankPeriod2** | **long?** |  | [optional] 

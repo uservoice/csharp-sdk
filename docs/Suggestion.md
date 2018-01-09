@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **SupportersCount** | **long?** |  | [optional] 
 **SupportingAccountsCount** | **long?** |  | [optional] 
 **Title** | **string** |  | [optional] 
+**Unmergeable** | **bool?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
 **VotesCount** | **long?** |  | [optional] 
 

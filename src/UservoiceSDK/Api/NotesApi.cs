@@ -31,13 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NoteResponse</returns>
-        NoteResponse Create (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null);
+        NoteResponse Create (Request33 request = null);
 
         /// <summary>
         /// # Create a note
@@ -46,13 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NoteResponse</returns>
-        ApiResponse<NoteResponse> CreateWithHttpInfo (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null);
+        ApiResponse<NoteResponse> CreateWithHttpInfo (Request33 request = null);
         /// <summary>
         /// # List notes
         /// </summary>
@@ -62,11 +54,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>NoteResponsePaginated</returns>
-        NoteResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null);
+        NoteResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null);
 
         /// <summary>
         /// # List notes
@@ -77,11 +70,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of NoteResponsePaginated</returns>
-        ApiResponse<NoteResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null);
+        ApiResponse<NoteResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve notes by id
         /// </summary>
@@ -113,10 +107,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NoteResponse</returns>
-        NoteResponse UpdateById (long? id, string body, List<string> includes = null);
+        NoteResponse UpdateById (long? id, Request34 request = null);
 
         /// <summary>
         /// # Update a note
@@ -126,10 +119,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NoteResponse</returns>
-        ApiResponse<NoteResponse> UpdateByIdWithHttpInfo (long? id, string body, List<string> includes = null);
+        ApiResponse<NoteResponse> UpdateByIdWithHttpInfo (long? id, Request34 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -139,13 +131,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NoteResponse</returns>
-        System.Threading.Tasks.Task<NoteResponse> CreateAsync (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null);
+        System.Threading.Tasks.Task<NoteResponse> CreateAsync (Request33 request = null);
 
         /// <summary>
         /// # Create a note
@@ -154,13 +142,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoteResponse>> CreateAsyncWithHttpInfo (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<NoteResponse>> CreateAsyncWithHttpInfo (Request33 request = null);
         /// <summary>
         /// # List notes
         /// </summary>
@@ -170,11 +154,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of NoteResponsePaginated</returns>
-        System.Threading.Tasks.Task<NoteResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null);
+        System.Threading.Tasks.Task<NoteResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null);
 
         /// <summary>
         /// # List notes
@@ -185,11 +170,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoteResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<NoteResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve notes by id
         /// </summary>
@@ -221,10 +207,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NoteResponse</returns>
-        System.Threading.Tasks.Task<NoteResponse> UpdateByIdAsync (long? id, string body, List<string> includes = null);
+        System.Threading.Tasks.Task<NoteResponse> UpdateByIdAsync (long? id, Request34 request = null);
 
         /// <summary>
         /// # Update a note
@@ -234,10 +219,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NoteResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string body, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<NoteResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request34 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -334,15 +318,11 @@ namespace UserVoiceSdk.Api
         /// # Create a note 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NoteResponse</returns>
-        public NoteResponse Create (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null)
+        public NoteResponse Create (Request33 request = null)
         {
-             ApiResponse<NoteResponse> localVarResponse = CreateWithHttpInfo(body, linksSuggestion, bodyMimeType, attachmentTokens, includes);
+             ApiResponse<NoteResponse> localVarResponse = CreateWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -350,20 +330,10 @@ namespace UserVoiceSdk.Api
         /// # Create a note 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NoteResponse</returns>
-        public ApiResponse< NoteResponse > CreateWithHttpInfo (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null)
+        public ApiResponse< NoteResponse > CreateWithHttpInfo (Request33 request = null)
         {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling NotesApi->Create");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling NotesApi->Create");
 
             var localVarPath = "/admin/notes";
             var localVarPathParams = new Dictionary<String, String>();
@@ -375,7 +345,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -389,11 +359,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (bodyMimeType != null) localVarFormParams.Add("body_mime_type", Configuration.ApiClient.ParameterToString(bodyMimeType)); // form parameter
-            if (attachmentTokens != null) localVarFormParams.Add("attachment_tokens", Configuration.ApiClient.ParameterToString(attachmentTokens)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -418,15 +391,11 @@ namespace UserVoiceSdk.Api
         /// # Create a note 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NoteResponse</returns>
-        public async System.Threading.Tasks.Task<NoteResponse> CreateAsync (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<NoteResponse> CreateAsync (Request33 request = null)
         {
-             ApiResponse<NoteResponse> localVarResponse = await CreateAsyncWithHttpInfo(body, linksSuggestion, bodyMimeType, attachmentTokens, includes);
+             ApiResponse<NoteResponse> localVarResponse = await CreateAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -435,20 +404,10 @@ namespace UserVoiceSdk.Api
         /// # Create a note 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="bodyMimeType"> (optional, default to text/plain)</param>
-        /// <param name="attachmentTokens"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NoteResponse>> CreateAsyncWithHttpInfo (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NoteResponse>> CreateAsyncWithHttpInfo (Request33 request = null)
         {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling NotesApi->Create");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling NotesApi->Create");
 
             var localVarPath = "/admin/notes";
             var localVarPathParams = new Dictionary<String, String>();
@@ -460,7 +419,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -474,19 +433,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (bodyMimeType != null) localVarFormParams.Add("body_mime_type", Configuration.ApiClient.ParameterToString(bodyMimeType)); // form parameter
-            if (attachmentTokens != null) localVarFormParams.Add("attachment_tokens", Configuration.ApiClient.ParameterToString(attachmentTokens)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -518,13 +480,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>NoteResponsePaginated</returns>
-        public NoteResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null)
+        public NoteResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null)
         {
-             ApiResponse<NoteResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, suggestion, includes);
+             ApiResponse<NoteResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, suggestion, includes);
              return localVarResponse.Data;
         }
 
@@ -534,11 +497,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of NoteResponsePaginated</returns>
-        public ApiResponse< NoteResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null)
+        public ApiResponse< NoteResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/notes";
@@ -551,7 +515,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -567,6 +531,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
@@ -596,13 +561,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of NoteResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<NoteResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<NoteResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null)
         {
-             ApiResponse<NoteResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, suggestion, includes);
+             ApiResponse<NoteResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, suggestion, includes);
              return localVarResponse.Data;
 
         }
@@ -613,11 +579,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NoteResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NoteResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/notes";
@@ -630,7 +597,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -646,17 +613,18 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -718,7 +686,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -791,7 +759,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -808,13 +776,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -845,12 +813,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NoteResponse</returns>
-        public NoteResponse UpdateById (long? id, string body, List<string> includes = null)
+        public NoteResponse UpdateById (long? id, Request34 request = null)
         {
-             ApiResponse<NoteResponse> localVarResponse = UpdateByIdWithHttpInfo(id, body, includes);
+             ApiResponse<NoteResponse> localVarResponse = UpdateByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -859,17 +826,13 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NoteResponse</returns>
-        public ApiResponse< NoteResponse > UpdateByIdWithHttpInfo (long? id, string body, List<string> includes = null)
+        public ApiResponse< NoteResponse > UpdateByIdWithHttpInfo (long? id, Request34 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling NotesApi->UpdateById");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling NotesApi->UpdateById");
 
             var localVarPath = "/admin/notes/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -881,7 +844,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -896,8 +859,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -923,12 +892,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NoteResponse</returns>
-        public async System.Threading.Tasks.Task<NoteResponse> UpdateByIdAsync (long? id, string body, List<string> includes = null)
+        public async System.Threading.Tasks.Task<NoteResponse> UpdateByIdAsync (long? id, Request34 request = null)
         {
-             ApiResponse<NoteResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, body, includes);
+             ApiResponse<NoteResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -938,17 +906,13 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="body"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NoteResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NoteResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string body, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NoteResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request34 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling NotesApi->UpdateById");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling NotesApi->UpdateById");
 
             var localVarPath = "/admin/notes/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -960,7 +924,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -975,16 +939,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

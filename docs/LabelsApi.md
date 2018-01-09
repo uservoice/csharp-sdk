@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="attach"></a>
 # **Attach**
-> LabelResponse Attach (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+> LabelResponse Attach (Request28 request = null)
 
 # Create a label
 
@@ -50,14 +50,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var linksLabel = 789;  // long? | 
-            var linksSuggestion = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request28(); // Request28 | Payload for this request (optional) 
 
             try
             {
                 // # Create a label
-                LabelResponse result = client.Labels.Attach(linksLabel, linksSuggestion, includes);
+                LabelResponse result = client.Labels.Attach(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -78,9 +76,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **linksLabel** | **long?**|  | 
- **linksSuggestion** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request28**](request_28.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -88,18 +84,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="create"></a>
 # **Create**
-> LabelResponse Create (string name, long? linksParent = null, List<string> includes = null)
+> LabelResponse Create (Request27 request = null)
 
 # Create a label
 
@@ -136,14 +132,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var name = name_example;  // string | 
-            var linksParent = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request27(); // Request27 | Payload for this request (optional) 
 
             try
             {
                 // # Create a label
-                LabelResponse result = client.Labels.Create(name, linksParent, includes);
+                LabelResponse result = client.Labels.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -164,9 +158,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**|  | 
- **linksParent** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request27**](request_27.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -174,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> LabelResponse DeleteById (long? id, List<string> includes = null)
+> LabelResponse DeleteById (long? id, Request31 request = null)
 
 # Delete a label
 
@@ -223,12 +215,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request31(); // Request31 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a label
-                LabelResponse result = client.Labels.DeleteById(id, includes);
+                LabelResponse result = client.Labels.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -250,7 +242,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request31**](request_31.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -258,18 +250,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="detach"></a>
 # **Detach**
-> LabelResponse Detach (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+> LabelResponse Detach (Request29 request = null)
 
 # Create a label
 
@@ -306,14 +298,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var linksLabel = 789;  // long? | 
-            var linksSuggestion = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request29(); // Request29 | Payload for this request (optional) 
 
             try
             {
                 // # Create a label
-                LabelResponse result = client.Labels.Detach(linksLabel, linksSuggestion, includes);
+                LabelResponse result = client.Labels.Detach(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -334,9 +324,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **linksLabel** | **long?**|  | 
- **linksSuggestion** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request29**](request_29.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -344,18 +332,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> LabelResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+> LabelResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
 
 # List labels
 
@@ -394,13 +382,14 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # List labels
-                LabelResponsePaginated result = client.Labels.Get(page, perPage, sort, includes);
+                LabelResponsePaginated result = client.Labels.Get(page, perPage, pageToken, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -423,6 +412,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
@@ -432,11 +422,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -516,18 +506,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> LabelResponse UpdateById (long? id, string name = null, long? linksParent = null, List<string> includes = null)
+> LabelResponse UpdateById (long? id, Request30 request = null)
 
 # Update a label
 
@@ -565,14 +555,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var name = name_example;  // string |  (optional) 
-            var linksParent = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request30(); // Request30 | Payload for this request (optional) 
 
             try
             {
                 // # Update a label
-                LabelResponse result = client.Labels.UpdateById(id, name, linksParent, includes);
+                LabelResponse result = client.Labels.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -594,9 +582,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **name** | **string**|  | [optional] 
- **linksParent** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request30**](request_30.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -604,11 +590,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> ViewResponse Create (string kind, string name = null, string subKind = null, string _params = null, bool? subscribed = null, string subscriptionParams = null, long? linksSuggestion = null, long? linksSmartvoteExperiment = null, long? linksUser = null, List<string> includes = null)
+> ViewResponse Create (Request52 request = null)
 
 # Create a view
 
@@ -48,21 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var kind = kind_example;  // string | 
-            var name = name_example;  // string |  (optional) 
-            var subKind = subKind_example;  // string |  (optional) 
-            var _params = _params_example;  // string |  (optional) 
-            var subscribed = true;  // bool? |  (optional)  (default to false)
-            var subscriptionParams = subscriptionParams_example;  // string |  (optional) 
-            var linksSuggestion = 789;  // long? |  (optional) 
-            var linksSmartvoteExperiment = 789;  // long? |  (optional) 
-            var linksUser = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request52(); // Request52 | Payload for this request (optional) 
 
             try
             {
                 // # Create a view
-                ViewResponse result = client.Views.Create(kind, name, subKind, _params, subscribed, subscriptionParams, linksSuggestion, linksSmartvoteExperiment, linksUser, includes);
+                ViewResponse result = client.Views.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -83,16 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kind** | **string**|  | 
- **name** | **string**|  | [optional] 
- **subKind** | **string**|  | [optional] 
- **_params** | **string**|  | [optional] 
- **subscribed** | **bool?**|  | [optional] [default to false]
- **subscriptionParams** | **string**|  | [optional] 
- **linksSuggestion** | **long?**|  | [optional] 
- **linksSmartvoteExperiment** | **long?**|  | [optional] 
- **linksUser** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request52**](request_52.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -100,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> ViewResponse DeleteById (long? id, List<string> includes = null)
+> ViewResponse DeleteById (long? id, Request54 request = null)
 
 # Delete a view
 
@@ -149,12 +131,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request54(); // Request54 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a view
-                ViewResponse result = client.Views.DeleteById(id, includes);
+                ViewResponse result = client.Views.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -176,7 +158,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request54**](request_54.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -184,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> ViewResponsePaginated Get (long? user, long? page = null, long? perPage = null, List<string> kind = null, string sort = null, List<string> includes = null)
+> ViewResponsePaginated Get (long? user, long? page = null, long? perPage = null, string pageToken = null, List<string> kind = null, string sort = null, List<string> includes = null)
 
 # List views
 
@@ -235,6 +217,7 @@ namespace Example
             var user = 789;  // long? | 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var kind = new List<string>(); // List<string> |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -position)
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -242,7 +225,7 @@ namespace Example
             try
             {
                 // # List views
-                ViewResponsePaginated result = client.Views.Get(user, page, perPage, kind, sort, includes);
+                ViewResponsePaginated result = client.Views.Get(user, page, perPage, pageToken, kind, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -266,6 +249,7 @@ Name | Type | Description  | Notes
  **user** | **long?**|  | 
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **kind** | [**List<string>**](string.md)|  | [optional] 
  **sort** | **string**|  | [optional] [default to -position]
  **includes** | [**List<string>**](string.md)|  | [optional] 
@@ -276,11 +260,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -360,18 +344,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> ViewResponse UpdateById (long? id, string name = null, bool? subscribed = null, string subscriptionParams = null, string _params = null, long? position = null, List<string> includes = null)
+> ViewResponse UpdateById (long? id, Request53 request = null)
 
 # Update a view
 
@@ -409,17 +393,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var name = name_example;  // string |  (optional) 
-            var subscribed = true;  // bool? |  (optional) 
-            var subscriptionParams = subscriptionParams_example;  // string |  (optional) 
-            var _params = _params_example;  // string |  (optional) 
-            var position = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request53(); // Request53 | Payload for this request (optional) 
 
             try
             {
                 // # Update a view
-                ViewResponse result = client.Views.UpdateById(id, name, subscribed, subscriptionParams, _params, position, includes);
+                ViewResponse result = client.Views.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -441,12 +420,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **name** | **string**|  | [optional] 
- **subscribed** | **bool?**|  | [optional] 
- **subscriptionParams** | **string**|  | [optional] 
- **_params** | **string**|  | [optional] 
- **position** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request53**](request_53.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -454,11 +428,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

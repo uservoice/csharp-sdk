@@ -77,8 +77,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.BlockById(id, includes);
+            //Request50 request = null;
+            //var response = instance.BlockById(id, request);
             //Assert.IsInstanceOf<UserResponse> (response, "response is UserResponse");
         }
         
@@ -101,10 +101,8 @@ namespace UserVoiceSdk.Test
         public void FindOrCreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string name = null;
-            //string email = null;
-            //List<string> includes = null;
-            //var response = instance.FindOrCreate(name, email, includes);
+            //Request49 request = null;
+            //var response = instance.FindOrCreate(request);
             //Assert.IsInstanceOf<UserResponse> (response, "response is UserResponse");
         }
         
@@ -117,8 +115,10 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //string q = null;
+            //string expression = null;
             //List<string> emailAddress = null;
             //List<string> allowedState = null;
             //bool? internalUser = null;
@@ -127,7 +127,7 @@ namespace UserVoiceSdk.Test
             //List<int?> suggestion = null;
             //List<int?> feature = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, q, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, q, expression, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
             //Assert.IsInstanceOf<UserResponsePaginated> (response, "response is UserResponsePaginated");
         }
         
@@ -152,8 +152,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.UnblockById(id, includes);
+            //Request51 request = null;
+            //var response = instance.UnblockById(id, request);
             //Assert.IsInstanceOf<UserResponse> (response, "response is UserResponse");
         }
         

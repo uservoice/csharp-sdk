@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> FeedbackResponse Create (string body, string channel, long? linksSuggestion, long? linksUser, string bodyMimeType = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, bool? subscribe = null, long? linksTicket = null, List<string> includes = null)
+> FeedbackResponse Create (Request21 request = null)
 
 # Create a feedback
 
@@ -48,22 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var body = body_example;  // string | 
-            var channel = channel_example;  // string |  (default to api)
-            var linksSuggestion = 789;  // long? | 
-            var linksUser = 789;  // long? | 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional)  (default to text/plain)
-            var sourceUrl = sourceUrl_example;  // string |  (optional) 
-            var sourceType = sourceType_example;  // string |  (optional) 
-            var sourceGuid = sourceGuid_example;  // string |  (optional) 
-            var subscribe = true;  // bool? |  (optional)  (default to true)
-            var linksTicket = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request21(); // Request21 | Payload for this request (optional) 
 
             try
             {
                 // # Create a feedback
-                FeedbackResponse result = client.Feedback.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
+                FeedbackResponse result = client.Feedback.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -84,17 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**|  | 
- **channel** | **string**|  | [default to api]
- **linksSuggestion** | **long?**|  | 
- **linksUser** | **long?**|  | 
- **bodyMimeType** | **string**|  | [optional] [default to text/plain]
- **sourceUrl** | **string**|  | [optional] 
- **sourceType** | **string**|  | [optional] 
- **sourceGuid** | **string**|  | [optional] 
- **subscribe** | **bool?**|  | [optional] [default to true]
- **linksTicket** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request21**](request_21.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -102,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> FeedbackResponse DeleteById (long? id, List<string> includes = null)
+> FeedbackResponse DeleteById (long? id, Request23 request = null)
 
 # Delete a feedback
 
@@ -151,12 +131,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request23(); // Request23 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a feedback
-                FeedbackResponse result = client.Feedback.DeleteById(id, includes);
+                FeedbackResponse result = client.Feedback.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -178,7 +158,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request23**](request_23.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -186,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> FeedbackResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, string channel = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, List<int?> suggestion = null, List<int?> ticket = null, List<string> includes = null)
+> FeedbackResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, string channel = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, List<int?> suggestion = null, List<int?> ticket = null, List<string> includes = null)
 
 # List feedback
 
@@ -236,6 +216,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -updated_at)
             var channel = channel_example;  // string |  (optional) 
             var sourceUrl = sourceUrl_example;  // string |  (optional) 
@@ -248,7 +229,7 @@ namespace Example
             try
             {
                 // # List feedback
-                FeedbackResponsePaginated result = client.Feedback.Get(page, perPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
+                FeedbackResponsePaginated result = client.Feedback.Get(page, perPage, pageToken, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -271,6 +252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -updated_at]
  **channel** | **string**|  | [optional] 
  **sourceUrl** | **string**|  | [optional] 
@@ -286,11 +268,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -370,18 +352,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> FeedbackResponse UpdateById (long? id, string body = null, string bodyMimeType = null, string sourceUrl = null, string sourceType = null, string sourceGuid = null, bool? subscribe = null, long? linksSuggestion = null, long? linksUser = null, List<string> includes = null)
+> FeedbackResponse UpdateById (long? id, Request22 request = null)
 
 # Update a feedback
 
@@ -419,20 +401,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var body = body_example;  // string |  (optional) 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional) 
-            var sourceUrl = sourceUrl_example;  // string |  (optional) 
-            var sourceType = sourceType_example;  // string |  (optional) 
-            var sourceGuid = sourceGuid_example;  // string |  (optional) 
-            var subscribe = true;  // bool? |  (optional) 
-            var linksSuggestion = 789;  // long? |  (optional) 
-            var linksUser = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request22(); // Request22 | Payload for this request (optional) 
 
             try
             {
                 // # Update a feedback
-                FeedbackResponse result = client.Feedback.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
+                FeedbackResponse result = client.Feedback.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -454,15 +428,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **body** | **string**|  | [optional] 
- **bodyMimeType** | **string**|  | [optional] 
- **sourceUrl** | **string**|  | [optional] 
- **sourceType** | **string**|  | [optional] 
- **sourceGuid** | **string**|  | [optional] 
- **subscribe** | **bool?**|  | [optional] 
- **linksSuggestion** | **long?**|  | [optional] 
- **linksUser** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request22**](request_22.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -470,11 +436,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

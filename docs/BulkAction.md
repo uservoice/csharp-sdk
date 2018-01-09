@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ActionParams** | **string** |  | [optional] 
 **Complete** | **bool?** |  | [optional] 
 **Id** | **long?** |  | [optional] 
-**Links** | [**BulkActionLinks**](BulkActionLinks.md) |  | [optional] 
+**Links** | [**AdminnpsRatingsLinks**](AdminnpsRatingsLinks.md) |  | [optional] 
 **ObjectType** | **string** |  | [optional] 
 **ObjectsChanged** | **long?** |  | [optional] 
 **ObjectsSelected** | **long?** |  | [optional] 

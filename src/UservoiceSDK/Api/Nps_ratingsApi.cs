@@ -31,14 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NPSRatingResponse</returns>
-        NPSRatingResponse Create (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null);
+        NPSRatingResponse Create (Request35 request = null);
 
         /// <summary>
         /// # Create a nps rating
@@ -47,14 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NPSRatingResponse</returns>
-        ApiResponse<NPSRatingResponse> CreateWithHttpInfo (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null);
+        ApiResponse<NPSRatingResponse> CreateWithHttpInfo (Request35 request = null);
         /// <summary>
         /// # List nps ratings
         /// </summary>
@@ -64,6 +54,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -71,7 +62,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>NPSRatingResponsePaginated</returns>
-        NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
+        NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
 
         /// <summary>
         /// # List nps ratings
@@ -82,6 +73,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -89,7 +81,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of NPSRatingResponsePaginated</returns>
-        ApiResponse<NPSRatingResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
+        ApiResponse<NPSRatingResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve nps ratings by id
         /// </summary>
@@ -122,14 +114,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NPSRatingResponse</returns>
-        System.Threading.Tasks.Task<NPSRatingResponse> CreateAsync (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null);
+        System.Threading.Tasks.Task<NPSRatingResponse> CreateAsync (Request35 request = null);
 
         /// <summary>
         /// # Create a nps rating
@@ -138,14 +125,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NPSRatingResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NPSRatingResponse>> CreateAsyncWithHttpInfo (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<NPSRatingResponse>> CreateAsyncWithHttpInfo (Request35 request = null);
         /// <summary>
         /// # List nps ratings
         /// </summary>
@@ -155,6 +137,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -162,7 +145,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of NPSRatingResponsePaginated</returns>
-        System.Threading.Tasks.Task<NPSRatingResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
+        System.Threading.Tasks.Task<NPSRatingResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
 
         /// <summary>
         /// # List nps ratings
@@ -173,6 +156,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -180,7 +164,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (NPSRatingResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<NPSRatingResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<NPSRatingResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve nps ratings by id
         /// </summary>
@@ -300,16 +284,11 @@ namespace UserVoiceSdk.Api
         /// # Create a nps rating 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>NPSRatingResponse</returns>
-        public NPSRatingResponse Create (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null)
+        public NPSRatingResponse Create (Request35 request = null)
         {
-             ApiResponse<NPSRatingResponse> localVarResponse = CreateWithHttpInfo(rating, linksUser, prompt, body, date, includes);
+             ApiResponse<NPSRatingResponse> localVarResponse = CreateWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -317,21 +296,10 @@ namespace UserVoiceSdk.Api
         /// # Create a nps rating 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of NPSRatingResponse</returns>
-        public ApiResponse< NPSRatingResponse > CreateWithHttpInfo (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null)
+        public ApiResponse< NPSRatingResponse > CreateWithHttpInfo (Request35 request = null)
         {
-            // verify the required parameter 'rating' is set
-            if (rating == null)
-                throw new ApiException(400, "Missing required parameter 'rating' when calling Nps_ratingsApi->Create");
-            // verify the required parameter 'linksUser' is set
-            if (linksUser == null)
-                throw new ApiException(400, "Missing required parameter 'linksUser' when calling Nps_ratingsApi->Create");
 
             var localVarPath = "/admin/nps_ratings";
             var localVarPathParams = new Dictionary<String, String>();
@@ -343,7 +311,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -357,12 +325,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (rating != null) localVarFormParams.Add("rating", Configuration.ApiClient.ParameterToString(rating)); // form parameter
-            if (prompt != null) localVarFormParams.Add("prompt", Configuration.ApiClient.ParameterToString(prompt)); // form parameter
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (date != null) localVarFormParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // form parameter
-            if (linksUser != null) localVarFormParams.Add("links.user", Configuration.ApiClient.ParameterToString(linksUser)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -387,16 +357,11 @@ namespace UserVoiceSdk.Api
         /// # Create a nps rating 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of NPSRatingResponse</returns>
-        public async System.Threading.Tasks.Task<NPSRatingResponse> CreateAsync (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<NPSRatingResponse> CreateAsync (Request35 request = null)
         {
-             ApiResponse<NPSRatingResponse> localVarResponse = await CreateAsyncWithHttpInfo(rating, linksUser, prompt, body, date, includes);
+             ApiResponse<NPSRatingResponse> localVarResponse = await CreateAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -405,21 +370,10 @@ namespace UserVoiceSdk.Api
         /// # Create a nps rating 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rating"></param>
-        /// <param name="linksUser"></param>
-        /// <param name="prompt"> (optional)</param>
-        /// <param name="body"> (optional)</param>
-        /// <param name="date"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (NPSRatingResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NPSRatingResponse>> CreateAsyncWithHttpInfo (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NPSRatingResponse>> CreateAsyncWithHttpInfo (Request35 request = null)
         {
-            // verify the required parameter 'rating' is set
-            if (rating == null)
-                throw new ApiException(400, "Missing required parameter 'rating' when calling Nps_ratingsApi->Create");
-            // verify the required parameter 'linksUser' is set
-            if (linksUser == null)
-                throw new ApiException(400, "Missing required parameter 'linksUser' when calling Nps_ratingsApi->Create");
 
             var localVarPath = "/admin/nps_ratings";
             var localVarPathParams = new Dictionary<String, String>();
@@ -431,7 +385,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -445,20 +399,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (rating != null) localVarFormParams.Add("rating", Configuration.ApiClient.ParameterToString(rating)); // form parameter
-            if (prompt != null) localVarFormParams.Add("prompt", Configuration.ApiClient.ParameterToString(prompt)); // form parameter
-            if (body != null) localVarFormParams.Add("body", Configuration.ApiClient.ParameterToString(body)); // form parameter
-            if (date != null) localVarFormParams.Add("date", Configuration.ApiClient.ParameterToString(date)); // form parameter
-            if (linksUser != null) localVarFormParams.Add("links.user", Configuration.ApiClient.ParameterToString(linksUser)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -490,6 +446,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -497,9 +454,9 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>NPSRatingResponsePaginated</returns>
-        public NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
+        public NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
         {
-             ApiResponse<NPSRatingResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
+             ApiResponse<NPSRatingResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, periodStart, periodEnd, user, ticket, includes);
              return localVarResponse.Data;
         }
 
@@ -509,6 +466,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -516,7 +474,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of NPSRatingResponsePaginated</returns>
-        public ApiResponse< NPSRatingResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
+        public ApiResponse< NPSRatingResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/nps_ratings";
@@ -529,7 +487,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -545,6 +503,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (periodStart != null) localVarQueryParams.Add("period_start", Configuration.ApiClient.ParameterToString(periodStart)); // query parameter
             if (periodEnd != null) localVarQueryParams.Add("period_end", Configuration.ApiClient.ParameterToString(periodEnd)); // query parameter
@@ -577,6 +536,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -584,9 +544,9 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of NPSRatingResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<NPSRatingResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<NPSRatingResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
         {
-             ApiResponse<NPSRatingResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
+             ApiResponse<NPSRatingResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, periodStart, periodEnd, user, ticket, includes);
              return localVarResponse.Data;
 
         }
@@ -597,6 +557,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="periodStart"> (optional)</param>
         /// <param name="periodEnd"> (optional)</param>
@@ -604,7 +565,7 @@ namespace UserVoiceSdk.Api
         /// <param name="ticket"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (NPSRatingResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<NPSRatingResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<NPSRatingResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/nps_ratings";
@@ -617,7 +578,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -633,6 +594,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (periodStart != null) localVarQueryParams.Add("period_start", Configuration.ApiClient.ParameterToString(periodStart)); // query parameter
             if (periodEnd != null) localVarQueryParams.Add("period_end", Configuration.ApiClient.ParameterToString(periodEnd)); // query parameter
@@ -640,13 +602,13 @@ namespace UserVoiceSdk.Api
             if (ticket != null) localVarQueryParams.Add("ticket", Configuration.ApiClient.ParameterToString(ticket)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -708,7 +670,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -781,7 +743,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -798,13 +760,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

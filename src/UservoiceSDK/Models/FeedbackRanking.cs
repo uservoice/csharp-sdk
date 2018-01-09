@@ -34,16 +34,18 @@ namespace UserVoiceSdk.Models
         /// </summary>
         /// <param name="CountDelta">CountDelta.</param>
         /// <param name="CountLifetime">CountLifetime.</param>
+        /// <param name="CountPercentDelta">CountPercentDelta.</param>
         /// <param name="CountPeriod1">CountPeriod1.</param>
         /// <param name="CountPeriod2">CountPeriod2.</param>
         /// <param name="Links">Links.</param>
         /// <param name="RankDelta">RankDelta.</param>
         /// <param name="RankPeriod1">RankPeriod1.</param>
         /// <param name="RankPeriod2">RankPeriod2.</param>
-        public FeedbackRanking(long? CountDelta = null, long? CountLifetime = null, long? CountPeriod1 = null, long? CountPeriod2 = null, FeedbackRankingLinks Links = null, long? RankDelta = null, long? RankPeriod1 = null, long? RankPeriod2 = null)
+        public FeedbackRanking(long? CountDelta = null, long? CountLifetime = null, decimal? CountPercentDelta = null, long? CountPeriod1 = null, long? CountPeriod2 = null, AdmincommentsLinks Links = null, long? RankDelta = null, long? RankPeriod1 = null, long? RankPeriod2 = null)
         {
             this.CountDelta = CountDelta;
             this.CountLifetime = CountLifetime;
+            this.CountPercentDelta = CountPercentDelta;
             this.CountPeriod1 = CountPeriod1;
             this.CountPeriod2 = CountPeriod2;
             this.Links = Links;
@@ -63,6 +65,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="count_lifetime", EmitDefaultValue=false)]
         public long? CountLifetime { get; set; }
         /// <summary>
+        /// Gets or Sets CountPercentDelta
+        /// </summary>
+        [DataMember(Name="count_percent_delta", EmitDefaultValue=false)]
+        public decimal? CountPercentDelta { get; set; }
+        /// <summary>
         /// Gets or Sets CountPeriod1
         /// </summary>
         [DataMember(Name="count_period1", EmitDefaultValue=false)]
@@ -76,7 +83,7 @@ namespace UserVoiceSdk.Models
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public FeedbackRankingLinks Links { get; set; }
+        public AdmincommentsLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets RankDelta
         /// </summary>
@@ -102,6 +109,7 @@ namespace UserVoiceSdk.Models
             sb.Append("class FeedbackRanking {\n");
             sb.Append("  CountDelta: ").Append(CountDelta).Append("\n");
             sb.Append("  CountLifetime: ").Append(CountLifetime).Append("\n");
+            sb.Append("  CountPercentDelta: ").Append(CountPercentDelta).Append("\n");
             sb.Append("  CountPeriod1: ").Append(CountPeriod1).Append("\n");
             sb.Append("  CountPeriod2: ").Append(CountPeriod2).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
@@ -155,6 +163,11 @@ namespace UserVoiceSdk.Models
                     this.CountLifetime.Equals(other.CountLifetime)
                 ) && 
                 (
+                    this.CountPercentDelta == other.CountPercentDelta ||
+                    this.CountPercentDelta != null &&
+                    this.CountPercentDelta.Equals(other.CountPercentDelta)
+                ) && 
+                (
                     this.CountPeriod1 == other.CountPeriod1 ||
                     this.CountPeriod1 != null &&
                     this.CountPeriod1.Equals(other.CountPeriod1)
@@ -201,6 +214,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.CountDelta.GetHashCode();
                 if (this.CountLifetime != null)
                     hash = hash * 59 + this.CountLifetime.GetHashCode();
+                if (this.CountPercentDelta != null)
+                    hash = hash * 59 + this.CountPercentDelta.GetHashCode();
                 if (this.CountPeriod1 != null)
                     hash = hash * 59 + this.CountPeriod1.GetHashCode();
                 if (this.CountPeriod2 != null)

@@ -76,12 +76,8 @@ namespace UserVoiceSdk.Test
         public void GetOauthTokenTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string grantType = null;
-            //string clientId = null;
-            //string username = null;
-            //string password = null;
-            //string clientSecret = null;
-            //var response = instance.GetOauthToken(grantType, clientId, username, password, clientSecret);
+            //Request55 request = null;
+            //var response = instance.GetOauthToken(request);
             //Assert.IsInstanceOf<Token> (response, "response is Token");
         }
         

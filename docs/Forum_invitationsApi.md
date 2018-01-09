@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> ForumInvitationResponse Create (List<string> email, long? linksForum, string subject = null, string replyTo = null, string message = null, List<string> includes = null)
+> ForumInvitationResponse Create (Request25 request = null)
 
 # Create a forum invitation
 
@@ -47,17 +47,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var email = new List<string>(); // List<string> | 
-            var linksForum = 789;  // long? | 
-            var subject = subject_example;  // string |  (optional) 
-            var replyTo = replyTo_example;  // string |  (optional) 
-            var message = message_example;  // string |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request25(); // Request25 | Payload for this request (optional) 
 
             try
             {
                 // # Create a forum invitation
-                ForumInvitationResponse result = client.Forum_invitations.Create(email, linksForum, subject, replyTo, message, includes);
+                ForumInvitationResponse result = client.Forum_invitations.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -78,12 +73,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**List<string>**](string.md)|  | 
- **linksForum** | **long?**|  | 
- **subject** | **string**|  | [optional] 
- **replyTo** | **string**|  | [optional] 
- **message** | **string**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request25**](request_25.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -91,18 +81,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> ForumInvitationResponse DeleteById (long? id, List<string> includes = null)
+> ForumInvitationResponse DeleteById (long? id, Request26 request = null)
 
 # Delete a forum invitation
 
@@ -140,12 +130,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request26(); // Request26 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a forum invitation
-                ForumInvitationResponse result = client.Forum_invitations.DeleteById(id, includes);
+                ForumInvitationResponse result = client.Forum_invitations.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -167,7 +157,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request26**](request_26.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -175,18 +165,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> ForumInvitationResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, long? forum = null, bool? claimed = null, List<string> includes = null)
+> ForumInvitationResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? forum = null, bool? claimed = null, List<string> includes = null)
 
 # List forum invitations
 
@@ -225,6 +215,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var forum = 789;  // long? |  (optional) 
             var claimed = true;  // bool? |  (optional) 
@@ -233,7 +224,7 @@ namespace Example
             try
             {
                 // # List forum invitations
-                ForumInvitationResponsePaginated result = client.Forum_invitations.Get(page, perPage, sort, forum, claimed, includes);
+                ForumInvitationResponsePaginated result = client.Forum_invitations.Get(page, perPage, pageToken, sort, forum, claimed, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -256,6 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **forum** | **long?**|  | [optional] 
  **claimed** | **bool?**|  | [optional] 
@@ -267,11 +259,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -351,11 +343,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

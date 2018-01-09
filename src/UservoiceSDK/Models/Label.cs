@@ -40,7 +40,7 @@ namespace UserVoiceSdk.Models
         /// <param name="Name">Name.</param>
         /// <param name="OpenSuggestionsCount">OpenSuggestionsCount.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public Label(DateTime? CreatedAt = null, string FullName = null, long? Id = null, long? Level = null, LabelLinks Links = null, string Name = null, long? OpenSuggestionsCount = null, DateTime? UpdatedAt = null)
+        public Label(DateTime? CreatedAt = null, string FullName = null, long? Id = null, long? Level = null, AdminlabelsLinks Links = null, string Name = null, long? OpenSuggestionsCount = null, DateTime? UpdatedAt = null)
         {
             this.CreatedAt = CreatedAt;
             this.FullName = FullName;
@@ -76,7 +76,7 @@ namespace UserVoiceSdk.Models
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public LabelLinks Links { get; set; }
+        public AdminlabelsLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>

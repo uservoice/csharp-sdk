@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **FullName** | **string** |  | [optional] 
 **Id** | **long?** |  | [optional] 
 **Level** | **long?** |  | [optional] 
-**Links** | [**LabelLinks**](LabelLinks.md) |  | [optional] 
+**Links** | [**AdminlabelsLinks**](AdminlabelsLinks.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
 **OpenSuggestionsCount** | **long?** |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 

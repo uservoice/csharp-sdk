@@ -76,11 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string name = null;
-            //string description = null;
-            //string customFields = null;
-            //List<string> includes = null;
-            //var response = instance.Create(name, description, customFields, includes);
+            //Request18 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<FeatureResponse> (response, "response is FeatureResponse");
         }
         
@@ -92,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request20 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<FeatureResponse> (response, "response is FeatureResponse");
         }
         
@@ -106,12 +103,13 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> user = null;
             //List<int?> account = null;
             //List<int?> suggestion = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, user, account, suggestion, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, user, account, suggestion, includes);
             //Assert.IsInstanceOf<FeatureResponsePaginated> (response, "response is FeatureResponsePaginated");
         }
         
@@ -136,11 +134,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string name = null;
-            //string description = null;
-            //string customFields = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, name, description, customFields, includes);
+            //Request19 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<FeatureResponse> (response, "response is FeatureResponse");
         }
         

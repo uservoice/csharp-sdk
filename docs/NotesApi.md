@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> NoteResponse Create (string body, long? linksSuggestion, string bodyMimeType = null, string attachmentTokens = null, List<string> includes = null)
+> NoteResponse Create (Request33 request = null)
 
 # Create a note
 
@@ -47,16 +47,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var body = body_example;  // string | 
-            var linksSuggestion = 789;  // long? | 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional)  (default to text/plain)
-            var attachmentTokens = attachmentTokens_example;  // string |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request33(); // Request33 | Payload for this request (optional) 
 
             try
             {
                 // # Create a note
-                NoteResponse result = client.Notes.Create(body, linksSuggestion, bodyMimeType, attachmentTokens, includes);
+                NoteResponse result = client.Notes.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -77,11 +73,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**|  | 
- **linksSuggestion** | **long?**|  | 
- **bodyMimeType** | **string**|  | [optional] [default to text/plain]
- **attachmentTokens** | **string**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request33**](request_33.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -89,18 +81,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> NoteResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, long? suggestion = null, List<string> includes = null)
+> NoteResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, long? suggestion = null, List<string> includes = null)
 
 # List notes
 
@@ -139,6 +131,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var suggestion = 789;  // long? |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -146,7 +139,7 @@ namespace Example
             try
             {
                 // # List notes
-                NoteResponsePaginated result = client.Notes.Get(page, perPage, sort, suggestion, includes);
+                NoteResponsePaginated result = client.Notes.Get(page, perPage, pageToken, sort, suggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -169,6 +162,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **suggestion** | **long?**|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
@@ -179,11 +173,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -263,18 +257,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> NoteResponse UpdateById (long? id, string body, List<string> includes = null)
+> NoteResponse UpdateById (long? id, Request34 request = null)
 
 # Update a note
 
@@ -312,13 +306,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var body = body_example;  // string | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request34(); // Request34 | Payload for this request (optional) 
 
             try
             {
                 // # Update a note
-                NoteResponse result = client.Notes.UpdateById(id, body, includes);
+                NoteResponse result = client.Notes.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -340,8 +333,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **body** | **string**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request34**](request_34.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -349,11 +341,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

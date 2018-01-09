@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> FeatureResponse Create (string name, string description = null, string customFields = null, List<string> includes = null)
+> FeatureResponse Create (Request18 request = null)
 
 # Create a feature
 
@@ -48,15 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var name = name_example;  // string | 
-            var description = description_example;  // string |  (optional) 
-            var customFields = customFields_example;  // string |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request18(); // Request18 | Payload for this request (optional) 
 
             try
             {
                 // # Create a feature
-                FeatureResponse result = client.Features.Create(name, description, customFields, includes);
+                FeatureResponse result = client.Features.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -77,10 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**|  | 
- **description** | **string**|  | [optional] 
- **customFields** | **string**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request18**](request_18.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -88,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> FeatureResponse DeleteById (long? id, List<string> includes = null)
+> FeatureResponse DeleteById (long? id, Request20 request = null)
 
 # Delete a feature
 
@@ -137,12 +131,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request20(); // Request20 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a feature
-                FeatureResponse result = client.Features.DeleteById(id, includes);
+                FeatureResponse result = client.Features.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -164,7 +158,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request20**](request_20.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -172,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> FeatureResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> user = null, List<int?> account = null, List<int?> suggestion = null, List<string> includes = null)
+> FeatureResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> user = null, List<int?> account = null, List<int?> suggestion = null, List<string> includes = null)
 
 # List features
 
@@ -222,6 +216,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var user = new List<int?>(); // List<int?> |  (optional) 
             var account = new List<int?>(); // List<int?> |  (optional) 
@@ -231,7 +226,7 @@ namespace Example
             try
             {
                 // # List features
-                FeatureResponsePaginated result = client.Features.Get(page, perPage, sort, user, account, suggestion, includes);
+                FeatureResponsePaginated result = client.Features.Get(page, perPage, pageToken, sort, user, account, suggestion, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -254,6 +249,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **user** | [**List<int?>**](int?.md)|  | [optional] 
  **account** | [**List<int?>**](int?.md)|  | [optional] 
@@ -266,11 +262,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -350,18 +346,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> FeatureResponse UpdateById (long? id, string name = null, string description = null, string customFields = null, List<string> includes = null)
+> FeatureResponse UpdateById (long? id, Request19 request = null)
 
 # Update a feature
 
@@ -399,15 +395,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var name = name_example;  // string |  (optional) 
-            var description = description_example;  // string |  (optional) 
-            var customFields = customFields_example;  // string |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request19(); // Request19 | Payload for this request (optional) 
 
             try
             {
                 // # Update a feature
-                FeatureResponse result = client.Features.UpdateById(id, name, description, customFields, includes);
+                FeatureResponse result = client.Features.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -429,10 +422,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **name** | **string**|  | [optional] 
- **description** | **string**|  | [optional] 
- **customFields** | **string**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request19**](request_19.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -440,11 +430,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

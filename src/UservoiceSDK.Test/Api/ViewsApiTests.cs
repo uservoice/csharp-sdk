@@ -76,17 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string kind = null;
-            //string name = null;
-            //string subKind = null;
-            //string _params = null;
-            //bool? subscribed = null;
-            //string subscriptionParams = null;
-            //long? linksSuggestion = null;
-            //long? linksSmartvoteExperiment = null;
-            //long? linksUser = null;
-            //List<string> includes = null;
-            //var response = instance.Create(kind, name, subKind, _params, subscribed, subscriptionParams, linksSuggestion, linksSmartvoteExperiment, linksUser, includes);
+            //Request52 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<ViewResponse> (response, "response is ViewResponse");
         }
         
@@ -98,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request54 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<ViewResponse> (response, "response is ViewResponse");
         }
         
@@ -113,10 +104,11 @@ namespace UserVoiceSdk.Test
             //long? user = null;
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //List<string> kind = null;
             //string sort = null;
             //List<string> includes = null;
-            //var response = instance.Get(user, page, perPage, kind, sort, includes);
+            //var response = instance.Get(user, page, perPage, pageToken, kind, sort, includes);
             //Assert.IsInstanceOf<ViewResponsePaginated> (response, "response is ViewResponsePaginated");
         }
         
@@ -141,13 +133,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string name = null;
-            //bool? subscribed = null;
-            //string subscriptionParams = null;
-            //string _params = null;
-            //long? position = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, name, subscribed, subscriptionParams, _params, position, includes);
+            //Request53 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<ViewResponse> (response, "response is ViewResponse");
         }
         

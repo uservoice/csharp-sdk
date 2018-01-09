@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="blockbyid"></a>
 # **BlockById**
-> UserResponse BlockById (long? id, List<string> includes = null)
+> UserResponse BlockById (long? id, Request50 request = null)
 
 
 
@@ -50,12 +50,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request50(); // Request50 | Payload for this request (optional) 
 
             try
             {
                 // 
-                UserResponse result = client.Users.BlockById(id, includes);
+                UserResponse result = client.Users.BlockById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -77,7 +77,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request50**](request_50.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -85,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -167,18 +167,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="findorcreate"></a>
 # **FindOrCreate**
-> UserResponse FindOrCreate (string name = null, string email = null, List<string> includes = null)
+> UserResponse FindOrCreate (Request49 request = null)
 
 # Create an user
 
@@ -215,14 +215,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var name = name_example;  // string |  (optional) 
-            var email = email_example;  // string |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request49(); // Request49 | Payload for this request (optional) 
 
             try
             {
                 // # Create an user
-                UserResponse result = client.Users.FindOrCreate(name, email, includes);
+                UserResponse result = client.Users.FindOrCreate(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -243,9 +241,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**|  | [optional] 
- **email** | **string**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request49**](request_49.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -253,18 +249,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> UserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, string q = null, List<string> emailAddress = null, List<string> allowedState = null, bool? internalUser = null, List<int?> team = null, List<int?> externalAccount = null, List<int?> suggestion = null, List<int?> feature = null, List<string> includes = null)
+> UserResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, string q = null, string expression = null, List<string> emailAddress = null, List<string> allowedState = null, bool? internalUser = null, List<int?> team = null, List<int?> externalAccount = null, List<int?> suggestion = null, List<int?> feature = null, List<string> includes = null)
 
 # List users
 
@@ -303,8 +299,10 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var sort = sort_example;  // string |  (optional)  (default to -id)
+            var pageToken = pageToken_example;  // string |  (optional) 
+            var sort = sort_example;  // string | Specify custom field sorting by object and key, e.g. 'external_users.cf_persona'. Text custom fields cannot be sorted. (optional)  (default to -id)
             var q = q_example;  // string |  (optional) 
+            var expression = expression_example;  // string |  (optional) 
             var emailAddress = new List<string>(); // List<string> |  (optional) 
             var allowedState = new List<string>(); // List<string> |  (optional) 
             var internalUser = true;  // bool? |  (optional) 
@@ -317,7 +315,7 @@ namespace Example
             try
             {
                 // # List users
-                UserResponsePaginated result = client.Users.Get(page, perPage, sort, q, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
+                UserResponsePaginated result = client.Users.Get(page, perPage, pageToken, sort, q, expression, emailAddress, allowedState, internalUser, team, externalAccount, suggestion, feature, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -340,8 +338,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **sort** | **string**|  | [optional] [default to -id]
+ **pageToken** | **string**|  | [optional] 
+ **sort** | **string**| Specify custom field sorting by object and key, e.g. &#39;external_users.cf_persona&#39;. Text custom fields cannot be sorted. | [optional] [default to -id]
  **q** | **string**|  | [optional] 
+ **expression** | **string**|  | [optional] 
  **emailAddress** | [**List<string>**](string.md)|  | [optional] 
  **allowedState** | [**List<string>**](string.md)|  | [optional] 
  **internalUser** | **bool?**|  | [optional] 
@@ -357,11 +357,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -441,18 +441,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="unblockbyid"></a>
 # **UnblockById**
-> UserResponse UnblockById (long? id, List<string> includes = null)
+> UserResponse UnblockById (long? id, Request51 request = null)
 
 
 
@@ -490,12 +490,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request51(); // Request51 | Payload for this request (optional) 
 
             try
             {
                 // 
-                UserResponse result = client.Users.UnblockById(id, includes);
+                UserResponse result = client.Users.UnblockById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -517,7 +517,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request51**](request_51.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -525,11 +525,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

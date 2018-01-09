@@ -76,10 +76,8 @@ namespace UserVoiceSdk.Test
         public void AttachTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? linksLabel = null;
-            //long? linksSuggestion = null;
-            //List<string> includes = null;
-            //var response = instance.Attach(linksLabel, linksSuggestion, includes);
+            //Request28 request = null;
+            //var response = instance.Attach(request);
             //Assert.IsInstanceOf<LabelResponse> (response, "response is LabelResponse");
         }
         
@@ -90,10 +88,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string name = null;
-            //long? linksParent = null;
-            //List<string> includes = null;
-            //var response = instance.Create(name, linksParent, includes);
+            //Request27 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<LabelResponse> (response, "response is LabelResponse");
         }
         
@@ -105,8 +101,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request31 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<LabelResponse> (response, "response is LabelResponse");
         }
         
@@ -117,10 +113,8 @@ namespace UserVoiceSdk.Test
         public void DetachTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? linksLabel = null;
-            //long? linksSuggestion = null;
-            //List<string> includes = null;
-            //var response = instance.Detach(linksLabel, linksSuggestion, includes);
+            //Request29 request = null;
+            //var response = instance.Detach(request);
             //Assert.IsInstanceOf<LabelResponse> (response, "response is LabelResponse");
         }
         
@@ -133,9 +127,10 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, includes);
             //Assert.IsInstanceOf<LabelResponsePaginated> (response, "response is LabelResponsePaginated");
         }
         
@@ -160,10 +155,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string name = null;
-            //long? linksParent = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, name, linksParent, includes);
+            //Request30 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<LabelResponse> (response, "response is LabelResponse");
         }
         

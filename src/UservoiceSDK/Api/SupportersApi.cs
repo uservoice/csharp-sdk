@@ -33,6 +33,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -43,7 +44,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>SupporterResponsePaginated</returns>
-        SupporterResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
+        SupporterResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
 
         /// <summary>
         /// # List supporters
@@ -54,6 +55,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -64,7 +66,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of SupporterResponsePaginated</returns>
-        ApiResponse<SupporterResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
+        ApiResponse<SupporterResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve supporters by id
         /// </summary>
@@ -99,6 +101,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -109,7 +112,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of SupporterResponsePaginated</returns>
-        System.Threading.Tasks.Task<SupporterResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
+        System.Threading.Tasks.Task<SupporterResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
 
         /// <summary>
         /// # List supporters
@@ -120,6 +123,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -130,7 +134,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (SupporterResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SupporterResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<SupporterResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve supporters by id
         /// </summary>
@@ -252,6 +256,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -262,9 +267,9 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>SupporterResponsePaginated</returns>
-        public SupporterResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
+        public SupporterResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
         {
-             ApiResponse<SupporterResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
+             ApiResponse<SupporterResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
              return localVarResponse.Data;
         }
 
@@ -274,6 +279,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -284,7 +290,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of SupporterResponsePaginated</returns>
-        public ApiResponse< SupporterResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
+        public ApiResponse< SupporterResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/supporters";
@@ -297,7 +303,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -313,6 +319,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
@@ -348,6 +355,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -358,9 +366,9 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of SupporterResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<SupporterResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<SupporterResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
         {
-             ApiResponse<SupporterResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
+             ApiResponse<SupporterResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
              return localVarResponse.Data;
 
         }
@@ -371,6 +379,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="suggestion"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -381,7 +390,7 @@ namespace UserVoiceSdk.Api
         /// <param name="anonymous"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (SupporterResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SupporterResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SupporterResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> user = null, bool? legit = null, List<int?> forum = null, DateTime? periodStart = null, DateTime? periodEnd = null, bool? anonymous = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/supporters";
@@ -394,7 +403,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -410,6 +419,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (suggestion != null) localVarQueryParams.Add("suggestion", Configuration.ApiClient.ParameterToString(suggestion)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
@@ -420,13 +430,13 @@ namespace UserVoiceSdk.Api
             if (anonymous != null) localVarQueryParams.Add("anonymous", Configuration.ApiClient.ParameterToString(anonymous)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -488,7 +498,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -561,7 +571,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -578,13 +588,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

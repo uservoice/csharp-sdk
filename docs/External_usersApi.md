@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="bulkdelete"></a>
 # **BulkDelete**
-> ExternalUserResponse BulkDelete (List<int?> ids)
+> ExternalUserResponse BulkDelete (Request15 request = null)
 
 # Bulk delete external users by ID
 
@@ -48,12 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var ids = new List<int?>(); // List<int?> | 
+            var request = new Request15(); // Request15 | Payload for this request (optional) 
 
             try
             {
                 // # Bulk delete external users by ID
-                ExternalUserResponse result = client.External_users.BulkDelete(ids);
+                ExternalUserResponse result = client.External_users.BulkDelete(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -74,7 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**List<int?>**](int?.md)|  | 
+ **request** | [**Request15**](request_15.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -82,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="bulkdeletebyexternalid"></a>
 # **BulkDeleteByExternalId**
-> ExternalUserResponse BulkDeleteByExternalId (List<string> externalIds)
+> ExternalUserResponse BulkDeleteByExternalId (Request16 request = null)
 
 # Bulk delete external users by external ID
 
@@ -130,12 +130,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var externalIds = new List<string>(); // List<string> | 
+            var request = new Request16(); // Request16 | Payload for this request (optional) 
 
             try
             {
                 // # Bulk delete external users by external ID
-                ExternalUserResponse result = client.External_users.BulkDeleteByExternalId(externalIds);
+                ExternalUserResponse result = client.External_users.BulkDeleteByExternalId(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -156,7 +156,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalIds** | [**List<string>**](string.md)|  | 
+ **request** | [**Request16**](request_16.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -164,18 +164,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
+> ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
 
 # List external users
 
@@ -214,6 +214,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var externalId = new List<string>(); // List<string> |  (optional) 
             var user = new List<int?>(); // List<int?> |  (optional) 
@@ -222,7 +223,7 @@ namespace Example
             try
             {
                 // # List external users
-                ExternalUserResponsePaginated result = client.External_users.Get(page, perPage, sort, externalId, user, includes);
+                ExternalUserResponsePaginated result = client.External_users.Get(page, perPage, pageToken, sort, externalId, user, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -245,6 +246,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **externalId** | [**List<string>**](string.md)|  | [optional] 
  **user** | [**List<int?>**](int?.md)|  | [optional] 
@@ -256,11 +258,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -340,18 +342,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="import"></a>
 # **Import**
-> ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+> ExternalUserResponse Import (Request17 request = null)
 
 # Import external users
 
@@ -388,27 +390,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var users = new List<string>(); // List<string> | Each element with index i has these fields:
-            var usersIExternalId = usersIExternalId_example;  // string | User ID in your system. Recommended length: 128 or fewer characters.
-            var usersIEmail = usersIEmail_example;  // string | Primary way we link the external user to the user's UV profile. Recommended length: 128 or fewer characters.
-            var usersIAccountExternalId = usersIAccountExternalId_example;  // string | Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.
-            var usersIUserId = 789;  // long? | User's ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional) 
-            var usersIName = usersIName_example;  // string | Name of the user. Recommended length: 128 or fewer characters. (optional) 
-            var usersIExternalCreatedAt = 2013-10-20;  // DateTime? | Date user was created in your system. (optional) 
-            var usersIIp = usersIIp_example;  // string | Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional) 
-            var usersIType = usersIType_example;  // string | Type for the user, e.g. 'admin' or 'owner'. Recommended length: 128 or fewer characters. (optional) 
-            var usersICustomFields = usersICustomFields_example;  // string |  (optional) 
-            var usersIAccountName = usersIAccountName_example;  // string | Name of the account. Recommended length: 128 or fewer characters. (optional) 
-            var usersIAccountPlan = usersIAccountPlan_example;  // string | Plan name of account. Recommended length: 128 or fewer characters. (optional) 
-            var usersIAccountMrrCents = 789;  // long? |  (optional) 
-            var usersIAccountLtvCents = 789;  // long? |  (optional) 
-            var usersIAccountExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
-            var usersIAccountCustomFields = usersIAccountCustomFields_example;  // string |  (optional) 
+            var request = new Request17(); // Request17 | Payload for this request (optional) 
 
             try
             {
                 // # Import external users
-                ExternalUserResponse result = client.External_users.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+                ExternalUserResponse result = client.External_users.Import(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -429,22 +416,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **users** | [**List<string>**](string.md)| Each element with index i has these fields: | 
- **usersIExternalId** | **string**| User ID in your system. Recommended length: 128 or fewer characters. | 
- **usersIEmail** | **string**| Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters. | 
- **usersIAccountExternalId** | **string**| Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters. | 
- **usersIUserId** | **long?**| User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. | [optional] 
- **usersIName** | **string**| Name of the user. Recommended length: 128 or fewer characters. | [optional] 
- **usersIExternalCreatedAt** | **DateTime?**| Date user was created in your system. | [optional] 
- **usersIIp** | **string**| Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. | [optional] 
- **usersIType** | **string**| Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. | [optional] 
- **usersICustomFields** | **string**|  | [optional] 
- **usersIAccountName** | **string**| Name of the account. Recommended length: 128 or fewer characters. | [optional] 
- **usersIAccountPlan** | **string**| Plan name of account. Recommended length: 128 or fewer characters. | [optional] 
- **usersIAccountMrrCents** | **long?**|  | [optional] 
- **usersIAccountLtvCents** | **long?**|  | [optional] 
- **usersIAccountExternalCreatedAt** | **DateTime?**|  | [optional] 
- **usersIAccountCustomFields** | **string**|  | [optional] 
+ **request** | [**Request17**](request_17.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -452,11 +424,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

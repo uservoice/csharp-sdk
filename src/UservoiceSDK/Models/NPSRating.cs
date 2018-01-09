@@ -41,8 +41,9 @@ namespace UserVoiceSdk.Models
         /// <param name="Prompt">Prompt.</param>
         /// <param name="Rating">Rating.</param>
         /// <param name="RatingDelta">RatingDelta.</param>
+        /// <param name="Traits">Traits.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public NPSRating(string Body = null, DateTime? CreatedAt = null, string Group = null, long? Id = null, NPSRatingLinks Links = null, long? PreviousRating = null, string Prompt = null, long? Rating = null, long? RatingDelta = null, DateTime? UpdatedAt = null)
+        public NPSRating(string Body = null, DateTime? CreatedAt = null, string Group = null, long? Id = null, NPSRatingLinks Links = null, long? PreviousRating = null, string Prompt = null, long? Rating = null, long? RatingDelta = null, NPSTraits Traits = null, DateTime? UpdatedAt = null)
         {
             this.Body = Body;
             this.CreatedAt = CreatedAt;
@@ -53,6 +54,7 @@ namespace UserVoiceSdk.Models
             this.Prompt = Prompt;
             this.Rating = Rating;
             this.RatingDelta = RatingDelta;
+            this.Traits = Traits;
             this.UpdatedAt = UpdatedAt;
         }
         
@@ -102,6 +104,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="rating_delta", EmitDefaultValue=false)]
         public long? RatingDelta { get; set; }
         /// <summary>
+        /// Gets or Sets Traits
+        /// </summary>
+        [DataMember(Name="traits", EmitDefaultValue=false)]
+        public NPSTraits Traits { get; set; }
+        /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
@@ -123,6 +130,7 @@ namespace UserVoiceSdk.Models
             sb.Append("  Prompt: ").Append(Prompt).Append("\n");
             sb.Append("  Rating: ").Append(Rating).Append("\n");
             sb.Append("  RatingDelta: ").Append(RatingDelta).Append("\n");
+            sb.Append("  Traits: ").Append(Traits).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -206,6 +214,11 @@ namespace UserVoiceSdk.Models
                     this.RatingDelta.Equals(other.RatingDelta)
                 ) && 
                 (
+                    this.Traits == other.Traits ||
+                    this.Traits != null &&
+                    this.Traits.Equals(other.Traits)
+                ) && 
+                (
                     this.UpdatedAt == other.UpdatedAt ||
                     this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(other.UpdatedAt)
@@ -241,6 +254,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.Rating.GetHashCode();
                 if (this.RatingDelta != null)
                     hash = hash * 59 + this.RatingDelta.GetHashCode();
+                if (this.Traits != null)
+                    hash = hash * 59 + this.Traits.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 return hash;

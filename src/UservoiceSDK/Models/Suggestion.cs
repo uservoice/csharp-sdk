@@ -60,9 +60,10 @@ namespace UserVoiceSdk.Models
         /// <param name="SupportersCount">SupportersCount.</param>
         /// <param name="SupportingAccountsCount">SupportingAccountsCount.</param>
         /// <param name="Title">Title.</param>
+        /// <param name="Unmergeable">Unmergeable.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
         /// <param name="VotesCount">VotesCount.</param>
-        public Suggestion(string AdminUrl = null, DateTime? ApprovedAt = null, string Body = null, string BodyMimeType = null, DateTime? ClosedAt = null, long? CommentsCount = null, DateTime? CreatedAt = null, string CreatorBrowser = null, string CreatorBrowserVersion = null, bool? CreatorMobile = null, string CreatorOs = null, string CreatorReferrer = null, string CreatorUserAgent = null, DateTime? FirstSupportAt = null, long? Id = null, long? InappropriateFlagsCount = null, SuggestionLinks Links = null, long? NotesCount = null, string PortalUrl = null, long? RecentEngagement = null, long? RequestsCount = null, long? SatisfactionDetractorCount = null, long? SatisfactionNeutralCount = null, long? SatisfactionPromoterCount = null, string State = null, long? SupportersCount = null, long? SupportingAccountsCount = null, string Title = null, DateTime? UpdatedAt = null, long? VotesCount = null)
+        public Suggestion(string AdminUrl = null, DateTime? ApprovedAt = null, string Body = null, string BodyMimeType = null, DateTime? ClosedAt = null, long? CommentsCount = null, DateTime? CreatedAt = null, string CreatorBrowser = null, string CreatorBrowserVersion = null, bool? CreatorMobile = null, string CreatorOs = null, string CreatorReferrer = null, string CreatorUserAgent = null, DateTime? FirstSupportAt = null, long? Id = null, long? InappropriateFlagsCount = null, SuggestionLinks Links = null, long? NotesCount = null, string PortalUrl = null, long? RecentEngagement = null, long? RequestsCount = null, long? SatisfactionDetractorCount = null, long? SatisfactionNeutralCount = null, long? SatisfactionPromoterCount = null, string State = null, long? SupportersCount = null, long? SupportingAccountsCount = null, string Title = null, bool? Unmergeable = null, DateTime? UpdatedAt = null, long? VotesCount = null)
         {
             this.AdminUrl = AdminUrl;
             this.ApprovedAt = ApprovedAt;
@@ -92,6 +93,7 @@ namespace UserVoiceSdk.Models
             this.SupportersCount = SupportersCount;
             this.SupportingAccountsCount = SupportingAccountsCount;
             this.Title = Title;
+            this.Unmergeable = Unmergeable;
             this.UpdatedAt = UpdatedAt;
             this.VotesCount = VotesCount;
         }
@@ -237,6 +239,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
         /// <summary>
+        /// Gets or Sets Unmergeable
+        /// </summary>
+        [DataMember(Name="unmergeable", EmitDefaultValue=false)]
+        public bool? Unmergeable { get; set; }
+        /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
         [DataMember(Name="updated_at", EmitDefaultValue=false)]
@@ -282,6 +289,7 @@ namespace UserVoiceSdk.Models
             sb.Append("  SupportersCount: ").Append(SupportersCount).Append("\n");
             sb.Append("  SupportingAccountsCount: ").Append(SupportingAccountsCount).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Unmergeable: ").Append(Unmergeable).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  VotesCount: ").Append(VotesCount).Append("\n");
             sb.Append("}\n");
@@ -461,6 +469,11 @@ namespace UserVoiceSdk.Models
                     this.Title.Equals(other.Title)
                 ) && 
                 (
+                    this.Unmergeable == other.Unmergeable ||
+                    this.Unmergeable != null &&
+                    this.Unmergeable.Equals(other.Unmergeable)
+                ) && 
+                (
                     this.UpdatedAt == other.UpdatedAt ||
                     this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(other.UpdatedAt)
@@ -539,6 +552,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.SupportingAccountsCount.GetHashCode();
                 if (this.Title != null)
                     hash = hash * 59 + this.Title.GetHashCode();
+                if (this.Unmergeable != null)
+                    hash = hash * 59 + this.Unmergeable.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 if (this.VotesCount != null)

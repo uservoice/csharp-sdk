@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> AttachmentResponse Create (System.IO.Stream file, List<string> includes = null)
+> AttachmentResponse Create (Request request = null)
 
 
 
@@ -47,13 +47,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var file = new System.IO.Stream(); // System.IO.Stream | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request(); // Request | Payload for this request (optional) 
 
             try
             {
                 // 
-                AttachmentResponse result = client.Attachments.Create(file, includes);
+                AttachmentResponse result = client.Attachments.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -74,8 +73,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **System.IO.Stream**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request**](request.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -83,18 +81,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> AttachmentResponse DeleteById (long? id, List<string> includes = null)
+> AttachmentResponse DeleteById (long? id, Request1 request = null)
 
 # Delete an attachment
 
@@ -132,12 +130,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request1(); // Request1 | Payload for this request (optional) 
 
             try
             {
                 // # Delete an attachment
-                AttachmentResponse result = client.Attachments.DeleteById(id, includes);
+                AttachmentResponse result = client.Attachments.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -159,7 +157,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request1**](request_1.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -167,18 +165,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> AttachmentResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> suggestion = null, List<int?> note = null, List<string> includes = null)
+> AttachmentResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> suggestion = null, List<int?> note = null, List<string> includes = null)
 
 # List attachments
 
@@ -217,6 +215,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var suggestion = new List<int?>(); // List<int?> |  (optional) 
             var note = new List<int?>(); // List<int?> |  (optional) 
@@ -225,7 +224,7 @@ namespace Example
             try
             {
                 // # List attachments
-                AttachmentResponsePaginated result = client.Attachments.Get(page, perPage, sort, suggestion, note, includes);
+                AttachmentResponsePaginated result = client.Attachments.Get(page, perPage, pageToken, sort, suggestion, note, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -248,6 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **suggestion** | [**List<int?>**](int?.md)|  | [optional] 
  **note** | [**List<int?>**](int?.md)|  | [optional] 
@@ -259,11 +259,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -343,11 +343,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

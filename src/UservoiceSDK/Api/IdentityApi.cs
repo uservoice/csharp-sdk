@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using UserVoiceSdk.Client;
+using UserVoiceSdk.Models;
 
 namespace UserVoiceSdk.Api
 {
@@ -30,20 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns></returns>
-        void BulkIdentify (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null);
+        void BulkIdentify (Request2 request = null);
 
         /// <summary>
         /// # Add or update traits for a batch of users.
@@ -52,20 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> BulkIdentifyWithHttpInfo (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null);
+        ApiResponse<Object> BulkIdentifyWithHttpInfo (Request2 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -75,20 +54,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task BulkIdentifyAsync (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null);
+        System.Threading.Tasks.Task BulkIdentifyAsync (Request2 request = null);
 
         /// <summary>
         /// # Add or update traits for a batch of users.
@@ -97,20 +65,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> BulkIdentifyAsyncWithHttpInfo (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> BulkIdentifyAsyncWithHttpInfo (Request2 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -207,46 +164,21 @@ namespace UserVoiceSdk.Api
         /// # Add or update traits for a batch of users. 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns></returns>
-        public void BulkIdentify (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null)
+        public void BulkIdentify (Request2 request = null)
         {
-             BulkIdentifyWithHttpInfo(identities, identitiesIId, identitiesIEmail, identitiesIName, identitiesICreatedAt, identitiesIType, identitiesIAccountId, identitiesIAccountName, identitiesIAccountCreatedAt, identitiesIAccountMonthlyRate, identitiesIAccountLtv, identitiesIAccountPlan);
+             BulkIdentifyWithHttpInfo(request);
         }
 
         /// <summary>
         /// # Add or update traits for a batch of users. 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> BulkIdentifyWithHttpInfo (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null)
+        public ApiResponse<Object> BulkIdentifyWithHttpInfo (Request2 request = null)
         {
-            // verify the required parameter 'identities' is set
-            if (identities == null)
-                throw new ApiException(400, "Missing required parameter 'identities' when calling IdentityApi->BulkIdentify");
 
             var localVarPath = "/admin/bulk_identify";
             var localVarPathParams = new Dictionary<String, String>();
@@ -258,7 +190,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -272,18 +204,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (identities != null) localVarFormParams.Add("identities", Configuration.ApiClient.ParameterToString(identities)); // form parameter
-            if (identitiesIId != null) localVarFormParams.Add("identities[i].id", Configuration.ApiClient.ParameterToString(identitiesIId)); // form parameter
-            if (identitiesIEmail != null) localVarFormParams.Add("identities[i].email", Configuration.ApiClient.ParameterToString(identitiesIEmail)); // form parameter
-            if (identitiesIName != null) localVarFormParams.Add("identities[i].name", Configuration.ApiClient.ParameterToString(identitiesIName)); // form parameter
-            if (identitiesICreatedAt != null) localVarFormParams.Add("identities[i].created_at", Configuration.ApiClient.ParameterToString(identitiesICreatedAt)); // form parameter
-            if (identitiesIType != null) localVarFormParams.Add("identities[i].type", Configuration.ApiClient.ParameterToString(identitiesIType)); // form parameter
-            if (identitiesIAccountId != null) localVarFormParams.Add("identities[i].account.id", Configuration.ApiClient.ParameterToString(identitiesIAccountId)); // form parameter
-            if (identitiesIAccountName != null) localVarFormParams.Add("identities[i].account.name", Configuration.ApiClient.ParameterToString(identitiesIAccountName)); // form parameter
-            if (identitiesIAccountCreatedAt != null) localVarFormParams.Add("identities[i].account.created_at", Configuration.ApiClient.ParameterToString(identitiesIAccountCreatedAt)); // form parameter
-            if (identitiesIAccountMonthlyRate != null) localVarFormParams.Add("identities[i].account.monthly_rate", Configuration.ApiClient.ParameterToString(identitiesIAccountMonthlyRate)); // form parameter
-            if (identitiesIAccountLtv != null) localVarFormParams.Add("identities[i].account.ltv", Configuration.ApiClient.ParameterToString(identitiesIAccountLtv)); // form parameter
-            if (identitiesIAccountPlan != null) localVarFormParams.Add("identities[i].account.plan", Configuration.ApiClient.ParameterToString(identitiesIAccountPlan)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -308,22 +236,11 @@ namespace UserVoiceSdk.Api
         /// # Add or update traits for a batch of users. 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task BulkIdentifyAsync (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null)
+        public async System.Threading.Tasks.Task BulkIdentifyAsync (Request2 request = null)
         {
-             await BulkIdentifyAsyncWithHttpInfo(identities, identitiesIId, identitiesIEmail, identitiesIName, identitiesICreatedAt, identitiesIType, identitiesIAccountId, identitiesIAccountName, identitiesIAccountCreatedAt, identitiesIAccountMonthlyRate, identitiesIAccountLtv, identitiesIAccountPlan);
+             await BulkIdentifyAsyncWithHttpInfo(request);
 
         }
 
@@ -331,24 +248,10 @@ namespace UserVoiceSdk.Api
         /// # Add or update traits for a batch of users. 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="identities">Each element with index i has these fields:</param>
-        /// <param name="identitiesIId">external identifier for this user (optional)</param>
-        /// <param name="identitiesIEmail">required to match a user in the UserVoice database (optional)</param>
-        /// <param name="identitiesIName">user’s real name (optional)</param>
-        /// <param name="identitiesICreatedAt">unix timestamp for the date the user signed up (optional)</param>
-        /// <param name="identitiesIType">used for segmenting users by type (optional)</param>
-        /// <param name="identitiesIAccountId">external identifier for this user’s account (optional)</param>
-        /// <param name="identitiesIAccountName">account name (optional)</param>
-        /// <param name="identitiesIAccountCreatedAt">unix timestamp for the date the account was created (optional)</param>
-        /// <param name="identitiesIAccountMonthlyRate">decimal; monthly rate of the account (optional)</param>
-        /// <param name="identitiesIAccountLtv">decimal; lifetime value of the account (optional)</param>
-        /// <param name="identitiesIAccountPlan">plan name for the account (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> BulkIdentifyAsyncWithHttpInfo (List<string> identities, string identitiesIId = null, string identitiesIEmail = null, string identitiesIName = null, long? identitiesICreatedAt = null, string identitiesIType = null, string identitiesIAccountId = null, string identitiesIAccountName = null, long? identitiesIAccountCreatedAt = null, double? identitiesIAccountMonthlyRate = null, double? identitiesIAccountLtv = null, string identitiesIAccountPlan = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BulkIdentifyAsyncWithHttpInfo (Request2 request = null)
         {
-            // verify the required parameter 'identities' is set
-            if (identities == null)
-                throw new ApiException(400, "Missing required parameter 'identities' when calling IdentityApi->BulkIdentify");
 
             var localVarPath = "/admin/bulk_identify";
             var localVarPathParams = new Dictionary<String, String>();
@@ -360,7 +263,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -374,26 +277,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (identities != null) localVarFormParams.Add("identities", Configuration.ApiClient.ParameterToString(identities)); // form parameter
-            if (identitiesIId != null) localVarFormParams.Add("identities[i].id", Configuration.ApiClient.ParameterToString(identitiesIId)); // form parameter
-            if (identitiesIEmail != null) localVarFormParams.Add("identities[i].email", Configuration.ApiClient.ParameterToString(identitiesIEmail)); // form parameter
-            if (identitiesIName != null) localVarFormParams.Add("identities[i].name", Configuration.ApiClient.ParameterToString(identitiesIName)); // form parameter
-            if (identitiesICreatedAt != null) localVarFormParams.Add("identities[i].created_at", Configuration.ApiClient.ParameterToString(identitiesICreatedAt)); // form parameter
-            if (identitiesIType != null) localVarFormParams.Add("identities[i].type", Configuration.ApiClient.ParameterToString(identitiesIType)); // form parameter
-            if (identitiesIAccountId != null) localVarFormParams.Add("identities[i].account.id", Configuration.ApiClient.ParameterToString(identitiesIAccountId)); // form parameter
-            if (identitiesIAccountName != null) localVarFormParams.Add("identities[i].account.name", Configuration.ApiClient.ParameterToString(identitiesIAccountName)); // form parameter
-            if (identitiesIAccountCreatedAt != null) localVarFormParams.Add("identities[i].account.created_at", Configuration.ApiClient.ParameterToString(identitiesIAccountCreatedAt)); // form parameter
-            if (identitiesIAccountMonthlyRate != null) localVarFormParams.Add("identities[i].account.monthly_rate", Configuration.ApiClient.ParameterToString(identitiesIAccountMonthlyRate)); // form parameter
-            if (identitiesIAccountLtv != null) localVarFormParams.Add("identities[i].account.ltv", Configuration.ApiClient.ParameterToString(identitiesIAccountLtv)); // form parameter
-            if (identitiesIAccountPlan != null) localVarFormParams.Add("identities[i].account.plan", Configuration.ApiClient.ParameterToString(identitiesIAccountPlan)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

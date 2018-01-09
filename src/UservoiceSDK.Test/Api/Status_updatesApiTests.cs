@@ -76,13 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string body = null;
-            //long? linksSuggestion = null;
-            //bool? notifySupporters = null;
-            //string notificationEmailAddress = null;
-            //long? linksStatus = null;
-            //List<string> includes = null;
-            //var response = instance.Create(body, linksSuggestion, notifySupporters, notificationEmailAddress, linksStatus, includes);
+            //Request37 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<StatusUpdateResponse> (response, "response is StatusUpdateResponse");
         }
         
@@ -94,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request39 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<StatusUpdateResponse> (response, "response is StatusUpdateResponse");
         }
         
@@ -108,10 +103,11 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> suggestion = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, suggestion, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, suggestion, includes);
             //Assert.IsInstanceOf<StatusUpdateResponsePaginated> (response, "response is StatusUpdateResponsePaginated");
         }
         
@@ -136,9 +132,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string body = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, body, includes);
+            //Request38 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<StatusUpdateResponse> (response, "response is StatusUpdateResponse");
         }
         

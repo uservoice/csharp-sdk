@@ -105,12 +105,28 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'LastActiveAt'
         }
         /// <summary>
+        /// Test the property 'Ltv'
+        /// </summary>
+        [Test]
+        public void LtvTest()
+        {
+            // TODO unit test for the property 'Ltv'
+        }
+        /// <summary>
         /// Test the property 'LtvCents'
         /// </summary>
         [Test]
         public void LtvCentsTest()
         {
             // TODO unit test for the property 'LtvCents'
+        }
+        /// <summary>
+        /// Test the property 'Mrr'
+        /// </summary>
+        [Test]
+        public void MrrTest()
+        {
+            // TODO unit test for the property 'Mrr'
         }
         /// <summary>
         /// Test the property 'MrrCents'
@@ -127,6 +143,14 @@ namespace UserVoiceSdk.Test
         public void NameTest()
         {
             // TODO unit test for the property 'Name'
+        }
+        /// <summary>
+        /// Test the property 'Nps'
+        /// </summary>
+        [Test]
+        public void NpsTest()
+        {
+            // TODO unit test for the property 'Nps'
         }
         /// <summary>
         /// Test the property 'Plan'

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Prompt** | **string** |  | [optional] 
 **Rating** | **long?** |  | [optional] 
 **RatingDelta** | **long?** |  | [optional] 
+**Traits** | [**NPSTraits**](NPSTraits.md) |  | [optional] 
 **UpdatedAt** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

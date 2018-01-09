@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="get"></a>
 # **Get**
-> StatusResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+> StatusResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
 
 # List statuses
 
@@ -47,13 +47,14 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var includes = new List<string>(); // List<string> |  (optional) 
 
             try
             {
                 // # List statuses
-                StatusResponsePaginated result = client.Statuses.Get(page, perPage, sort, includes);
+                StatusResponsePaginated result = client.Statuses.Get(page, perPage, pageToken, sort, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -76,6 +77,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **includes** | [**List<string>**](string.md)|  | [optional] 
 
@@ -85,11 +87,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -169,11 +171,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

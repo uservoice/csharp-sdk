@@ -76,11 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string body = null;
-            //long? linksSuggestion = null;
-            //string notificationEmailAddress = null;
-            //List<string> includes = null;
-            //var response = instance.Create(body, linksSuggestion, notificationEmailAddress, includes);
+            //Request32 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<MessageResponse> (response, "response is MessageResponse");
         }
         
@@ -93,9 +90,10 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, includes);
             //Assert.IsInstanceOf<MessageResponsePaginated> (response, "response is MessageResponsePaginated");
         }
         

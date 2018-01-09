@@ -33,10 +33,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>StatusResponsePaginated</returns>
-        StatusResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        StatusResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
 
         /// <summary>
         /// # List statuses
@@ -47,10 +48,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of StatusResponsePaginated</returns>
-        ApiResponse<StatusResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        ApiResponse<StatusResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve statuses by id
         /// </summary>
@@ -85,10 +87,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of StatusResponsePaginated</returns>
-        System.Threading.Tasks.Task<StatusResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        System.Threading.Tasks.Task<StatusResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
 
         /// <summary>
         /// # List statuses
@@ -99,10 +102,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (StatusResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StatusResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<StatusResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve statuses by id
         /// </summary>
@@ -224,12 +228,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>StatusResponsePaginated</returns>
-        public StatusResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public StatusResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
-             ApiResponse<StatusResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, includes);
+             ApiResponse<StatusResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, includes);
              return localVarResponse.Data;
         }
 
@@ -239,10 +244,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of StatusResponsePaginated</returns>
-        public ApiResponse< StatusResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public ApiResponse< StatusResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/statuses";
@@ -255,7 +261,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -271,6 +277,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
@@ -299,12 +306,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of StatusResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<StatusResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<StatusResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
-             ApiResponse<StatusResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, includes);
+             ApiResponse<StatusResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, includes);
              return localVarResponse.Data;
 
         }
@@ -315,10 +323,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (StatusResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<StatusResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<StatusResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/statuses";
@@ -331,7 +340,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -347,16 +356,17 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -418,7 +428,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -491,7 +501,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -508,13 +518,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

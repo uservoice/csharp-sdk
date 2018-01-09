@@ -73,12 +73,36 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'CurrentNpsRating'
         }
         /// <summary>
+        /// Test the property 'ExternalUsers'
+        /// </summary>
+        [Test]
+        public void ExternalUsersTest()
+        {
+            // TODO unit test for the property 'ExternalUsers'
+        }
+        /// <summary>
         /// Test the property 'PreviousNpsRating'
         /// </summary>
         [Test]
         public void PreviousNpsRatingTest()
         {
             // TODO unit test for the property 'PreviousNpsRating'
+        }
+        /// <summary>
+        /// Test the property 'Supporter'
+        /// </summary>
+        [Test]
+        public void SupporterTest()
+        {
+            // TODO unit test for the property 'Supporter'
+        }
+        /// <summary>
+        /// Test the property 'Teams'
+        /// </summary>
+        [Test]
+        public void TeamsTest()
+        {
+            // TODO unit test for the property 'Teams'
         }
 
     }

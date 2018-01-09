@@ -76,11 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string name = null;
-            //string key = null;
-            //string fieldType = null;
-            //string objectType = null;
-            //var response = instance.Create(name, key, fieldType, objectType);
+            //Request11 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         
@@ -105,10 +102,11 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<string> objectType = null;
             //List<string> key = null;
-            //var response = instance.Get(page, perPage, sort, objectType, key);
+            //var response = instance.Get(page, perPage, pageToken, sort, objectType, key);
             //Assert.IsInstanceOf<CustomFieldResponsePaginated> (response, "response is CustomFieldResponsePaginated");
         }
         
@@ -132,9 +130,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string name = null;
-            //string key = null;
-            //var response = instance.UpdateById(id, name, key);
+            //Request12 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<CustomFieldResponse> (response, "response is CustomFieldResponse");
         }
         

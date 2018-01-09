@@ -31,9 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        ExternalUserResponse BulkDelete (List<int?> ids);
+        ExternalUserResponse BulkDelete (Request15 request = null);
 
         /// <summary>
         /// # Bulk delete external users by ID
@@ -42,9 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        ApiResponse<ExternalUserResponse> BulkDeleteWithHttpInfo (List<int?> ids);
+        ApiResponse<ExternalUserResponse> BulkDeleteWithHttpInfo (Request15 request = null);
         /// <summary>
         /// # Bulk delete external users by external ID
         /// </summary>
@@ -52,9 +52,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        ExternalUserResponse BulkDeleteByExternalId (List<string> externalIds);
+        ExternalUserResponse BulkDeleteByExternalId (Request16 request = null);
 
         /// <summary>
         /// # Bulk delete external users by external ID
@@ -63,9 +63,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        ApiResponse<ExternalUserResponse> BulkDeleteByExternalIdWithHttpInfo (List<string> externalIds);
+        ApiResponse<ExternalUserResponse> BulkDeleteByExternalIdWithHttpInfo (Request16 request = null);
         /// <summary>
         /// # List external users
         /// </summary>
@@ -75,12 +75,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ExternalUserResponsePaginated</returns>
-        ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
+        ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
 
         /// <summary>
         /// # List external users
@@ -91,12 +92,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponsePaginated</returns>
-        ApiResponse<ExternalUserResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
+        ApiResponse<ExternalUserResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve external users by id
         /// </summary>
@@ -127,24 +129,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        ExternalUserResponse Import (Request17 request = null);
 
         /// <summary>
         /// # Import external users
@@ -153,24 +140,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        ApiResponse<ExternalUserResponse> ImportWithHttpInfo (Request17 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -180,9 +152,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteAsync (List<int?> ids);
+        System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteAsync (Request15 request = null);
 
         /// <summary>
         /// # Bulk delete external users by ID
@@ -191,9 +163,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteAsyncWithHttpInfo (List<int?> ids);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteAsyncWithHttpInfo (Request15 request = null);
         /// <summary>
         /// # Bulk delete external users by external ID
         /// </summary>
@@ -201,9 +173,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteByExternalIdAsync (List<string> externalIds);
+        System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteByExternalIdAsync (Request16 request = null);
 
         /// <summary>
         /// # Bulk delete external users by external ID
@@ -212,9 +184,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (List<string> externalIds);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (Request16 request = null);
         /// <summary>
         /// # List external users
         /// </summary>
@@ -224,12 +196,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ExternalUserResponsePaginated</returns>
-        System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
 
         /// <summary>
         /// # List external users
@@ -240,12 +213,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve external users by id
         /// </summary>
@@ -276,24 +250,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (Request17 request = null);
 
         /// <summary>
         /// # Import external users
@@ -302,24 +261,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null);
+        System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (Request17 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -416,11 +360,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        public ExternalUserResponse BulkDelete (List<int?> ids)
+        public ExternalUserResponse BulkDelete (Request15 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = BulkDeleteWithHttpInfo(ids);
+             ApiResponse<ExternalUserResponse> localVarResponse = BulkDeleteWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -428,13 +372,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        public ApiResponse< ExternalUserResponse > BulkDeleteWithHttpInfo (List<int?> ids)
+        public ApiResponse< ExternalUserResponse > BulkDeleteWithHttpInfo (Request15 request = null)
         {
-            // verify the required parameter 'ids' is set
-            if (ids == null)
-                throw new ApiException(400, "Missing required parameter 'ids' when calling External_usersApi->BulkDelete");
 
             var localVarPath = "/admin/external_users/bulk_delete";
             var localVarPathParams = new Dictionary<String, String>();
@@ -446,7 +387,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -460,7 +401,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (ids != null) localVarFormParams.Add("ids", Configuration.ApiClient.ParameterToString(ids)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -485,11 +433,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteAsync (List<int?> ids)
+        public async System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteAsync (Request15 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = await BulkDeleteAsyncWithHttpInfo(ids);
+             ApiResponse<ExternalUserResponse> localVarResponse = await BulkDeleteAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -498,13 +446,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="ids"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteAsyncWithHttpInfo (List<int?> ids)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteAsyncWithHttpInfo (Request15 request = null)
         {
-            // verify the required parameter 'ids' is set
-            if (ids == null)
-                throw new ApiException(400, "Missing required parameter 'ids' when calling External_usersApi->BulkDelete");
 
             var localVarPath = "/admin/external_users/bulk_delete";
             var localVarPathParams = new Dictionary<String, String>();
@@ -516,7 +461,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -530,15 +475,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (ids != null) localVarFormParams.Add("ids", Configuration.ApiClient.ParameterToString(ids)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -568,11 +520,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        public ExternalUserResponse BulkDeleteByExternalId (List<string> externalIds)
+        public ExternalUserResponse BulkDeleteByExternalId (Request16 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = BulkDeleteByExternalIdWithHttpInfo(externalIds);
+             ApiResponse<ExternalUserResponse> localVarResponse = BulkDeleteByExternalIdWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -580,13 +532,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        public ApiResponse< ExternalUserResponse > BulkDeleteByExternalIdWithHttpInfo (List<string> externalIds)
+        public ApiResponse< ExternalUserResponse > BulkDeleteByExternalIdWithHttpInfo (Request16 request = null)
         {
-            // verify the required parameter 'externalIds' is set
-            if (externalIds == null)
-                throw new ApiException(400, "Missing required parameter 'externalIds' when calling External_usersApi->BulkDeleteByExternalId");
 
             var localVarPath = "/admin/external_users/bulk_delete_by_external_id";
             var localVarPathParams = new Dictionary<String, String>();
@@ -598,7 +547,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -612,7 +561,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (externalIds != null) localVarFormParams.Add("external_ids", Configuration.ApiClient.ParameterToString(externalIds)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -637,11 +593,11 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteByExternalIdAsync (List<string> externalIds)
+        public async System.Threading.Tasks.Task<ExternalUserResponse> BulkDeleteByExternalIdAsync (Request16 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = await BulkDeleteByExternalIdAsyncWithHttpInfo(externalIds);
+             ApiResponse<ExternalUserResponse> localVarResponse = await BulkDeleteByExternalIdAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -650,13 +606,10 @@ namespace UserVoiceSdk.Api
         /// # Bulk delete external users by external ID 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalIds"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (List<string> externalIds)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> BulkDeleteByExternalIdAsyncWithHttpInfo (Request16 request = null)
         {
-            // verify the required parameter 'externalIds' is set
-            if (externalIds == null)
-                throw new ApiException(400, "Missing required parameter 'externalIds' when calling External_usersApi->BulkDeleteByExternalId");
 
             var localVarPath = "/admin/external_users/bulk_delete_by_external_id";
             var localVarPathParams = new Dictionary<String, String>();
@@ -668,7 +621,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -682,15 +635,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (externalIds != null) localVarFormParams.Add("external_ids", Configuration.ApiClient.ParameterToString(externalIds)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -722,14 +682,15 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ExternalUserResponsePaginated</returns>
-        public ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
+        public ExternalUserResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
-             ApiResponse<ExternalUserResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, externalId, user, includes);
+             ApiResponse<ExternalUserResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, externalId, user, includes);
              return localVarResponse.Data;
         }
 
@@ -739,12 +700,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponsePaginated</returns>
-        public ApiResponse< ExternalUserResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
+        public ApiResponse< ExternalUserResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/external_users";
@@ -757,7 +719,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -773,6 +735,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
@@ -803,14 +766,15 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ExternalUserResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ExternalUserResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
-             ApiResponse<ExternalUserResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, externalId, user, includes);
+             ApiResponse<ExternalUserResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, externalId, user, includes);
              return localVarResponse.Data;
 
         }
@@ -821,12 +785,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="externalId"> (optional)</param>
         /// <param name="user"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> user = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/external_users";
@@ -839,7 +804,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -855,18 +820,19 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (externalId != null) localVarQueryParams.Add("external_id", Configuration.ApiClient.ParameterToString(externalId)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -928,7 +894,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1001,7 +967,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1018,13 +984,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1054,26 +1020,11 @@ namespace UserVoiceSdk.Api
         /// # Import external users 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ExternalUserResponse</returns>
-        public ExternalUserResponse Import (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public ExternalUserResponse Import (Request17 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+             ApiResponse<ExternalUserResponse> localVarResponse = ImportWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -1081,37 +1032,10 @@ namespace UserVoiceSdk.Api
         /// # Import external users 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of ExternalUserResponse</returns>
-        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public ApiResponse< ExternalUserResponse > ImportWithHttpInfo (Request17 request = null)
         {
-            // verify the required parameter 'users' is set
-            if (users == null)
-                throw new ApiException(400, "Missing required parameter 'users' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIExternalId' is set
-            if (usersIExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'usersIExternalId' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIEmail' is set
-            if (usersIEmail == null)
-                throw new ApiException(400, "Missing required parameter 'usersIEmail' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIAccountExternalId' is set
-            if (usersIAccountExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'usersIAccountExternalId' when calling External_usersApi->Import");
 
             var localVarPath = "/admin/external_users/import";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1123,7 +1047,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1137,22 +1061,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (users != null) localVarFormParams.Add("users", Configuration.ApiClient.ParameterToString(users)); // form parameter
-            if (usersIExternalId != null) localVarFormParams.Add("users[i].external_id", Configuration.ApiClient.ParameterToString(usersIExternalId)); // form parameter
-            if (usersIEmail != null) localVarFormParams.Add("users[i].email", Configuration.ApiClient.ParameterToString(usersIEmail)); // form parameter
-            if (usersIUserId != null) localVarFormParams.Add("users[i].user_id", Configuration.ApiClient.ParameterToString(usersIUserId)); // form parameter
-            if (usersIName != null) localVarFormParams.Add("users[i].name", Configuration.ApiClient.ParameterToString(usersIName)); // form parameter
-            if (usersIExternalCreatedAt != null) localVarFormParams.Add("users[i].external_created_at", Configuration.ApiClient.ParameterToString(usersIExternalCreatedAt)); // form parameter
-            if (usersIIp != null) localVarFormParams.Add("users[i].ip", Configuration.ApiClient.ParameterToString(usersIIp)); // form parameter
-            if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
-            if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
-            if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
-            if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter
-            if (usersIAccountPlan != null) localVarFormParams.Add("users[i].account.plan", Configuration.ApiClient.ParameterToString(usersIAccountPlan)); // form parameter
-            if (usersIAccountMrrCents != null) localVarFormParams.Add("users[i].account.mrr_cents", Configuration.ApiClient.ParameterToString(usersIAccountMrrCents)); // form parameter
-            if (usersIAccountLtvCents != null) localVarFormParams.Add("users[i].account.ltv_cents", Configuration.ApiClient.ParameterToString(usersIAccountLtvCents)); // form parameter
-            if (usersIAccountExternalCreatedAt != null) localVarFormParams.Add("users[i].account.external_created_at", Configuration.ApiClient.ParameterToString(usersIAccountExternalCreatedAt)); // form parameter
-            if (usersIAccountCustomFields != null) localVarFormParams.Add("users[i].account.custom_fields", Configuration.ApiClient.ParameterToString(usersIAccountCustomFields)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1177,26 +1093,11 @@ namespace UserVoiceSdk.Api
         /// # Import external users 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ExternalUserResponse</returns>
-        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public async System.Threading.Tasks.Task<ExternalUserResponse> ImportAsync (Request17 request = null)
         {
-             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+             ApiResponse<ExternalUserResponse> localVarResponse = await ImportAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -1205,37 +1106,10 @@ namespace UserVoiceSdk.Api
         /// # Import external users 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="users">Each element with index i has these fields:</param>
-        /// <param name="usersIExternalId">User ID in your system. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIEmail">Primary way we link the external user to the user&#39;s UV profile. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIAccountExternalId">Account ID in your system; only required if an embedded account is provided. Recommended length: 128 or fewer characters.</param>
-        /// <param name="usersIUserId">User&#39;s ID in UserVoice. If you pass a UV ID, we will use it to link to an existing UV Profile rather than email. (optional)</param>
-        /// <param name="usersIName">Name of the user. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIExternalCreatedAt">Date user was created in your system. (optional)</param>
-        /// <param name="usersIIp">Defaults to IP address as determined by UserVoice. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIType">Type for the user, e.g. &#39;admin&#39; or &#39;owner&#39;. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersICustomFields"> (optional)</param>
-        /// <param name="usersIAccountName">Name of the account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountPlan">Plan name of account. Recommended length: 128 or fewer characters. (optional)</param>
-        /// <param name="usersIAccountMrrCents"> (optional)</param>
-        /// <param name="usersIAccountLtvCents"> (optional)</param>
-        /// <param name="usersIAccountExternalCreatedAt"> (optional)</param>
-        /// <param name="usersIAccountCustomFields"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (ExternalUserResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (List<string> users, string usersIExternalId, string usersIEmail, string usersIAccountExternalId, long? usersIUserId = null, string usersIName = null, DateTime? usersIExternalCreatedAt = null, string usersIIp = null, string usersIType = null, string usersICustomFields = null, string usersIAccountName = null, string usersIAccountPlan = null, long? usersIAccountMrrCents = null, long? usersIAccountLtvCents = null, DateTime? usersIAccountExternalCreatedAt = null, string usersIAccountCustomFields = null)
+        public async System.Threading.Tasks.Task<ApiResponse<ExternalUserResponse>> ImportAsyncWithHttpInfo (Request17 request = null)
         {
-            // verify the required parameter 'users' is set
-            if (users == null)
-                throw new ApiException(400, "Missing required parameter 'users' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIExternalId' is set
-            if (usersIExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'usersIExternalId' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIEmail' is set
-            if (usersIEmail == null)
-                throw new ApiException(400, "Missing required parameter 'usersIEmail' when calling External_usersApi->Import");
-            // verify the required parameter 'usersIAccountExternalId' is set
-            if (usersIAccountExternalId == null)
-                throw new ApiException(400, "Missing required parameter 'usersIAccountExternalId' when calling External_usersApi->Import");
 
             var localVarPath = "/admin/external_users/import";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1247,7 +1121,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1261,30 +1135,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (users != null) localVarFormParams.Add("users", Configuration.ApiClient.ParameterToString(users)); // form parameter
-            if (usersIExternalId != null) localVarFormParams.Add("users[i].external_id", Configuration.ApiClient.ParameterToString(usersIExternalId)); // form parameter
-            if (usersIEmail != null) localVarFormParams.Add("users[i].email", Configuration.ApiClient.ParameterToString(usersIEmail)); // form parameter
-            if (usersIUserId != null) localVarFormParams.Add("users[i].user_id", Configuration.ApiClient.ParameterToString(usersIUserId)); // form parameter
-            if (usersIName != null) localVarFormParams.Add("users[i].name", Configuration.ApiClient.ParameterToString(usersIName)); // form parameter
-            if (usersIExternalCreatedAt != null) localVarFormParams.Add("users[i].external_created_at", Configuration.ApiClient.ParameterToString(usersIExternalCreatedAt)); // form parameter
-            if (usersIIp != null) localVarFormParams.Add("users[i].ip", Configuration.ApiClient.ParameterToString(usersIIp)); // form parameter
-            if (usersIType != null) localVarFormParams.Add("users[i].type", Configuration.ApiClient.ParameterToString(usersIType)); // form parameter
-            if (usersICustomFields != null) localVarFormParams.Add("users[i].custom_fields", Configuration.ApiClient.ParameterToString(usersICustomFields)); // form parameter
-            if (usersIAccountExternalId != null) localVarFormParams.Add("users[i].account.external_id", Configuration.ApiClient.ParameterToString(usersIAccountExternalId)); // form parameter
-            if (usersIAccountName != null) localVarFormParams.Add("users[i].account.name", Configuration.ApiClient.ParameterToString(usersIAccountName)); // form parameter
-            if (usersIAccountPlan != null) localVarFormParams.Add("users[i].account.plan", Configuration.ApiClient.ParameterToString(usersIAccountPlan)); // form parameter
-            if (usersIAccountMrrCents != null) localVarFormParams.Add("users[i].account.mrr_cents", Configuration.ApiClient.ParameterToString(usersIAccountMrrCents)); // form parameter
-            if (usersIAccountLtvCents != null) localVarFormParams.Add("users[i].account.ltv_cents", Configuration.ApiClient.ParameterToString(usersIAccountLtvCents)); // form parameter
-            if (usersIAccountExternalCreatedAt != null) localVarFormParams.Add("users[i].account.external_created_at", Configuration.ApiClient.ParameterToString(usersIAccountExternalCreatedAt)); // form parameter
-            if (usersIAccountCustomFields != null) localVarFormParams.Add("users[i].account.custom_fields", Configuration.ApiClient.ParameterToString(usersIAccountCustomFields)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

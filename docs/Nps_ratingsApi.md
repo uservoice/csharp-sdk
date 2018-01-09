@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> NPSRatingResponse Create (long? rating, long? linksUser, string prompt = null, string body = null, DateTime? date = null, List<string> includes = null)
+> NPSRatingResponse Create (Request35 request = null)
 
 # Create a nps rating
 
@@ -46,17 +46,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var rating = 789;  // long? | 
-            var linksUser = 789;  // long? | 
-            var prompt = prompt_example;  // string |  (optional) 
-            var body = body_example;  // string |  (optional) 
-            var date = 2013-10-20;  // DateTime? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request35(); // Request35 | Payload for this request (optional) 
 
             try
             {
                 // # Create a nps rating
-                NPSRatingResponse result = client.Nps_ratings.Create(rating, linksUser, prompt, body, date, includes);
+                NPSRatingResponse result = client.Nps_ratings.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -77,12 +72,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rating** | **long?**|  | 
- **linksUser** | **long?**|  | 
- **prompt** | **string**|  | [optional] 
- **body** | **string**|  | [optional] 
- **date** | **DateTime?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request35**](request_35.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -90,18 +80,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
+> NPSRatingResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> user = null, List<int?> ticket = null, List<string> includes = null)
 
 # List nps ratings
 
@@ -140,6 +130,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var periodStart = 2013-10-20;  // DateTime? |  (optional) 
             var periodEnd = 2013-10-20;  // DateTime? |  (optional) 
@@ -150,7 +141,7 @@ namespace Example
             try
             {
                 // # List nps ratings
-                NPSRatingResponsePaginated result = client.Nps_ratings.Get(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
+                NPSRatingResponsePaginated result = client.Nps_ratings.Get(page, perPage, pageToken, sort, periodStart, periodEnd, user, ticket, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -173,6 +164,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **periodStart** | **DateTime?**|  | [optional] 
  **periodEnd** | **DateTime?**|  | [optional] 
@@ -186,11 +178,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -270,11 +262,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

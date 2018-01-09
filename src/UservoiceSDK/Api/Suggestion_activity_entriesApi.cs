@@ -33,6 +33,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -57,7 +58,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>SuggestionActivityEntryResponsePaginated</returns>
-        SuggestionActivityEntryResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
+        SuggestionActivityEntryResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
 
         /// <summary>
         /// # List suggestion activity entries
@@ -68,6 +69,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -92,7 +94,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of SuggestionActivityEntryResponsePaginated</returns>
-        ApiResponse<SuggestionActivityEntryResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
+        ApiResponse<SuggestionActivityEntryResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -104,6 +106,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -128,7 +131,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of SuggestionActivityEntryResponsePaginated</returns>
-        System.Threading.Tasks.Task<SuggestionActivityEntryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
+        System.Threading.Tasks.Task<SuggestionActivityEntryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
 
         /// <summary>
         /// # List suggestion activity entries
@@ -139,6 +142,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -163,7 +167,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (SuggestionActivityEntryResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SuggestionActivityEntryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<SuggestionActivityEntryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null);
         #endregion Asynchronous Operations
     }
 
@@ -262,6 +266,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -286,9 +291,9 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>SuggestionActivityEntryResponsePaginated</returns>
-        public SuggestionActivityEntryResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
+        public SuggestionActivityEntryResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
         {
-             ApiResponse<SuggestionActivityEntryResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
+             ApiResponse<SuggestionActivityEntryResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
              return localVarResponse.Data;
         }
 
@@ -298,6 +303,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -322,7 +328,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of SuggestionActivityEntryResponsePaginated</returns>
-        public ApiResponse< SuggestionActivityEntryResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
+        public ApiResponse< SuggestionActivityEntryResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/suggestion_activity_entries";
@@ -335,7 +341,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -351,6 +357,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (forum != null) localVarQueryParams.Add("forum", Configuration.ApiClient.ParameterToString(forum)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
@@ -400,6 +407,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -424,9 +432,9 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of SuggestionActivityEntryResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<SuggestionActivityEntryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<SuggestionActivityEntryResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
         {
-             ApiResponse<SuggestionActivityEntryResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
+             ApiResponse<SuggestionActivityEntryResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
              return localVarResponse.Data;
 
         }
@@ -437,6 +445,7 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -created_at)</param>
         /// <param name="forum"> (optional)</param>
         /// <param name="user"> (optional)</param>
@@ -461,7 +470,7 @@ namespace UserVoiceSdk.Api
         /// <param name="externalAccount"> (optional)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (SuggestionActivityEntryResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SuggestionActivityEntryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SuggestionActivityEntryResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> user = null, List<int?> suggestion = null, List<string> kind = null, List<string> state = null, bool? spam = null, bool? needsReview = null, DateTime? periodStart = null, DateTime? periodEnd = null, List<int?> creator = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<int?> label = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, List<int?> uncategorizedInForum = null, long? externalAccount = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/suggestion_activity_entries";
@@ -474,7 +483,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -490,6 +499,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (forum != null) localVarQueryParams.Add("forum", Configuration.ApiClient.ParameterToString(forum)); // query parameter
             if (user != null) localVarQueryParams.Add("user", Configuration.ApiClient.ParameterToString(user)); // query parameter
@@ -514,13 +524,13 @@ namespace UserVoiceSdk.Api
             if (externalAccount != null) localVarQueryParams.Add("external_account", Configuration.ApiClient.ParameterToString(externalAccount)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

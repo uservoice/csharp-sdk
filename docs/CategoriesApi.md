@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> CategoryResponse Create (string name, long? linksForum, List<string> includes = null)
+> CategoryResponse Create (Request3 request = null)
 
 # Create a category
 
@@ -48,14 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var name = name_example;  // string | 
-            var linksForum = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request3(); // Request3 | Payload for this request (optional) 
 
             try
             {
                 // # Create a category
-                CategoryResponse result = client.Categories.Create(name, linksForum, includes);
+                CategoryResponse result = client.Categories.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -76,9 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**|  | 
- **linksForum** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request3**](request_3.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -86,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> CategoryResponse DeleteById (long? id, List<string> includes = null)
+> CategoryResponse DeleteById (long? id, Request5 request = null)
 
 # Delete a category
 
@@ -135,12 +131,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request5(); // Request5 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a category
-                CategoryResponse result = client.Categories.DeleteById(id, includes);
+                CategoryResponse result = client.Categories.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -162,7 +158,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request5**](request_5.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -170,18 +166,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> CategoryResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<string> includes = null)
+> CategoryResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<string> includes = null)
 
 # List categories
 
@@ -220,6 +216,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var forum = new List<int?>(); // List<int?> |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -227,7 +224,7 @@ namespace Example
             try
             {
                 // # List categories
-                CategoryResponsePaginated result = client.Categories.Get(page, perPage, sort, forum, includes);
+                CategoryResponsePaginated result = client.Categories.Get(page, perPage, pageToken, sort, forum, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -250,6 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **forum** | [**List<int?>**](int?.md)|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
@@ -260,11 +258,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -344,18 +342,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> CategoryResponse UpdateById (long? id, string name = null, long? linksForum = null, List<string> includes = null)
+> CategoryResponse UpdateById (long? id, Request4 request = null)
 
 # Update a category
 
@@ -393,14 +391,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var name = name_example;  // string |  (optional) 
-            var linksForum = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request4(); // Request4 | Payload for this request (optional) 
 
             try
             {
                 // # Update a category
-                CategoryResponse result = client.Categories.UpdateById(id, name, linksForum, includes);
+                CategoryResponse result = client.Categories.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -422,9 +418,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **name** | **string**|  | [optional] 
- **linksForum** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request4**](request_4.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -432,11 +426,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

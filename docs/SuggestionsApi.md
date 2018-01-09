@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="approvebyid"></a>
 # **ApproveById**
-> SuggestionResponse ApproveById (long? id, List<string> includes = null)
+> SuggestionResponse ApproveById (long? id, Request44 request = null)
 
 
 
@@ -55,12 +55,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request44(); // Request44 | Payload for this request (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = client.Suggestions.ApproveById(id, includes);
+                SuggestionResponse result = client.Suggestions.ApproveById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -82,7 +82,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request44**](request_44.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -90,18 +90,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="converttoticketbyid"></a>
 # **ConvertToTicketById**
-> SuggestionResponse ConvertToTicketById (long? id, List<string> includes = null)
+> SuggestionResponse ConvertToTicketById (long? id, Request45 request = null)
 
 
 
@@ -139,12 +139,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request45(); // Request45 | Payload for this request (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = client.Suggestions.ConvertToTicketById(id, includes);
+                SuggestionResponse result = client.Suggestions.ConvertToTicketById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -166,7 +166,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request45**](request_45.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -174,18 +174,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="create"></a>
 # **Create**
-> SuggestionResponse Create (string title, long? linksForum, string body = null, string bodyMimeType = null, string attachmentTokens = null, long? linksCategory = null, long? linksStatus = null, List<string> includes = null)
+> SuggestionResponse Create (Request40 request = null)
 
 # Create a suggestion
 
@@ -222,19 +222,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var title = title_example;  // string | 
-            var linksForum = 789;  // long? | 
-            var body = body_example;  // string |  (optional) 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional)  (default to text/plain)
-            var attachmentTokens = attachmentTokens_example;  // string |  (optional) 
-            var linksCategory = 789;  // long? |  (optional) 
-            var linksStatus = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request40(); // Request40 | Payload for this request (optional) 
 
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = client.Suggestions.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -255,14 +248,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **title** | **string**|  | 
- **linksForum** | **long?**|  | 
- **body** | **string**|  | [optional] 
- **bodyMimeType** | **string**|  | [optional] [default to text/plain]
- **attachmentTokens** | **string**|  | [optional] 
- **linksCategory** | **long?**|  | [optional] 
- **linksStatus** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request40**](request_40.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -270,18 +256,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> SuggestionResponse DeleteById (long? id, List<string> includes = null)
+> SuggestionResponse DeleteById (long? id, Request43 request = null)
 
 # Delete a suggestion
 
@@ -319,12 +305,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request43(); // Request43 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a suggestion
-                SuggestionResponse result = client.Suggestions.DeleteById(id, includes);
+                SuggestionResponse result = client.Suggestions.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -346,7 +332,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request43**](request_43.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -354,18 +340,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> SuggestionResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<int?> forum = null, List<int?> creator = null, List<int?> uncategorizedInForum = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<string> state = null, List<int?> label = null, List<int?> supporter = null, List<int?> externalAccount = null, List<int?> feature = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, DateTime? periodStart = null, DateTime? periodEnd = null, string q = null, List<string> includes = null)
+> SuggestionResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<int?> forum = null, List<int?> creator = null, List<int?> uncategorizedInForum = null, bool? categoryNone = null, List<int?> category = null, bool? statusNone = null, List<int?> status = null, List<string> state = null, List<int?> label = null, List<int?> supporter = null, List<int?> externalAccount = null, List<int?> feature = null, bool? hasResponse = null, bool? hasSmartvoteScore = null, DateTime? noEngagementSince = null, DateTime? engagementSince = null, DateTime? periodStart = null, DateTime? periodEnd = null, string q = null, List<string> includes = null)
 
 # List suggestions  Returns a paginated list of suggestions.
 
@@ -404,6 +390,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var forum = new List<int?>(); // List<int?> |  (optional) 
             var creator = new List<int?>(); // List<int?> |  (optional) 
@@ -429,7 +416,7 @@ namespace Example
             try
             {
                 // # List suggestions  Returns a paginated list of suggestions.
-                SuggestionResponsePaginated result = client.Suggestions.Get(page, perPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
+                SuggestionResponsePaginated result = client.Suggestions.Get(page, perPage, pageToken, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -452,6 +439,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **forum** | [**List<int?>**](int?.md)|  | [optional] 
  **creator** | [**List<int?>**](int?.md)|  | [optional] 
@@ -480,11 +468,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -564,18 +552,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="import"></a>
 # **Import**
-> SuggestionResponse Import (string title, long? linksForum, string body = null, string bodyMimeType = null, string userName = null, string userEmail = null, string state = null, string attachmentTokens = null, long? linksUser = null, long? linksCategory = null, long? linksStatus = null, List<string> includes = null)
+> SuggestionResponse Import (Request41 request = null)
 
 # Create a suggestion
 
@@ -612,23 +600,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var title = title_example;  // string | 
-            var linksForum = 789;  // long? | 
-            var body = body_example;  // string |  (optional) 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional)  (default to text/plain)
-            var userName = userName_example;  // string |  (optional) 
-            var userEmail = userEmail_example;  // string |  (optional) 
-            var state = state_example;  // string |  (optional)  (default to approved)
-            var attachmentTokens = attachmentTokens_example;  // string |  (optional) 
-            var linksUser = 789;  // long? |  (optional) 
-            var linksCategory = 789;  // long? |  (optional) 
-            var linksStatus = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request41(); // Request41 | Payload for this request (optional) 
 
             try
             {
                 // # Create a suggestion
-                SuggestionResponse result = client.Suggestions.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.Import(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -649,18 +626,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **title** | **string**|  | 
- **linksForum** | **long?**|  | 
- **body** | **string**|  | [optional] 
- **bodyMimeType** | **string**|  | [optional] [default to text/plain]
- **userName** | **string**|  | [optional] 
- **userEmail** | **string**|  | [optional] 
- **state** | **string**|  | [optional] [default to approved]
- **attachmentTokens** | **string**|  | [optional] 
- **linksUser** | **long?**|  | [optional] 
- **linksCategory** | **long?**|  | [optional] 
- **linksStatus** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request41**](request_41.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -668,18 +634,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="publishbyid"></a>
 # **PublishById**
-> SuggestionResponse PublishById (long? id, List<string> includes = null)
+> SuggestionResponse PublishById (long? id, Request46 request = null)
 
 
 
@@ -717,12 +683,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request46(); // Request46 | Payload for this request (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = client.Suggestions.PublishById(id, includes);
+                SuggestionResponse result = client.Suggestions.PublishById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -744,7 +710,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request46**](request_46.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -752,18 +718,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="spambyid"></a>
 # **SpamById**
-> SuggestionResponse SpamById (long? id, List<string> includes = null)
+> SuggestionResponse SpamById (long? id, Request47 request = null)
 
 
 
@@ -801,12 +767,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request47(); // Request47 | Payload for this request (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = client.Suggestions.SpamById(id, includes);
+                SuggestionResponse result = client.Suggestions.SpamById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -828,7 +794,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request47**](request_47.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -836,18 +802,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="unremovebyid"></a>
 # **UnremoveById**
-> SuggestionResponse UnremoveById (long? id, List<string> includes = null)
+> SuggestionResponse UnremoveById (long? id, Request48 request = null)
 
 
 
@@ -885,12 +851,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request48(); // Request48 | Payload for this request (optional) 
 
             try
             {
                 // 
-                SuggestionResponse result = client.Suggestions.UnremoveById(id, includes);
+                SuggestionResponse result = client.Suggestions.UnremoveById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -912,7 +878,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request48**](request_48.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -920,18 +886,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> SuggestionResponse UpdateById (long? id, string title = null, string body = null, string bodyMimeType = null, string attachmentTokens = null, long? linksForum = null, long? linksCategory = null, long? linksStatus = null, List<string> includes = null)
+> SuggestionResponse UpdateById (long? id, Request42 request = null)
 
 # Update a suggestion
 
@@ -969,19 +935,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var title = title_example;  // string |  (optional) 
-            var body = body_example;  // string |  (optional) 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional) 
-            var attachmentTokens = attachmentTokens_example;  // string |  (optional) 
-            var linksForum = 789;  // long? |  (optional) 
-            var linksCategory = 789;  // long? |  (optional) 
-            var linksStatus = 789;  // long? |  (optional) 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request42(); // Request42 | Payload for this request (optional) 
 
             try
             {
                 // # Update a suggestion
-                SuggestionResponse result = client.Suggestions.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
+                SuggestionResponse result = client.Suggestions.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -1003,14 +962,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **title** | **string**|  | [optional] 
- **body** | **string**|  | [optional] 
- **bodyMimeType** | **string**|  | [optional] 
- **attachmentTokens** | **string**|  | [optional] 
- **linksForum** | **long?**|  | [optional] 
- **linksCategory** | **long?**|  | [optional] 
- **linksStatus** | **long?**|  | [optional] 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request42**](request_42.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -1018,11 +970,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

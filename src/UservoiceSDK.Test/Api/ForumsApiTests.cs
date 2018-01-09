@@ -78,10 +78,11 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //bool? open = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, open, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, open, includes);
             //Assert.IsInstanceOf<ForumResponsePaginated> (response, "response is ForumResponsePaginated");
         }
         

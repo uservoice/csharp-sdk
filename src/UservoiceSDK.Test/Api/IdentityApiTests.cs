@@ -19,6 +19,7 @@ using NUnit.Framework;
 
 using UserVoiceSdk.Client;
 using UserVoiceSdk.Api;
+using UserVoiceSdk.Models;
 
 namespace UserVoiceSdk.Test
 {
@@ -75,19 +76,8 @@ namespace UserVoiceSdk.Test
         public void BulkIdentifyTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<string> identities = null;
-            //string identitiesIId = null;
-            //string identitiesIEmail = null;
-            //string identitiesIName = null;
-            //long? identitiesICreatedAt = null;
-            //string identitiesIType = null;
-            //string identitiesIAccountId = null;
-            //string identitiesIAccountName = null;
-            //long? identitiesIAccountCreatedAt = null;
-            //double? identitiesIAccountMonthlyRate = null;
-            //double? identitiesIAccountLtv = null;
-            //string identitiesIAccountPlan = null;
-            //instance.BulkIdentify(identities, identitiesIId, identitiesIEmail, identitiesIName, identitiesICreatedAt, identitiesIType, identitiesIAccountId, identitiesIAccountName, identitiesIAccountCreatedAt, identitiesIAccountMonthlyRate, identitiesIAccountLtv, identitiesIAccountPlan);
+            //Request2 request = null;
+            //instance.BulkIdentify(request);
             
         }
         

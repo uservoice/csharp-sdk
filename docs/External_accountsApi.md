@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="bulkdelete"></a>
 # **BulkDelete**
-> ExternalAccountResponse BulkDelete (List<int?> ids)
+> ExternalAccountResponse BulkDelete (Request13 request = null)
 
 # Bulk delete external accounts by ID
 
@@ -48,12 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var ids = new List<int?>(); // List<int?> | 
+            var request = new Request13(); // Request13 | Payload for this request (optional) 
 
             try
             {
                 // # Bulk delete external accounts by ID
-                ExternalAccountResponse result = client.External_accounts.BulkDelete(ids);
+                ExternalAccountResponse result = client.External_accounts.BulkDelete(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -74,7 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**List<int?>**](int?.md)|  | 
+ **request** | [**Request13**](request_13.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -82,18 +82,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="bulkdeletebyexternalid"></a>
 # **BulkDeleteByExternalId**
-> ExternalAccountResponse BulkDeleteByExternalId (List<string> externalIds)
+> ExternalAccountResponse BulkDeleteByExternalId (Request14 request = null)
 
 # Bulk delete external accounts by external ID
 
@@ -130,12 +130,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var externalIds = new List<string>(); // List<string> | 
+            var request = new Request14(); // Request14 | Payload for this request (optional) 
 
             try
             {
                 // # Bulk delete external accounts by external ID
-                ExternalAccountResponse result = client.External_accounts.BulkDeleteByExternalId(externalIds);
+                ExternalAccountResponse result = client.External_accounts.BulkDeleteByExternalId(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -156,7 +156,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalIds** | [**List<string>**](string.md)|  | 
+ **request** | [**Request14**](request_14.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -164,18 +164,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
+> ExternalAccountResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> externalId = null, List<int?> suggestion = null, List<int?> feature = null, string q = null)
 
 # List external accounts
 
@@ -214,7 +214,8 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
-            var sort = sort_example;  // string |  (optional)  (default to -last_active_at)
+            var pageToken = pageToken_example;  // string |  (optional) 
+            var sort = sort_example;  // string | Specify custom field sorting by object and key, e.g. 'external_accounts.cf_industry'. Text custom fields cannot be sorted. (optional)  (default to -last_active_at)
             var externalId = new List<string>(); // List<string> |  (optional) 
             var suggestion = new List<int?>(); // List<int?> |  (optional) 
             var feature = new List<int?>(); // List<int?> |  (optional) 
@@ -223,7 +224,7 @@ namespace Example
             try
             {
                 // # List external accounts
-                ExternalAccountResponsePaginated result = client.External_accounts.Get(page, perPage, sort, externalId, suggestion, feature, q);
+                ExternalAccountResponsePaginated result = client.External_accounts.Get(page, perPage, pageToken, sort, externalId, suggestion, feature, q);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -246,7 +247,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
- **sort** | **string**|  | [optional] [default to -last_active_at]
+ **pageToken** | **string**|  | [optional] 
+ **sort** | **string**| Specify custom field sorting by object and key, e.g. &#39;external_accounts.cf_industry&#39;. Text custom fields cannot be sorted. | [optional] [default to -last_active_at]
  **externalId** | [**List<string>**](string.md)|  | [optional] 
  **suggestion** | [**List<int?>**](int?.md)|  | [optional] 
  **feature** | [**List<int?>**](int?.md)|  | [optional] 
@@ -258,11 +260,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -340,18 +342,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="import"></a>
 # **Import**
-> ExternalAccountResponse Import (List<string> accounts, string accountsIExternalId, string accountsIName = null, string accountsIPlan = null, long? accountsIMrrCents = null, long? accountsILtvCents = null, DateTime? accountsIExternalCreatedAt = null, string accountsICustomFields = null)
+> ExternalAccountResponse Import (ExternalAccountsImportRequest request = null)
 
 
 
@@ -388,19 +390,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var accounts = new List<string>(); // List<string> | Each element with index i has these fields:
-            var accountsIExternalId = accountsIExternalId_example;  // string | Account ID in your system.
-            var accountsIName = accountsIName_example;  // string | Account name in your system. Recommended length: 128 or fewer characters. (optional) 
-            var accountsIPlan = accountsIPlan_example;  // string | Plan name of account. Recommended length: 128 or fewer characters. (optional) 
-            var accountsIMrrCents = 789;  // long? |  (optional) 
-            var accountsILtvCents = 789;  // long? |  (optional) 
-            var accountsIExternalCreatedAt = 2013-10-20;  // DateTime? |  (optional) 
-            var accountsICustomFields = accountsICustomFields_example;  // string |  (optional) 
+            var request = new ExternalAccountsImportRequest(); // ExternalAccountsImportRequest | Payload for this request (optional) 
 
             try
             {
                 // 
-                ExternalAccountResponse result = client.External_accounts.Import(accounts, accountsIExternalId, accountsIName, accountsIPlan, accountsIMrrCents, accountsILtvCents, accountsIExternalCreatedAt, accountsICustomFields);
+                ExternalAccountResponse result = client.External_accounts.Import(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -421,14 +416,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accounts** | [**List<string>**](string.md)| Each element with index i has these fields: | 
- **accountsIExternalId** | **string**| Account ID in your system. | 
- **accountsIName** | **string**| Account name in your system. Recommended length: 128 or fewer characters. | [optional] 
- **accountsIPlan** | **string**| Plan name of account. Recommended length: 128 or fewer characters. | [optional] 
- **accountsIMrrCents** | **long?**|  | [optional] 
- **accountsILtvCents** | **long?**|  | [optional] 
- **accountsIExternalCreatedAt** | **DateTime?**|  | [optional] 
- **accountsICustomFields** | **string**|  | [optional] 
+ **request** | [**ExternalAccountsImportRequest**](ExternalAccountsImportRequest.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -436,11 +424,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

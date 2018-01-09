@@ -33,12 +33,14 @@ namespace UserVoiceSdk.Models
         /// Initializes a new instance of the <see cref="Pagination" /> class.
         /// </summary>
         /// <param name="Page">Page.</param>
+        /// <param name="PageToken">PageToken.</param>
         /// <param name="PerPage">PerPage.</param>
         /// <param name="TotalPages">TotalPages.</param>
         /// <param name="TotalRecords">TotalRecords.</param>
-        public Pagination(long? Page = null, long? PerPage = null, long? TotalPages = null, long? TotalRecords = null)
+        public Pagination(long? Page = null, string PageToken = null, long? PerPage = null, long? TotalPages = null, long? TotalRecords = null)
         {
             this.Page = Page;
+            this.PageToken = PageToken;
             this.PerPage = PerPage;
             this.TotalPages = TotalPages;
             this.TotalRecords = TotalRecords;
@@ -49,6 +51,11 @@ namespace UserVoiceSdk.Models
         /// </summary>
         [DataMember(Name="page", EmitDefaultValue=false)]
         public long? Page { get; set; }
+        /// <summary>
+        /// Gets or Sets PageToken
+        /// </summary>
+        [DataMember(Name="page_token", EmitDefaultValue=false)]
+        public string PageToken { get; set; }
         /// <summary>
         /// Gets or Sets PerPage
         /// </summary>
@@ -73,6 +80,7 @@ namespace UserVoiceSdk.Models
             var sb = new StringBuilder();
             sb.Append("class Pagination {\n");
             sb.Append("  Page: ").Append(Page).Append("\n");
+            sb.Append("  PageToken: ").Append(PageToken).Append("\n");
             sb.Append("  PerPage: ").Append(PerPage).Append("\n");
             sb.Append("  TotalPages: ").Append(TotalPages).Append("\n");
             sb.Append("  TotalRecords: ").Append(TotalRecords).Append("\n");
@@ -118,6 +126,11 @@ namespace UserVoiceSdk.Models
                     this.Page.Equals(other.Page)
                 ) && 
                 (
+                    this.PageToken == other.PageToken ||
+                    this.PageToken != null &&
+                    this.PageToken.Equals(other.PageToken)
+                ) && 
+                (
                     this.PerPage == other.PerPage ||
                     this.PerPage != null &&
                     this.PerPage.Equals(other.PerPage)
@@ -147,6 +160,8 @@ namespace UserVoiceSdk.Models
                 // Suitable nullity checks etc, of course :)
                 if (this.Page != null)
                     hash = hash * 59 + this.Page.GetHashCode();
+                if (this.PageToken != null)
+                    hash = hash * 59 + this.PageToken.GetHashCode();
                 if (this.PerPage != null)
                     hash = hash * 59 + this.PerPage.GetHashCode();
                 if (this.TotalPages != null)

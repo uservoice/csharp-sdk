@@ -41,7 +41,7 @@ namespace UserVoiceSdk.Models
         /// <param name="ObjectsChanged">ObjectsChanged.</param>
         /// <param name="ObjectsSelected">ObjectsSelected.</param>
         /// <param name="SearchParams">SearchParams.</param>
-        public BulkAction(string Action = null, string ActionParams = null, bool? Complete = null, long? Id = null, BulkActionLinks Links = null, string ObjectType = null, long? ObjectsChanged = null, long? ObjectsSelected = null, string SearchParams = null)
+        public BulkAction(string Action = null, string ActionParams = null, bool? Complete = null, long? Id = null, AdminnpsRatingsLinks Links = null, string ObjectType = null, long? ObjectsChanged = null, long? ObjectsSelected = null, string SearchParams = null)
         {
             this.Action = Action;
             this.ActionParams = ActionParams;
@@ -78,7 +78,7 @@ namespace UserVoiceSdk.Models
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public BulkActionLinks Links { get; set; }
+        public AdminnpsRatingsLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets ObjectType
         /// </summary>

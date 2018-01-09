@@ -76,13 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<string> email = null;
-            //long? linksForum = null;
-            //string subject = null;
-            //string replyTo = null;
-            //string message = null;
-            //List<string> includes = null;
-            //var response = instance.Create(email, linksForum, subject, replyTo, message, includes);
+            //Request25 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<ForumInvitationResponse> (response, "response is ForumInvitationResponse");
         }
         
@@ -94,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request26 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<ForumInvitationResponse> (response, "response is ForumInvitationResponse");
         }
         
@@ -108,11 +103,12 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //long? forum = null;
             //bool? claimed = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, forum, claimed, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, forum, claimed, includes);
             //Assert.IsInstanceOf<ForumInvitationResponsePaginated> (response, "response is ForumInvitationResponsePaginated");
         }
         

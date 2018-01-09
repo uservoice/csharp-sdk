@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> CustomFieldResponse Create (string name, string key, string fieldType, string objectType)
+> CustomFieldResponse Create (Request11 request = null)
 
 # Create a custom field
 
@@ -48,15 +48,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var name = name_example;  // string | 
-            var key = key_example;  // string | 
-            var fieldType = fieldType_example;  // string | boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.
-            var objectType = objectType_example;  // string | 
+            var request = new Request11(); // Request11 | Payload for this request (optional) 
 
             try
             {
                 // # Create a custom field
-                CustomFieldResponse result = client.Custom_fields.Create(name, key, fieldType, objectType);
+                CustomFieldResponse result = client.Custom_fields.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -77,10 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string**|  | 
- **key** | **string**|  | 
- **fieldType** | **string**| boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers. | 
- **objectType** | **string**|  | 
+ **request** | [**Request11**](request_11.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -88,11 +82,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -170,18 +164,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+> CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null)
 
 # List custom fields
 
@@ -220,6 +214,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var objectType = new List<string>(); // List<string> |  (optional) 
             var key = new List<string>(); // List<string> |  (optional) 
@@ -227,7 +222,7 @@ namespace Example
             try
             {
                 // # List custom fields
-                CustomFieldResponsePaginated result = client.Custom_fields.Get(page, perPage, sort, objectType, key);
+                CustomFieldResponsePaginated result = client.Custom_fields.Get(page, perPage, pageToken, sort, objectType, key);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -250,6 +245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **objectType** | [**List<string>**](string.md)|  | [optional] 
  **key** | [**List<string>**](string.md)|  | [optional] 
@@ -260,11 +256,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -342,18 +338,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatebyid"></a>
 # **UpdateById**
-> CustomFieldResponse UpdateById (long? id, string name = null, string key = null)
+> CustomFieldResponse UpdateById (long? id, Request12 request = null)
 
 # Update a custom field
 
@@ -391,13 +387,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var name = name_example;  // string |  (optional) 
-            var key = key_example;  // string |  (optional) 
+            var request = new Request12(); // Request12 | Payload for this request (optional) 
 
             try
             {
                 // # Update a custom field
-                CustomFieldResponse result = client.Custom_fields.UpdateById(id, name, key);
+                CustomFieldResponse result = client.Custom_fields.UpdateById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -419,8 +414,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **name** | **string**|  | [optional] 
- **key** | **string**|  | [optional] 
+ **request** | [**Request12**](request_12.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -428,11 +422,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

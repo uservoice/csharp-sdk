@@ -31,12 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CustomFieldResponse</returns>
-        CustomFieldResponse Create (string name, string key, string fieldType, string objectType);
+        CustomFieldResponse Create (Request11 request = null);
 
         /// <summary>
         /// # Create a custom field
@@ -45,12 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
-        ApiResponse<CustomFieldResponse> CreateWithHttpInfo (string name, string key, string fieldType, string objectType);
+        ApiResponse<CustomFieldResponse> CreateWithHttpInfo (Request11 request = null);
         /// <summary>
         /// # Delete a custom field
         /// </summary>
@@ -81,11 +75,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>CustomFieldResponsePaginated</returns>
-        CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null);
 
         /// <summary>
         /// # List custom fields
@@ -96,11 +91,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponsePaginated</returns>
-        ApiResponse<CustomFieldResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        ApiResponse<CustomFieldResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null);
         /// <summary>
         /// # Retrieve custom fields by id
         /// </summary>
@@ -130,10 +126,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CustomFieldResponse</returns>
-        CustomFieldResponse UpdateById (long? id, string name = null, string key = null);
+        CustomFieldResponse UpdateById (long? id, Request12 request = null);
 
         /// <summary>
         /// # Update a custom field
@@ -143,10 +138,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
-        ApiResponse<CustomFieldResponse> UpdateByIdWithHttpInfo (long? id, string name = null, string key = null);
+        ApiResponse<CustomFieldResponse> UpdateByIdWithHttpInfo (long? id, Request12 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -156,12 +150,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CustomFieldResponse</returns>
-        System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType);
+        System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (Request11 request = null);
 
         /// <summary>
         /// # Create a custom field
@@ -170,12 +161,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType);
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (Request11 request = null);
         /// <summary>
         /// # Delete a custom field
         /// </summary>
@@ -206,11 +194,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>Task of CustomFieldResponsePaginated</returns>
-        System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null);
 
         /// <summary>
         /// # List custom fields
@@ -221,11 +210,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null);
         /// <summary>
         /// # Retrieve custom fields by id
         /// </summary>
@@ -255,10 +245,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CustomFieldResponse</returns>
-        System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, string name = null, string key = null);
+        System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, Request12 request = null);
 
         /// <summary>
         /// # Update a custom field
@@ -268,10 +257,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null);
+        System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request12 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -368,14 +356,11 @@ namespace UserVoiceSdk.Api
         /// # Create a custom field 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CustomFieldResponse</returns>
-        public CustomFieldResponse Create (string name, string key, string fieldType, string objectType)
+        public CustomFieldResponse Create (Request11 request = null)
         {
-             ApiResponse<CustomFieldResponse> localVarResponse = CreateWithHttpInfo(name, key, fieldType, objectType);
+             ApiResponse<CustomFieldResponse> localVarResponse = CreateWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -383,25 +368,10 @@ namespace UserVoiceSdk.Api
         /// # Create a custom field 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
-        public ApiResponse< CustomFieldResponse > CreateWithHttpInfo (string name, string key, string fieldType, string objectType)
+        public ApiResponse< CustomFieldResponse > CreateWithHttpInfo (Request11 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'key' is set
-            if (key == null)
-                throw new ApiException(400, "Missing required parameter 'key' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'fieldType' is set
-            if (fieldType == null)
-                throw new ApiException(400, "Missing required parameter 'fieldType' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'objectType' is set
-            if (objectType == null)
-                throw new ApiException(400, "Missing required parameter 'objectType' when calling Custom_fieldsApi->Create");
 
             var localVarPath = "/admin/custom_fields";
             var localVarPathParams = new Dictionary<String, String>();
@@ -413,7 +383,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -427,10 +397,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (key != null) localVarFormParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // form parameter
-            if (fieldType != null) localVarFormParams.Add("field_type", Configuration.ApiClient.ParameterToString(fieldType)); // form parameter
-            if (objectType != null) localVarFormParams.Add("object_type", Configuration.ApiClient.ParameterToString(objectType)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -455,14 +429,11 @@ namespace UserVoiceSdk.Api
         /// # Create a custom field 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CustomFieldResponse</returns>
-        public async System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (string name, string key, string fieldType, string objectType)
+        public async System.Threading.Tasks.Task<CustomFieldResponse> CreateAsync (Request11 request = null)
         {
-             ApiResponse<CustomFieldResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, key, fieldType, objectType);
+             ApiResponse<CustomFieldResponse> localVarResponse = await CreateAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -471,25 +442,10 @@ namespace UserVoiceSdk.Api
         /// # Create a custom field 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="key"></param>
-        /// <param name="fieldType">boolean: True or False value   timestamp: datetime value, 2000-01-01T00:00:00Z format   string: String value; 128 or fewer characters.   text: Text value; 10,000 or fewer characters.   number: Number value. 15 or fewer digits. All numbers are processed as 64-bit floating-point numbers.</param>
-        /// <param name="objectType"></param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (string name, string key, string fieldType, string objectType)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> CreateAsyncWithHttpInfo (Request11 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'key' is set
-            if (key == null)
-                throw new ApiException(400, "Missing required parameter 'key' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'fieldType' is set
-            if (fieldType == null)
-                throw new ApiException(400, "Missing required parameter 'fieldType' when calling Custom_fieldsApi->Create");
-            // verify the required parameter 'objectType' is set
-            if (objectType == null)
-                throw new ApiException(400, "Missing required parameter 'objectType' when calling Custom_fieldsApi->Create");
 
             var localVarPath = "/admin/custom_fields";
             var localVarPathParams = new Dictionary<String, String>();
@@ -501,7 +457,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -515,18 +471,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (key != null) localVarFormParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // form parameter
-            if (fieldType != null) localVarFormParams.Add("field_type", Configuration.ApiClient.ParameterToString(fieldType)); // form parameter
-            if (objectType != null) localVarFormParams.Add("object_type", Configuration.ApiClient.ParameterToString(objectType)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -586,7 +546,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -656,7 +616,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -672,13 +632,13 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -710,13 +670,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>CustomFieldResponsePaginated</returns>
-        public CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        public CustomFieldResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
-             ApiResponse<CustomFieldResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, objectType, key);
+             ApiResponse<CustomFieldResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, objectType, key);
              return localVarResponse.Data;
         }
 
@@ -726,11 +687,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponsePaginated</returns>
-        public ApiResponse< CustomFieldResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        public ApiResponse< CustomFieldResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
 
             var localVarPath = "/admin/custom_fields";
@@ -743,7 +705,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -759,6 +721,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (objectType != null) localVarQueryParams.Add("object_type", Configuration.ApiClient.ParameterToString(objectType)); // query parameter
             if (key != null) localVarQueryParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // query parameter
@@ -788,13 +751,14 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>Task of CustomFieldResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        public async System.Threading.Tasks.Task<CustomFieldResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
-             ApiResponse<CustomFieldResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, objectType, key);
+             ApiResponse<CustomFieldResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, objectType, key);
              return localVarResponse.Data;
 
         }
@@ -805,11 +769,12 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="objectType"> (optional)</param>
         /// <param name="key"> (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> objectType = null, List<string> key = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> objectType = null, List<string> key = null)
         {
 
             var localVarPath = "/admin/custom_fields";
@@ -822,7 +787,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -838,17 +803,18 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (objectType != null) localVarQueryParams.Add("object_type", Configuration.ApiClient.ParameterToString(objectType)); // query parameter
             if (key != null) localVarQueryParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -908,7 +874,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -978,7 +944,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -994,13 +960,13 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1031,12 +997,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>CustomFieldResponse</returns>
-        public CustomFieldResponse UpdateById (long? id, string name = null, string key = null)
+        public CustomFieldResponse UpdateById (long? id, Request12 request = null)
         {
-             ApiResponse<CustomFieldResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, key);
+             ApiResponse<CustomFieldResponse> localVarResponse = UpdateByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -1045,10 +1010,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of CustomFieldResponse</returns>
-        public ApiResponse< CustomFieldResponse > UpdateByIdWithHttpInfo (long? id, string name = null, string key = null)
+        public ApiResponse< CustomFieldResponse > UpdateByIdWithHttpInfo (long? id, Request12 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1064,7 +1028,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1079,8 +1043,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (key != null) localVarFormParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1106,12 +1076,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of CustomFieldResponse</returns>
-        public async System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, string name = null, string key = null)
+        public async System.Threading.Tasks.Task<CustomFieldResponse> UpdateByIdAsync (long? id, Request12 request = null)
         {
-             ApiResponse<CustomFieldResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, key);
+             ApiResponse<CustomFieldResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -1121,10 +1090,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="key"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (CustomFieldResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, string key = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CustomFieldResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request12 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1140,7 +1108,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1155,16 +1123,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (key != null) localVarFormParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

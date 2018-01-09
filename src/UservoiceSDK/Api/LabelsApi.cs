@@ -31,11 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        LabelResponse Attach (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        LabelResponse Attach (Request28 request = null);
 
         /// <summary>
         /// # Create a label
@@ -44,11 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        ApiResponse<LabelResponse> AttachWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        ApiResponse<LabelResponse> AttachWithHttpInfo (Request28 request = null);
         /// <summary>
         /// # Create a label
         /// </summary>
@@ -56,11 +52,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        LabelResponse Create (string name, long? linksParent = null, List<string> includes = null);
+        LabelResponse Create (Request27 request = null);
 
         /// <summary>
         /// # Create a label
@@ -69,11 +63,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        ApiResponse<LabelResponse> CreateWithHttpInfo (string name, long? linksParent = null, List<string> includes = null);
+        ApiResponse<LabelResponse> CreateWithHttpInfo (Request27 request = null);
         /// <summary>
         /// # Delete a label
         /// </summary>
@@ -82,9 +74,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        LabelResponse DeleteById (long? id, List<string> includes = null);
+        LabelResponse DeleteById (long? id, Request31 request = null);
 
         /// <summary>
         /// # Delete a label
@@ -94,9 +86,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        ApiResponse<LabelResponse> DeleteByIdWithHttpInfo (long? id, List<string> includes = null);
+        ApiResponse<LabelResponse> DeleteByIdWithHttpInfo (long? id, Request31 request = null);
         /// <summary>
         /// # Create a label
         /// </summary>
@@ -104,11 +96,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        LabelResponse Detach (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        LabelResponse Detach (Request29 request = null);
 
         /// <summary>
         /// # Create a label
@@ -117,11 +107,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        ApiResponse<LabelResponse> DetachWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        ApiResponse<LabelResponse> DetachWithHttpInfo (Request29 request = null);
         /// <summary>
         /// # List labels
         /// </summary>
@@ -131,10 +119,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>LabelResponsePaginated</returns>
-        LabelResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        LabelResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
 
         /// <summary>
         /// # List labels
@@ -145,10 +134,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of LabelResponsePaginated</returns>
-        ApiResponse<LabelResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        ApiResponse<LabelResponsePaginated> GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve labels by id
         /// </summary>
@@ -180,11 +170,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        LabelResponse UpdateById (long? id, string name = null, long? linksParent = null, List<string> includes = null);
+        LabelResponse UpdateById (long? id, Request30 request = null);
 
         /// <summary>
         /// # Update a label
@@ -194,11 +182,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        ApiResponse<LabelResponse> UpdateByIdWithHttpInfo (long? id, string name = null, long? linksParent = null, List<string> includes = null);
+        ApiResponse<LabelResponse> UpdateByIdWithHttpInfo (long? id, Request30 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -208,11 +194,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        System.Threading.Tasks.Task<LabelResponse> AttachAsync (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponse> AttachAsync (Request28 request = null);
 
         /// <summary>
         /// # Create a label
@@ -221,11 +205,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> AttachAsyncWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> AttachAsyncWithHttpInfo (Request28 request = null);
         /// <summary>
         /// # Create a label
         /// </summary>
@@ -233,11 +215,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        System.Threading.Tasks.Task<LabelResponse> CreateAsync (string name, long? linksParent = null, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponse> CreateAsync (Request27 request = null);
 
         /// <summary>
         /// # Create a label
@@ -246,11 +226,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> CreateAsyncWithHttpInfo (string name, long? linksParent = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> CreateAsyncWithHttpInfo (Request27 request = null);
         /// <summary>
         /// # Delete a label
         /// </summary>
@@ -259,9 +237,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        System.Threading.Tasks.Task<LabelResponse> DeleteByIdAsync (long? id, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponse> DeleteByIdAsync (long? id, Request31 request = null);
 
         /// <summary>
         /// # Delete a label
@@ -271,9 +249,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DeleteByIdAsyncWithHttpInfo (long? id, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DeleteByIdAsyncWithHttpInfo (long? id, Request31 request = null);
         /// <summary>
         /// # Create a label
         /// </summary>
@@ -281,11 +259,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        System.Threading.Tasks.Task<LabelResponse> DetachAsync (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponse> DetachAsync (Request29 request = null);
 
         /// <summary>
         /// # Create a label
@@ -294,11 +270,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DetachAsyncWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DetachAsyncWithHttpInfo (Request29 request = null);
         /// <summary>
         /// # List labels
         /// </summary>
@@ -308,10 +282,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of LabelResponsePaginated</returns>
-        System.Threading.Tasks.Task<LabelResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
 
         /// <summary>
         /// # List labels
@@ -322,10 +297,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponsePaginated)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null);
         /// <summary>
         /// # Retrieve labels by id
         /// </summary>
@@ -357,11 +333,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        System.Threading.Tasks.Task<LabelResponse> UpdateByIdAsync (long? id, string name = null, long? linksParent = null, List<string> includes = null);
+        System.Threading.Tasks.Task<LabelResponse> UpdateByIdAsync (long? id, Request30 request = null);
 
         /// <summary>
         /// # Update a label
@@ -371,11 +345,9 @@ namespace UserVoiceSdk.Api
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, long? linksParent = null, List<string> includes = null);
+        System.Threading.Tasks.Task<ApiResponse<LabelResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request30 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -472,13 +444,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        public LabelResponse Attach (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public LabelResponse Attach (Request28 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = AttachWithHttpInfo(linksLabel, linksSuggestion, includes);
+             ApiResponse<LabelResponse> localVarResponse = AttachWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -486,18 +456,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        public ApiResponse< LabelResponse > AttachWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public ApiResponse< LabelResponse > AttachWithHttpInfo (Request28 request = null)
         {
-            // verify the required parameter 'linksLabel' is set
-            if (linksLabel == null)
-                throw new ApiException(400, "Missing required parameter 'linksLabel' when calling LabelsApi->Attach");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling LabelsApi->Attach");
 
             var localVarPath = "/admin/labels/attach";
             var localVarPathParams = new Dictionary<String, String>();
@@ -509,7 +471,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -523,9 +485,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (linksLabel != null) localVarFormParams.Add("links.label", Configuration.ApiClient.ParameterToString(linksLabel)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -550,13 +517,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        public async System.Threading.Tasks.Task<LabelResponse> AttachAsync (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponse> AttachAsync (Request28 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = await AttachAsyncWithHttpInfo(linksLabel, linksSuggestion, includes);
+             ApiResponse<LabelResponse> localVarResponse = await AttachAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -565,18 +530,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> AttachAsyncWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> AttachAsyncWithHttpInfo (Request28 request = null)
         {
-            // verify the required parameter 'linksLabel' is set
-            if (linksLabel == null)
-                throw new ApiException(400, "Missing required parameter 'linksLabel' when calling LabelsApi->Attach");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling LabelsApi->Attach");
 
             var localVarPath = "/admin/labels/attach";
             var localVarPathParams = new Dictionary<String, String>();
@@ -588,7 +545,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -602,17 +559,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (linksLabel != null) localVarFormParams.Add("links.label", Configuration.ApiClient.ParameterToString(linksLabel)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -642,13 +604,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        public LabelResponse Create (string name, long? linksParent = null, List<string> includes = null)
+        public LabelResponse Create (Request27 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = CreateWithHttpInfo(name, linksParent, includes);
+             ApiResponse<LabelResponse> localVarResponse = CreateWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -656,15 +616,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        public ApiResponse< LabelResponse > CreateWithHttpInfo (string name, long? linksParent = null, List<string> includes = null)
+        public ApiResponse< LabelResponse > CreateWithHttpInfo (Request27 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling LabelsApi->Create");
 
             var localVarPath = "/admin/labels";
             var localVarPathParams = new Dictionary<String, String>();
@@ -676,7 +631,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -690,9 +645,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksParent != null) localVarFormParams.Add("links.parent", Configuration.ApiClient.ParameterToString(linksParent)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -717,13 +677,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        public async System.Threading.Tasks.Task<LabelResponse> CreateAsync (string name, long? linksParent = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponse> CreateAsync (Request27 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = await CreateAsyncWithHttpInfo(name, linksParent, includes);
+             ApiResponse<LabelResponse> localVarResponse = await CreateAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -732,15 +690,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="name"></param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> CreateAsyncWithHttpInfo (string name, long? linksParent = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> CreateAsyncWithHttpInfo (Request27 request = null)
         {
-            // verify the required parameter 'name' is set
-            if (name == null)
-                throw new ApiException(400, "Missing required parameter 'name' when calling LabelsApi->Create");
 
             var localVarPath = "/admin/labels";
             var localVarPathParams = new Dictionary<String, String>();
@@ -752,7 +705,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -766,17 +719,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksParent != null) localVarFormParams.Add("links.parent", Configuration.ApiClient.ParameterToString(linksParent)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -807,11 +765,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        public LabelResponse DeleteById (long? id, List<string> includes = null)
+        public LabelResponse DeleteById (long? id, Request31 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = DeleteByIdWithHttpInfo(id, includes);
+             ApiResponse<LabelResponse> localVarResponse = DeleteByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -820,9 +778,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        public ApiResponse< LabelResponse > DeleteByIdWithHttpInfo (long? id, List<string> includes = null)
+        public ApiResponse< LabelResponse > DeleteByIdWithHttpInfo (long? id, Request31 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -838,7 +796,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -853,7 +811,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -879,11 +844,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        public async System.Threading.Tasks.Task<LabelResponse> DeleteByIdAsync (long? id, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponse> DeleteByIdAsync (long? id, Request31 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = await DeleteByIdAsyncWithHttpInfo(id, includes);
+             ApiResponse<LabelResponse> localVarResponse = await DeleteByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -893,9 +858,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DeleteByIdAsyncWithHttpInfo (long? id, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DeleteByIdAsyncWithHttpInfo (long? id, Request31 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -911,7 +876,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -926,15 +891,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -964,13 +936,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        public LabelResponse Detach (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public LabelResponse Detach (Request29 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = DetachWithHttpInfo(linksLabel, linksSuggestion, includes);
+             ApiResponse<LabelResponse> localVarResponse = DetachWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -978,18 +948,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        public ApiResponse< LabelResponse > DetachWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public ApiResponse< LabelResponse > DetachWithHttpInfo (Request29 request = null)
         {
-            // verify the required parameter 'linksLabel' is set
-            if (linksLabel == null)
-                throw new ApiException(400, "Missing required parameter 'linksLabel' when calling LabelsApi->Detach");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling LabelsApi->Detach");
 
             var localVarPath = "/admin/labels/detach";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1001,7 +963,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1015,9 +977,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (linksLabel != null) localVarFormParams.Add("links.label", Configuration.ApiClient.ParameterToString(linksLabel)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1042,13 +1009,11 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        public async System.Threading.Tasks.Task<LabelResponse> DetachAsync (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponse> DetachAsync (Request29 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = await DetachAsyncWithHttpInfo(linksLabel, linksSuggestion, includes);
+             ApiResponse<LabelResponse> localVarResponse = await DetachAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -1057,18 +1022,10 @@ namespace UserVoiceSdk.Api
         /// # Create a label 
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="linksLabel"></param>
-        /// <param name="linksSuggestion"></param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DetachAsyncWithHttpInfo (long? linksLabel, long? linksSuggestion, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> DetachAsyncWithHttpInfo (Request29 request = null)
         {
-            // verify the required parameter 'linksLabel' is set
-            if (linksLabel == null)
-                throw new ApiException(400, "Missing required parameter 'linksLabel' when calling LabelsApi->Detach");
-            // verify the required parameter 'linksSuggestion' is set
-            if (linksSuggestion == null)
-                throw new ApiException(400, "Missing required parameter 'linksSuggestion' when calling LabelsApi->Detach");
 
             var localVarPath = "/admin/labels/detach";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1080,7 +1037,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1094,17 +1051,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (linksLabel != null) localVarFormParams.Add("links.label", Configuration.ApiClient.ParameterToString(linksLabel)); // form parameter
-            if (linksSuggestion != null) localVarFormParams.Add("links.suggestion", Configuration.ApiClient.ParameterToString(linksSuggestion)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1136,12 +1098,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>LabelResponsePaginated</returns>
-        public LabelResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public LabelResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
-             ApiResponse<LabelResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, sort, includes);
+             ApiResponse<LabelResponsePaginated> localVarResponse = GetWithHttpInfo(page, perPage, pageToken, sort, includes);
              return localVarResponse.Data;
         }
 
@@ -1151,10 +1114,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>ApiResponse of LabelResponsePaginated</returns>
-        public ApiResponse< LabelResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public ApiResponse< LabelResponsePaginated > GetWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/labels";
@@ -1167,7 +1131,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1183,6 +1147,7 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
@@ -1211,12 +1176,13 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of LabelResponsePaginated</returns>
-        public async System.Threading.Tasks.Task<LabelResponsePaginated> GetAsync (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponsePaginated> GetAsync (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
-             ApiResponse<LabelResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, sort, includes);
+             ApiResponse<LabelResponsePaginated> localVarResponse = await GetAsyncWithHttpInfo(page, perPage, pageToken, sort, includes);
              return localVarResponse.Data;
 
         }
@@ -1227,10 +1193,11 @@ namespace UserVoiceSdk.Api
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page"> (optional, default to 1)</param>
         /// <param name="perPage"> (optional, default to 20)</param>
+        /// <param name="pageToken"> (optional)</param>
         /// <param name="sort"> (optional, default to -id)</param>
         /// <param name="includes"> (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponsePaginated)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string sort = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponsePaginated>> GetAsyncWithHttpInfo (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> includes = null)
         {
 
             var localVarPath = "/admin/labels";
@@ -1243,7 +1210,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1259,16 +1226,17 @@ namespace UserVoiceSdk.Api
             localVarPathParams.Add("format", "json");
             if (page != null) localVarQueryParams.Add("page", Configuration.ApiClient.ParameterToString(page)); // query parameter
             if (perPage != null) localVarQueryParams.Add("per_page", Configuration.ApiClient.ParameterToString(perPage)); // query parameter
+            if (pageToken != null) localVarQueryParams.Add("page_token", Configuration.ApiClient.ParameterToString(pageToken)); // query parameter
             if (sort != null) localVarQueryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1330,7 +1298,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1403,7 +1371,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1420,13 +1388,13 @@ namespace UserVoiceSdk.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (includes != null) localVarQueryParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // query parameter
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
@@ -1457,13 +1425,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>LabelResponse</returns>
-        public LabelResponse UpdateById (long? id, string name = null, long? linksParent = null, List<string> includes = null)
+        public LabelResponse UpdateById (long? id, Request30 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = UpdateByIdWithHttpInfo(id, name, linksParent, includes);
+             ApiResponse<LabelResponse> localVarResponse = UpdateByIdWithHttpInfo(id, request);
              return localVarResponse.Data;
         }
 
@@ -1472,11 +1438,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of LabelResponse</returns>
-        public ApiResponse< LabelResponse > UpdateByIdWithHttpInfo (long? id, string name = null, long? linksParent = null, List<string> includes = null)
+        public ApiResponse< LabelResponse > UpdateByIdWithHttpInfo (long? id, Request30 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1492,7 +1456,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1507,9 +1471,14 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksParent != null) localVarFormParams.Add("links.parent", Configuration.ApiClient.ParameterToString(linksParent)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -1535,13 +1504,11 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of LabelResponse</returns>
-        public async System.Threading.Tasks.Task<LabelResponse> UpdateByIdAsync (long? id, string name = null, long? linksParent = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<LabelResponse> UpdateByIdAsync (long? id, Request30 request = null)
         {
-             ApiResponse<LabelResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, name, linksParent, includes);
+             ApiResponse<LabelResponse> localVarResponse = await UpdateByIdAsyncWithHttpInfo(id, request);
              return localVarResponse.Data;
 
         }
@@ -1551,11 +1518,9 @@ namespace UserVoiceSdk.Api
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <param name="name"> (optional)</param>
-        /// <param name="linksParent"> (optional)</param>
-        /// <param name="includes"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (LabelResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> UpdateByIdAsyncWithHttpInfo (long? id, string name = null, long? linksParent = null, List<string> includes = null)
+        public async System.Threading.Tasks.Task<ApiResponse<LabelResponse>> UpdateByIdAsyncWithHttpInfo (long? id, Request30 request = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1571,7 +1536,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1586,17 +1551,22 @@ namespace UserVoiceSdk.Api
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (name != null) localVarFormParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // form parameter
-            if (linksParent != null) localVarFormParams.Add("links.parent", Configuration.ApiClient.ParameterToString(linksParent)); // form parameter
-            if (includes != null) localVarFormParams.Add("includes", Configuration.ApiClient.ParameterToString(includes)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

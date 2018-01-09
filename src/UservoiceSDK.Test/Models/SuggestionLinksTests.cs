@@ -89,6 +89,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Forum'
         }
         /// <summary>
+        /// Test the property 'Labels'
+        /// </summary>
+        [Test]
+        public void LabelsTest()
+        {
+            // TODO unit test for the property 'Labels'
+        }
+        /// <summary>
         /// Test the property 'LastStatusUpdate'
         /// </summary>
         [Test]
@@ -103,6 +111,14 @@ namespace UserVoiceSdk.Test
         public void ParentSuggestionTest()
         {
             // TODO unit test for the property 'ParentSuggestion'
+        }
+        /// <summary>
+        /// Test the property 'ParentSuggestions'
+        /// </summary>
+        [Test]
+        public void ParentSuggestionsTest()
+        {
+            // TODO unit test for the property 'ParentSuggestions'
         }
         /// <summary>
         /// Test the property 'Status'

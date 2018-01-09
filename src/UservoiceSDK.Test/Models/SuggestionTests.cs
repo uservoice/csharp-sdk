@@ -289,6 +289,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Title'
         }
         /// <summary>
+        /// Test the property 'Unmergeable'
+        /// </summary>
+        [Test]
+        public void UnmergeableTest()
+        {
+            // TODO unit test for the property 'Unmergeable'
+        }
+        /// <summary>
         /// Test the property 'UpdatedAt'
         /// </summary>
         [Test]

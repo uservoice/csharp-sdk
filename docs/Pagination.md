@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Page** | **long?** |  | [optional] 
+**PageToken** | **string** |  | [optional] 
 **PerPage** | **long?** |  | [optional] 
 **TotalPages** | **long?** |  | [optional] 
 **TotalRecords** | **long?** |  | [optional] 

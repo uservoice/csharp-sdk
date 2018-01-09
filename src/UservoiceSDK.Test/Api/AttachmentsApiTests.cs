@@ -76,9 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //System.IO.Stream file = null;
-            //List<string> includes = null;
-            //var response = instance.Create(file, includes);
+            //Request request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<AttachmentResponse> (response, "response is AttachmentResponse");
         }
         
@@ -90,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request1 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<AttachmentResponse> (response, "response is AttachmentResponse");
         }
         
@@ -104,11 +103,12 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> suggestion = null;
             //List<int?> note = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, suggestion, note, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, suggestion, note, includes);
             //Assert.IsInstanceOf<AttachmentResponsePaginated> (response, "response is AttachmentResponsePaginated");
         }
         

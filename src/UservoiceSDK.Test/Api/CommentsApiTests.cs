@@ -77,8 +77,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.ApproveById(id, includes);
+            //Request8 request = null;
+            //var response = instance.ApproveById(id, request);
             //Assert.IsInstanceOf<CommentResponse> (response, "response is CommentResponse");
         }
         
@@ -89,11 +89,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string body = null;
-            //long? linksSuggestion = null;
-            //string bodyMimeType = null;
-            //List<string> includes = null;
-            //var response = instance.Create(body, linksSuggestion, bodyMimeType, includes);
+            //Request6 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<CommentResponse> (response, "response is CommentResponse");
         }
         
@@ -105,8 +102,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request7 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<CommentResponse> (response, "response is CommentResponse");
         }
         
@@ -119,10 +116,11 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<string> state = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, state, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, state, includes);
             //Assert.IsInstanceOf<CommentResponsePaginated> (response, "response is CommentResponsePaginated");
         }
         
@@ -147,8 +145,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.SpamById(id, includes);
+            //Request9 request = null;
+            //var response = instance.SpamById(id, request);
             //Assert.IsInstanceOf<CommentResponse> (response, "response is CommentResponse");
         }
         
@@ -160,8 +158,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.UnremoveById(id, includes);
+            //Request10 request = null;
+            //var response = instance.UnremoveById(id, request);
             //Assert.IsInstanceOf<CommentResponse> (response, "response is CommentResponse");
         }
         

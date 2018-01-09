@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="approvebyid"></a>
 # **ApproveById**
-> CommentResponse ApproveById (long? id, List<string> includes = null)
+> CommentResponse ApproveById (long? id, Request8 request = null)
 
 
 
@@ -51,12 +51,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request8(); // Request8 | Payload for this request (optional) 
 
             try
             {
                 // 
-                CommentResponse result = client.Comments.ApproveById(id, includes);
+                CommentResponse result = client.Comments.ApproveById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -78,7 +78,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request8**](request_8.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -86,18 +86,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="create"></a>
 # **Create**
-> CommentResponse Create (string body, long? linksSuggestion, string bodyMimeType = null, List<string> includes = null)
+> CommentResponse Create (Request6 request = null)
 
 # Create a comment
 
@@ -134,15 +134,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var body = body_example;  // string | 
-            var linksSuggestion = 789;  // long? | 
-            var bodyMimeType = bodyMimeType_example;  // string |  (optional)  (default to text/plain)
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request6(); // Request6 | Payload for this request (optional) 
 
             try
             {
                 // # Create a comment
-                CommentResponse result = client.Comments.Create(body, linksSuggestion, bodyMimeType, includes);
+                CommentResponse result = client.Comments.Create(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -163,10 +160,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**|  | 
- **linksSuggestion** | **long?**|  | 
- **bodyMimeType** | **string**|  | [optional] [default to text/plain]
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request6**](request_6.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -174,18 +168,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletebyid"></a>
 # **DeleteById**
-> CommentResponse DeleteById (long? id, List<string> includes = null)
+> CommentResponse DeleteById (long? id, Request7 request = null)
 
 # Delete a comment
 
@@ -223,12 +217,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request7(); // Request7 | Payload for this request (optional) 
 
             try
             {
                 // # Delete a comment
-                CommentResponse result = client.Comments.DeleteById(id, includes);
+                CommentResponse result = client.Comments.DeleteById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -250,7 +244,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request7**](request_7.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -258,18 +252,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
-> CommentResponsePaginated Get (long? page = null, long? perPage = null, string sort = null, List<string> state = null, List<string> includes = null)
+> CommentResponsePaginated Get (long? page = null, long? perPage = null, string pageToken = null, string sort = null, List<string> state = null, List<string> includes = null)
 
 # List comments
 
@@ -308,6 +302,7 @@ namespace Example
 
             var page = 789;  // long? |  (optional)  (default to 1)
             var perPage = 789;  // long? |  (optional)  (default to 20)
+            var pageToken = pageToken_example;  // string |  (optional) 
             var sort = sort_example;  // string |  (optional)  (default to -id)
             var state = new List<string>(); // List<string> |  (optional) 
             var includes = new List<string>(); // List<string> |  (optional) 
@@ -315,7 +310,7 @@ namespace Example
             try
             {
                 // # List comments
-                CommentResponsePaginated result = client.Comments.Get(page, perPage, sort, state, includes);
+                CommentResponsePaginated result = client.Comments.Get(page, perPage, pageToken, sort, state, includes);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -338,6 +333,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **long?**|  | [optional] [default to 1]
  **perPage** | **long?**|  | [optional] [default to 20]
+ **pageToken** | **string**|  | [optional] 
  **sort** | **string**|  | [optional] [default to -id]
  **state** | [**List<string>**](string.md)|  | [optional] 
  **includes** | [**List<string>**](string.md)|  | [optional] 
@@ -348,11 +344,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -432,18 +428,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="spambyid"></a>
 # **SpamById**
-> CommentResponse SpamById (long? id, List<string> includes = null)
+> CommentResponse SpamById (long? id, Request9 request = null)
 
 
 
@@ -481,12 +477,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request9(); // Request9 | Payload for this request (optional) 
 
             try
             {
                 // 
-                CommentResponse result = client.Comments.SpamById(id, includes);
+                CommentResponse result = client.Comments.SpamById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -508,7 +504,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request9**](request_9.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -516,18 +512,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="unremovebyid"></a>
 # **UnremoveById**
-> CommentResponse UnremoveById (long? id, List<string> includes = null)
+> CommentResponse UnremoveById (long? id, Request10 request = null)
 
 
 
@@ -565,12 +561,12 @@ namespace Example
 			//client.LoginAsUser(ApiKey, Username, Password);
 
             var id = 789;  // long? | 
-            var includes = new List<string>(); // List<string> |  (optional) 
+            var request = new Request10(); // Request10 | Payload for this request (optional) 
 
             try
             {
                 // 
-                CommentResponse result = client.Comments.UnremoveById(id, includes);
+                CommentResponse result = client.Comments.UnremoveById(id, request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -592,7 +588,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**|  | 
- **includes** | [**List<string>**](string.md)|  | [optional] 
+ **request** | [**Request10**](request_10.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -600,11 +596,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

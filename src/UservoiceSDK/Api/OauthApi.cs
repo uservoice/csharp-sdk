@@ -31,13 +31,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Token</returns>
-        Token GetOauthToken (string grantType, string clientId, string username = null, string password = null, string clientSecret = null);
+        Token GetOauthToken (Request55 request = null);
 
         /// <summary>
         /// 
@@ -46,13 +42,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of Token</returns>
-        ApiResponse<Token> GetOauthTokenWithHttpInfo (string grantType, string clientId, string username = null, string password = null, string clientSecret = null);
+        ApiResponse<Token> GetOauthTokenWithHttpInfo (Request55 request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -62,13 +54,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of Token</returns>
-        System.Threading.Tasks.Task<Token> GetOauthTokenAsync (string grantType, string clientId, string username = null, string password = null, string clientSecret = null);
+        System.Threading.Tasks.Task<Token> GetOauthTokenAsync (Request55 request = null);
 
         /// <summary>
         /// 
@@ -77,13 +65,9 @@ namespace UserVoiceSdk.Api
         /// 
         /// </remarks>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (Token)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Token>> GetOauthTokenAsyncWithHttpInfo (string grantType, string clientId, string username = null, string password = null, string clientSecret = null);
+        System.Threading.Tasks.Task<ApiResponse<Token>> GetOauthTokenAsyncWithHttpInfo (Request55 request = null);
         #endregion Asynchronous Operations
     }
 
@@ -180,15 +164,11 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Token</returns>
-        public Token GetOauthToken (string grantType, string clientId, string username = null, string password = null, string clientSecret = null)
+        public Token GetOauthToken (Request55 request = null)
         {
-             ApiResponse<Token> localVarResponse = GetOauthTokenWithHttpInfo(grantType, clientId, username, password, clientSecret);
+             ApiResponse<Token> localVarResponse = GetOauthTokenWithHttpInfo(request);
              return localVarResponse.Data;
         }
 
@@ -196,20 +176,10 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>ApiResponse of Token</returns>
-        public ApiResponse< Token > GetOauthTokenWithHttpInfo (string grantType, string clientId, string username = null, string password = null, string clientSecret = null)
+        public ApiResponse< Token > GetOauthTokenWithHttpInfo (Request55 request = null)
         {
-            // verify the required parameter 'grantType' is set
-            if (grantType == null)
-                throw new ApiException(400, "Missing required parameter 'grantType' when calling OauthApi->GetOauthToken");
-            // verify the required parameter 'clientId' is set
-            if (clientId == null)
-                throw new ApiException(400, "Missing required parameter 'clientId' when calling OauthApi->GetOauthToken");
 
             var localVarPath = "/oauth/token";
             var localVarPathParams = new Dictionary<String, String>();
@@ -221,7 +191,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -235,11 +205,14 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (grantType != null) localVarFormParams.Add("grant_type", Configuration.ApiClient.ParameterToString(grantType)); // form parameter
-            if (username != null) localVarFormParams.Add("username", Configuration.ApiClient.ParameterToString(username)); // form parameter
-            if (password != null) localVarFormParams.Add("password", Configuration.ApiClient.ParameterToString(password)); // form parameter
-            if (clientId != null) localVarFormParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // form parameter
-            if (clientSecret != null) localVarFormParams.Add("client_secret", Configuration.ApiClient.ParameterToString(clientSecret)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -264,15 +237,11 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of Token</returns>
-        public async System.Threading.Tasks.Task<Token> GetOauthTokenAsync (string grantType, string clientId, string username = null, string password = null, string clientSecret = null)
+        public async System.Threading.Tasks.Task<Token> GetOauthTokenAsync (Request55 request = null)
         {
-             ApiResponse<Token> localVarResponse = await GetOauthTokenAsyncWithHttpInfo(grantType, clientId, username, password, clientSecret);
+             ApiResponse<Token> localVarResponse = await GetOauthTokenAsyncWithHttpInfo(request);
              return localVarResponse.Data;
 
         }
@@ -281,20 +250,10 @@ namespace UserVoiceSdk.Api
         ///  
         /// </summary>
         /// <exception cref="UserVoiceSdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grantType"></param>
-        /// <param name="clientId"></param>
-        /// <param name="username"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <param name="clientSecret"> (optional)</param>
+        /// <param name="request">Payload for this request (optional)</param>
         /// <returns>Task of ApiResponse (Token)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Token>> GetOauthTokenAsyncWithHttpInfo (string grantType, string clientId, string username = null, string password = null, string clientSecret = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Token>> GetOauthTokenAsyncWithHttpInfo (Request55 request = null)
         {
-            // verify the required parameter 'grantType' is set
-            if (grantType == null)
-                throw new ApiException(400, "Missing required parameter 'grantType' when calling OauthApi->GetOauthToken");
-            // verify the required parameter 'clientId' is set
-            if (clientId == null)
-                throw new ApiException(400, "Missing required parameter 'clientId' when calling OauthApi->GetOauthToken");
 
             var localVarPath = "/oauth/token";
             var localVarPathParams = new Dictionary<String, String>();
@@ -306,7 +265,7 @@ namespace UserVoiceSdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/x-www-form-urlencoded"
+                "application/json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -320,19 +279,22 @@ namespace UserVoiceSdk.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (grantType != null) localVarFormParams.Add("grant_type", Configuration.ApiClient.ParameterToString(grantType)); // form parameter
-            if (username != null) localVarFormParams.Add("username", Configuration.ApiClient.ParameterToString(username)); // form parameter
-            if (password != null) localVarFormParams.Add("password", Configuration.ApiClient.ParameterToString(password)); // form parameter
-            if (clientId != null) localVarFormParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // form parameter
-            if (clientSecret != null) localVarFormParams.Add("client_secret", Configuration.ApiClient.ParameterToString(clientSecret)); // form parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
 
-            // authentication (oauth2_password) required
+            // authentication (oauth2_client_credentials) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {
                 localVarHeaderParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
-            // authentication (oauth2_client_credentials) required
+            // authentication (oauth2_password) required
             // oauth required
             if (!String.IsNullOrEmpty(Configuration.AccessToken))
             {

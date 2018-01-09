@@ -78,6 +78,7 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> suggestion = null;
             //List<int?> user = null;
@@ -87,7 +88,7 @@ namespace UserVoiceSdk.Test
             //DateTime? periodEnd = null;
             //bool? anonymous = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, suggestion, user, legit, forum, periodStart, periodEnd, anonymous, includes);
             //Assert.IsInstanceOf<SupporterResponsePaginated> (response, "response is SupporterResponsePaginated");
         }
         

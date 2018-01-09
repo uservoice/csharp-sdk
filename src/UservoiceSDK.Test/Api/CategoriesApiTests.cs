@@ -76,10 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string name = null;
-            //long? linksForum = null;
-            //List<string> includes = null;
-            //var response = instance.Create(name, linksForum, includes);
+            //Request3 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<CategoryResponse> (response, "response is CategoryResponse");
         }
         
@@ -91,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request5 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<CategoryResponse> (response, "response is CategoryResponse");
         }
         
@@ -105,10 +103,11 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> forum = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, forum, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, forum, includes);
             //Assert.IsInstanceOf<CategoryResponsePaginated> (response, "response is CategoryResponsePaginated");
         }
         
@@ -133,10 +132,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string name = null;
-            //long? linksForum = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, name, linksForum, includes);
+            //Request4 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<CategoryResponse> (response, "response is CategoryResponse");
         }
         

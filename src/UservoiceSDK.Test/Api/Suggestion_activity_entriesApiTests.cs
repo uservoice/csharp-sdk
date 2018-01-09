@@ -78,6 +78,7 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> forum = null;
             //List<int?> user = null;
@@ -101,7 +102,7 @@ namespace UserVoiceSdk.Test
             //List<int?> uncategorizedInForum = null;
             //long? externalAccount = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, forum, user, suggestion, kind, state, spam, needsReview, periodStart, periodEnd, creator, categoryNone, category, statusNone, status, label, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, uncategorizedInForum, externalAccount, includes);
             //Assert.IsInstanceOf<SuggestionActivityEntryResponsePaginated> (response, "response is SuggestionActivityEntryResponsePaginated");
         }
         

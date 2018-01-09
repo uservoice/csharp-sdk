@@ -73,6 +73,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Page'
         }
         /// <summary>
+        /// Test the property 'PageToken'
+        /// </summary>
+        [Test]
+        public void PageTokenTest()
+        {
+            // TODO unit test for the property 'PageToken'
+        }
+        /// <summary>
         /// Test the property 'PerPage'
         /// </summary>
         [Test]

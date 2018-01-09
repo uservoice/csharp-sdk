@@ -37,24 +37,30 @@ namespace UserVoiceSdk.Models
         /// <param name="ExternalId">ExternalId.</param>
         /// <param name="Id">Id.</param>
         /// <param name="LastActiveAt">LastActiveAt.</param>
+        /// <param name="Ltv">Ltv.</param>
         /// <param name="LtvCents">LtvCents.</param>
+        /// <param name="Mrr">Mrr.</param>
         /// <param name="MrrCents">MrrCents.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="Nps">Nps.</param>
         /// <param name="Plan">Plan.</param>
         /// <param name="RequestsCount">RequestsCount.</param>
         /// <param name="SupportedIdeasCount">SupportedIdeasCount.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
         /// <param name="UsersCount">UsersCount.</param>
-        public ExternalAccount(DateTime? CreatedAt = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, DateTime? LastActiveAt = null, long? LtvCents = null, long? MrrCents = null, string Name = null, string Plan = null, long? RequestsCount = null, long? SupportedIdeasCount = null, DateTime? UpdatedAt = null, long? UsersCount = null)
+        public ExternalAccount(DateTime? CreatedAt = null, DateTime? ExternalCreatedAt = null, string ExternalId = null, long? Id = null, DateTime? LastActiveAt = null, decimal? Ltv = null, long? LtvCents = null, decimal? Mrr = null, long? MrrCents = null, string Name = null, decimal? Nps = null, string Plan = null, long? RequestsCount = null, long? SupportedIdeasCount = null, DateTime? UpdatedAt = null, long? UsersCount = null)
         {
             this.CreatedAt = CreatedAt;
             this.ExternalCreatedAt = ExternalCreatedAt;
             this.ExternalId = ExternalId;
             this.Id = Id;
             this.LastActiveAt = LastActiveAt;
+            this.Ltv = Ltv;
             this.LtvCents = LtvCents;
+            this.Mrr = Mrr;
             this.MrrCents = MrrCents;
             this.Name = Name;
+            this.Nps = Nps;
             this.Plan = Plan;
             this.RequestsCount = RequestsCount;
             this.SupportedIdeasCount = SupportedIdeasCount;
@@ -88,10 +94,20 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="last_active_at", EmitDefaultValue=false)]
         public DateTime? LastActiveAt { get; set; }
         /// <summary>
+        /// Gets or Sets Ltv
+        /// </summary>
+        [DataMember(Name="ltv", EmitDefaultValue=false)]
+        public decimal? Ltv { get; set; }
+        /// <summary>
         /// Gets or Sets LtvCents
         /// </summary>
         [DataMember(Name="ltv_cents", EmitDefaultValue=false)]
         public long? LtvCents { get; set; }
+        /// <summary>
+        /// Gets or Sets Mrr
+        /// </summary>
+        [DataMember(Name="mrr", EmitDefaultValue=false)]
+        public decimal? Mrr { get; set; }
         /// <summary>
         /// Gets or Sets MrrCents
         /// </summary>
@@ -102,6 +118,11 @@ namespace UserVoiceSdk.Models
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets Nps
+        /// </summary>
+        [DataMember(Name="nps", EmitDefaultValue=false)]
+        public decimal? Nps { get; set; }
         /// <summary>
         /// Gets or Sets Plan
         /// </summary>
@@ -140,9 +161,12 @@ namespace UserVoiceSdk.Models
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  LastActiveAt: ").Append(LastActiveAt).Append("\n");
+            sb.Append("  Ltv: ").Append(Ltv).Append("\n");
             sb.Append("  LtvCents: ").Append(LtvCents).Append("\n");
+            sb.Append("  Mrr: ").Append(Mrr).Append("\n");
             sb.Append("  MrrCents: ").Append(MrrCents).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Nps: ").Append(Nps).Append("\n");
             sb.Append("  Plan: ").Append(Plan).Append("\n");
             sb.Append("  RequestsCount: ").Append(RequestsCount).Append("\n");
             sb.Append("  SupportedIdeasCount: ").Append(SupportedIdeasCount).Append("\n");
@@ -210,9 +234,19 @@ namespace UserVoiceSdk.Models
                     this.LastActiveAt.Equals(other.LastActiveAt)
                 ) && 
                 (
+                    this.Ltv == other.Ltv ||
+                    this.Ltv != null &&
+                    this.Ltv.Equals(other.Ltv)
+                ) && 
+                (
                     this.LtvCents == other.LtvCents ||
                     this.LtvCents != null &&
                     this.LtvCents.Equals(other.LtvCents)
+                ) && 
+                (
+                    this.Mrr == other.Mrr ||
+                    this.Mrr != null &&
+                    this.Mrr.Equals(other.Mrr)
                 ) && 
                 (
                     this.MrrCents == other.MrrCents ||
@@ -223,6 +257,11 @@ namespace UserVoiceSdk.Models
                     this.Name == other.Name ||
                     this.Name != null &&
                     this.Name.Equals(other.Name)
+                ) && 
+                (
+                    this.Nps == other.Nps ||
+                    this.Nps != null &&
+                    this.Nps.Equals(other.Nps)
                 ) && 
                 (
                     this.Plan == other.Plan ||
@@ -272,12 +311,18 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.Id.GetHashCode();
                 if (this.LastActiveAt != null)
                     hash = hash * 59 + this.LastActiveAt.GetHashCode();
+                if (this.Ltv != null)
+                    hash = hash * 59 + this.Ltv.GetHashCode();
                 if (this.LtvCents != null)
                     hash = hash * 59 + this.LtvCents.GetHashCode();
+                if (this.Mrr != null)
+                    hash = hash * 59 + this.Mrr.GetHashCode();
                 if (this.MrrCents != null)
                     hash = hash * 59 + this.MrrCents.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.Nps != null)
+                    hash = hash * 59 + this.Nps.GetHashCode();
                 if (this.Plan != null)
                     hash = hash * 59 + this.Plan.GetHashCode();
                 if (this.RequestsCount != null)

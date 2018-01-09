@@ -129,6 +129,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'Links'
         }
         /// <summary>
+        /// Test the property 'Traits'
+        /// </summary>
+        [Test]
+        public void TraitsTest()
+        {
+            // TODO unit test for the property 'Traits'
+        }
+        /// <summary>
         /// Test the property 'UpdatedAt'
         /// </summary>
         [Test]

@@ -35,17 +35,21 @@ namespace UserVoiceSdk.Models
         /// <param name="Category">Category.</param>
         /// <param name="CreatedBy">CreatedBy.</param>
         /// <param name="Forum">Forum.</param>
+        /// <param name="Labels">Labels.</param>
         /// <param name="LastStatusUpdate">LastStatusUpdate.</param>
         /// <param name="ParentSuggestion">ParentSuggestion.</param>
+        /// <param name="ParentSuggestions">ParentSuggestions.</param>
         /// <param name="Status">Status.</param>
         /// <param name="Ticket">Ticket.</param>
-        public SuggestionLinks(long? Category = null, long? CreatedBy = null, long? Forum = null, long? LastStatusUpdate = null, long? ParentSuggestion = null, long? Status = null, long? Ticket = null)
+        public SuggestionLinks(long? Category = null, long? CreatedBy = null, long? Forum = null, List<long?> Labels = null, long? LastStatusUpdate = null, long? ParentSuggestion = null, List<long?> ParentSuggestions = null, long? Status = null, long? Ticket = null)
         {
             this.Category = Category;
             this.CreatedBy = CreatedBy;
             this.Forum = Forum;
+            this.Labels = Labels;
             this.LastStatusUpdate = LastStatusUpdate;
             this.ParentSuggestion = ParentSuggestion;
+            this.ParentSuggestions = ParentSuggestions;
             this.Status = Status;
             this.Ticket = Ticket;
         }
@@ -66,6 +70,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="forum", EmitDefaultValue=false)]
         public long? Forum { get; set; }
         /// <summary>
+        /// Gets or Sets Labels
+        /// </summary>
+        [DataMember(Name="labels", EmitDefaultValue=false)]
+        public List<long?> Labels { get; set; }
+        /// <summary>
         /// Gets or Sets LastStatusUpdate
         /// </summary>
         [DataMember(Name="last_status_update", EmitDefaultValue=false)]
@@ -75,6 +84,11 @@ namespace UserVoiceSdk.Models
         /// </summary>
         [DataMember(Name="parent_suggestion", EmitDefaultValue=false)]
         public long? ParentSuggestion { get; set; }
+        /// <summary>
+        /// Gets or Sets ParentSuggestions
+        /// </summary>
+        [DataMember(Name="parent_suggestions", EmitDefaultValue=false)]
+        public List<long?> ParentSuggestions { get; set; }
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
@@ -96,8 +110,10 @@ namespace UserVoiceSdk.Models
             sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  Forum: ").Append(Forum).Append("\n");
+            sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  LastStatusUpdate: ").Append(LastStatusUpdate).Append("\n");
             sb.Append("  ParentSuggestion: ").Append(ParentSuggestion).Append("\n");
+            sb.Append("  ParentSuggestions: ").Append(ParentSuggestions).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Ticket: ").Append(Ticket).Append("\n");
             sb.Append("}\n");
@@ -152,6 +168,11 @@ namespace UserVoiceSdk.Models
                     this.Forum.Equals(other.Forum)
                 ) && 
                 (
+                    this.Labels == other.Labels ||
+                    this.Labels != null &&
+                    this.Labels.SequenceEqual(other.Labels)
+                ) && 
+                (
                     this.LastStatusUpdate == other.LastStatusUpdate ||
                     this.LastStatusUpdate != null &&
                     this.LastStatusUpdate.Equals(other.LastStatusUpdate)
@@ -160,6 +181,11 @@ namespace UserVoiceSdk.Models
                     this.ParentSuggestion == other.ParentSuggestion ||
                     this.ParentSuggestion != null &&
                     this.ParentSuggestion.Equals(other.ParentSuggestion)
+                ) && 
+                (
+                    this.ParentSuggestions == other.ParentSuggestions ||
+                    this.ParentSuggestions != null &&
+                    this.ParentSuggestions.SequenceEqual(other.ParentSuggestions)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -190,10 +216,14 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.CreatedBy.GetHashCode();
                 if (this.Forum != null)
                     hash = hash * 59 + this.Forum.GetHashCode();
+                if (this.Labels != null)
+                    hash = hash * 59 + this.Labels.GetHashCode();
                 if (this.LastStatusUpdate != null)
                     hash = hash * 59 + this.LastStatusUpdate.GetHashCode();
                 if (this.ParentSuggestion != null)
                     hash = hash * 59 + this.ParentSuggestion.GetHashCode();
+                if (this.ParentSuggestions != null)
+                    hash = hash * 59 + this.ParentSuggestions.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
                 if (this.Ticket != null)

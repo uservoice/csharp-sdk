@@ -76,8 +76,8 @@ namespace UserVoiceSdk.Test
         public void BulkDeleteTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<int?> ids = null;
-            //var response = instance.BulkDelete(ids);
+            //Request15 request = null;
+            //var response = instance.BulkDelete(request);
             //Assert.IsInstanceOf<ExternalUserResponse> (response, "response is ExternalUserResponse");
         }
         
@@ -88,8 +88,8 @@ namespace UserVoiceSdk.Test
         public void BulkDeleteByExternalIdTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<string> externalIds = null;
-            //var response = instance.BulkDeleteByExternalId(externalIds);
+            //Request16 request = null;
+            //var response = instance.BulkDeleteByExternalId(request);
             //Assert.IsInstanceOf<ExternalUserResponse> (response, "response is ExternalUserResponse");
         }
         
@@ -102,11 +102,12 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<string> externalId = null;
             //List<int?> user = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, externalId, user, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, externalId, user, includes);
             //Assert.IsInstanceOf<ExternalUserResponsePaginated> (response, "response is ExternalUserResponsePaginated");
         }
         
@@ -130,23 +131,8 @@ namespace UserVoiceSdk.Test
         public void ImportTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //List<string> users = null;
-            //string usersIExternalId = null;
-            //string usersIEmail = null;
-            //string usersIAccountExternalId = null;
-            //long? usersIUserId = null;
-            //string usersIName = null;
-            //DateTime? usersIExternalCreatedAt = null;
-            //string usersIIp = null;
-            //string usersIType = null;
-            //string usersICustomFields = null;
-            //string usersIAccountName = null;
-            //string usersIAccountPlan = null;
-            //long? usersIAccountMrrCents = null;
-            //long? usersIAccountLtvCents = null;
-            //DateTime? usersIAccountExternalCreatedAt = null;
-            //string usersIAccountCustomFields = null;
-            //var response = instance.Import(users, usersIExternalId, usersIEmail, usersIAccountExternalId, usersIUserId, usersIName, usersIExternalCreatedAt, usersIIp, usersIType, usersICustomFields, usersIAccountName, usersIAccountPlan, usersIAccountMrrCents, usersIAccountLtvCents, usersIAccountExternalCreatedAt, usersIAccountCustomFields);
+            //Request17 request = null;
+            //var response = instance.Import(request);
             //Assert.IsInstanceOf<ExternalUserResponse> (response, "response is ExternalUserResponse");
         }
         

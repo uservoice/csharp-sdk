@@ -39,7 +39,7 @@ namespace UserVoiceSdk.Models
         /// <param name="OpenSuggestionsCount">OpenSuggestionsCount.</param>
         /// <param name="SuggestionsCount">SuggestionsCount.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public Category(DateTime? CreatedAt = null, long? Id = null, CategoryLinks Links = null, string Name = null, long? OpenSuggestionsCount = null, long? SuggestionsCount = null, DateTime? UpdatedAt = null)
+        public Category(DateTime? CreatedAt = null, long? Id = null, AdmincategoriesLinks Links = null, string Name = null, long? OpenSuggestionsCount = null, long? SuggestionsCount = null, DateTime? UpdatedAt = null)
         {
             this.CreatedAt = CreatedAt;
             this.Id = Id;
@@ -64,7 +64,7 @@ namespace UserVoiceSdk.Models
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name="links", EmitDefaultValue=false)]
-        public CategoryLinks Links { get; set; }
+        public AdmincategoriesLinks Links { get; set; }
         /// <summary>
         /// Gets or Sets Name
         /// </summary>

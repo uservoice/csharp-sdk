@@ -35,44 +35,58 @@ namespace UserVoiceSdk.Models
         /// <param name="AllowedState">AllowedState.</param>
         /// <param name="AvatarUrl">AvatarUrl.</param>
         /// <param name="City">City.</param>
+        /// <param name="CommentNotifications">CommentNotifications.</param>
         /// <param name="Country">Country.</param>
         /// <param name="CreatedAt">CreatedAt.</param>
         /// <param name="EmailAddress">EmailAddress.</param>
+        /// <param name="EmailConfirmed">EmailConfirmed.</param>
         /// <param name="Guid">Guid.</param>
         /// <param name="Id">Id.</param>
         /// <param name="IsAdmin">IsAdmin.</param>
         /// <param name="IsOwner">IsOwner.</param>
+        /// <param name="IsSubscribed">IsSubscribed.</param>
         /// <param name="JobTitle">JobTitle.</param>
         /// <param name="LastIp">LastIp.</param>
         /// <param name="LastLogin">LastLogin.</param>
         /// <param name="Links">Links.</param>
         /// <param name="Name">Name.</param>
+        /// <param name="Permissions">Permissions.</param>
         /// <param name="Region">Region.</param>
         /// <param name="SatisfactionScore">SatisfactionScore.</param>
+        /// <param name="StatusNotifications">StatusNotifications.</param>
         /// <param name="SuggestionVotes">SuggestionVotes.</param>
+        /// <param name="SupportCreatedAt">SupportCreatedAt.</param>
         /// <param name="SupportedSuggestionsCount">SupportedSuggestionsCount.</param>
+        /// <param name="Traits">Traits.</param>
         /// <param name="UpdatedAt">UpdatedAt.</param>
-        public User(string AllowedState = null, string AvatarUrl = null, string City = null, string Country = null, DateTime? CreatedAt = null, string EmailAddress = null, string Guid = null, long? Id = null, bool? IsAdmin = null, bool? IsOwner = null, string JobTitle = null, string LastIp = null, DateTime? LastLogin = null, UserLinks Links = null, string Name = null, string Region = null, long? SatisfactionScore = null, long? SuggestionVotes = null, long? SupportedSuggestionsCount = null, DateTime? UpdatedAt = null)
+        public User(string AllowedState = null, string AvatarUrl = null, string City = null, bool? CommentNotifications = null, string Country = null, DateTime? CreatedAt = null, string EmailAddress = null, bool? EmailConfirmed = null, string Guid = null, long? Id = null, bool? IsAdmin = null, bool? IsOwner = null, bool? IsSubscribed = null, string JobTitle = null, string LastIp = null, DateTime? LastLogin = null, UserLinks Links = null, string Name = null, AdminPermission Permissions = null, string Region = null, long? SatisfactionScore = null, bool? StatusNotifications = null, long? SuggestionVotes = null, DateTime? SupportCreatedAt = null, long? SupportedSuggestionsCount = null, UserTraits Traits = null, DateTime? UpdatedAt = null)
         {
             this.AllowedState = AllowedState;
             this.AvatarUrl = AvatarUrl;
             this.City = City;
+            this.CommentNotifications = CommentNotifications;
             this.Country = Country;
             this.CreatedAt = CreatedAt;
             this.EmailAddress = EmailAddress;
+            this.EmailConfirmed = EmailConfirmed;
             this.Guid = Guid;
             this.Id = Id;
             this.IsAdmin = IsAdmin;
             this.IsOwner = IsOwner;
+            this.IsSubscribed = IsSubscribed;
             this.JobTitle = JobTitle;
             this.LastIp = LastIp;
             this.LastLogin = LastLogin;
             this.Links = Links;
             this.Name = Name;
+            this.Permissions = Permissions;
             this.Region = Region;
             this.SatisfactionScore = SatisfactionScore;
+            this.StatusNotifications = StatusNotifications;
             this.SuggestionVotes = SuggestionVotes;
+            this.SupportCreatedAt = SupportCreatedAt;
             this.SupportedSuggestionsCount = SupportedSuggestionsCount;
+            this.Traits = Traits;
             this.UpdatedAt = UpdatedAt;
         }
         
@@ -92,6 +106,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="city", EmitDefaultValue=false)]
         public string City { get; set; }
         /// <summary>
+        /// Gets or Sets CommentNotifications
+        /// </summary>
+        [DataMember(Name="comment_notifications", EmitDefaultValue=false)]
+        public bool? CommentNotifications { get; set; }
+        /// <summary>
         /// Gets or Sets Country
         /// </summary>
         [DataMember(Name="country", EmitDefaultValue=false)]
@@ -106,6 +125,11 @@ namespace UserVoiceSdk.Models
         /// </summary>
         [DataMember(Name="email_address", EmitDefaultValue=false)]
         public string EmailAddress { get; set; }
+        /// <summary>
+        /// Gets or Sets EmailConfirmed
+        /// </summary>
+        [DataMember(Name="email_confirmed", EmitDefaultValue=false)]
+        public bool? EmailConfirmed { get; set; }
         /// <summary>
         /// Gets or Sets Guid
         /// </summary>
@@ -126,6 +150,11 @@ namespace UserVoiceSdk.Models
         /// </summary>
         [DataMember(Name="is_owner", EmitDefaultValue=false)]
         public bool? IsOwner { get; set; }
+        /// <summary>
+        /// Gets or Sets IsSubscribed
+        /// </summary>
+        [DataMember(Name="is_subscribed", EmitDefaultValue=false)]
+        public bool? IsSubscribed { get; set; }
         /// <summary>
         /// Gets or Sets JobTitle
         /// </summary>
@@ -152,6 +181,11 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
         /// <summary>
+        /// Gets or Sets Permissions
+        /// </summary>
+        [DataMember(Name="permissions", EmitDefaultValue=false)]
+        public AdminPermission Permissions { get; set; }
+        /// <summary>
         /// Gets or Sets Region
         /// </summary>
         [DataMember(Name="region", EmitDefaultValue=false)]
@@ -162,15 +196,30 @@ namespace UserVoiceSdk.Models
         [DataMember(Name="satisfaction_score", EmitDefaultValue=false)]
         public long? SatisfactionScore { get; set; }
         /// <summary>
+        /// Gets or Sets StatusNotifications
+        /// </summary>
+        [DataMember(Name="status_notifications", EmitDefaultValue=false)]
+        public bool? StatusNotifications { get; set; }
+        /// <summary>
         /// Gets or Sets SuggestionVotes
         /// </summary>
         [DataMember(Name="suggestion_votes", EmitDefaultValue=false)]
         public long? SuggestionVotes { get; set; }
         /// <summary>
+        /// Gets or Sets SupportCreatedAt
+        /// </summary>
+        [DataMember(Name="support_created_at", EmitDefaultValue=false)]
+        public DateTime? SupportCreatedAt { get; set; }
+        /// <summary>
         /// Gets or Sets SupportedSuggestionsCount
         /// </summary>
         [DataMember(Name="supported_suggestions_count", EmitDefaultValue=false)]
         public long? SupportedSuggestionsCount { get; set; }
+        /// <summary>
+        /// Gets or Sets Traits
+        /// </summary>
+        [DataMember(Name="traits", EmitDefaultValue=false)]
+        public UserTraits Traits { get; set; }
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
@@ -187,22 +236,29 @@ namespace UserVoiceSdk.Models
             sb.Append("  AllowedState: ").Append(AllowedState).Append("\n");
             sb.Append("  AvatarUrl: ").Append(AvatarUrl).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
+            sb.Append("  CommentNotifications: ").Append(CommentNotifications).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  EmailAddress: ").Append(EmailAddress).Append("\n");
+            sb.Append("  EmailConfirmed: ").Append(EmailConfirmed).Append("\n");
             sb.Append("  Guid: ").Append(Guid).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  IsAdmin: ").Append(IsAdmin).Append("\n");
             sb.Append("  IsOwner: ").Append(IsOwner).Append("\n");
+            sb.Append("  IsSubscribed: ").Append(IsSubscribed).Append("\n");
             sb.Append("  JobTitle: ").Append(JobTitle).Append("\n");
             sb.Append("  LastIp: ").Append(LastIp).Append("\n");
             sb.Append("  LastLogin: ").Append(LastLogin).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("  SatisfactionScore: ").Append(SatisfactionScore).Append("\n");
+            sb.Append("  StatusNotifications: ").Append(StatusNotifications).Append("\n");
             sb.Append("  SuggestionVotes: ").Append(SuggestionVotes).Append("\n");
+            sb.Append("  SupportCreatedAt: ").Append(SupportCreatedAt).Append("\n");
             sb.Append("  SupportedSuggestionsCount: ").Append(SupportedSuggestionsCount).Append("\n");
+            sb.Append("  Traits: ").Append(Traits).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -256,6 +312,11 @@ namespace UserVoiceSdk.Models
                     this.City.Equals(other.City)
                 ) && 
                 (
+                    this.CommentNotifications == other.CommentNotifications ||
+                    this.CommentNotifications != null &&
+                    this.CommentNotifications.Equals(other.CommentNotifications)
+                ) && 
+                (
                     this.Country == other.Country ||
                     this.Country != null &&
                     this.Country.Equals(other.Country)
@@ -269,6 +330,11 @@ namespace UserVoiceSdk.Models
                     this.EmailAddress == other.EmailAddress ||
                     this.EmailAddress != null &&
                     this.EmailAddress.Equals(other.EmailAddress)
+                ) && 
+                (
+                    this.EmailConfirmed == other.EmailConfirmed ||
+                    this.EmailConfirmed != null &&
+                    this.EmailConfirmed.Equals(other.EmailConfirmed)
                 ) && 
                 (
                     this.Guid == other.Guid ||
@@ -289,6 +355,11 @@ namespace UserVoiceSdk.Models
                     this.IsOwner == other.IsOwner ||
                     this.IsOwner != null &&
                     this.IsOwner.Equals(other.IsOwner)
+                ) && 
+                (
+                    this.IsSubscribed == other.IsSubscribed ||
+                    this.IsSubscribed != null &&
+                    this.IsSubscribed.Equals(other.IsSubscribed)
                 ) && 
                 (
                     this.JobTitle == other.JobTitle ||
@@ -316,6 +387,11 @@ namespace UserVoiceSdk.Models
                     this.Name.Equals(other.Name)
                 ) && 
                 (
+                    this.Permissions == other.Permissions ||
+                    this.Permissions != null &&
+                    this.Permissions.Equals(other.Permissions)
+                ) && 
+                (
                     this.Region == other.Region ||
                     this.Region != null &&
                     this.Region.Equals(other.Region)
@@ -326,14 +402,29 @@ namespace UserVoiceSdk.Models
                     this.SatisfactionScore.Equals(other.SatisfactionScore)
                 ) && 
                 (
+                    this.StatusNotifications == other.StatusNotifications ||
+                    this.StatusNotifications != null &&
+                    this.StatusNotifications.Equals(other.StatusNotifications)
+                ) && 
+                (
                     this.SuggestionVotes == other.SuggestionVotes ||
                     this.SuggestionVotes != null &&
                     this.SuggestionVotes.Equals(other.SuggestionVotes)
                 ) && 
                 (
+                    this.SupportCreatedAt == other.SupportCreatedAt ||
+                    this.SupportCreatedAt != null &&
+                    this.SupportCreatedAt.Equals(other.SupportCreatedAt)
+                ) && 
+                (
                     this.SupportedSuggestionsCount == other.SupportedSuggestionsCount ||
                     this.SupportedSuggestionsCount != null &&
                     this.SupportedSuggestionsCount.Equals(other.SupportedSuggestionsCount)
+                ) && 
+                (
+                    this.Traits == other.Traits ||
+                    this.Traits != null &&
+                    this.Traits.Equals(other.Traits)
                 ) && 
                 (
                     this.UpdatedAt == other.UpdatedAt ||
@@ -359,12 +450,16 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.AvatarUrl.GetHashCode();
                 if (this.City != null)
                     hash = hash * 59 + this.City.GetHashCode();
+                if (this.CommentNotifications != null)
+                    hash = hash * 59 + this.CommentNotifications.GetHashCode();
                 if (this.Country != null)
                     hash = hash * 59 + this.Country.GetHashCode();
                 if (this.CreatedAt != null)
                     hash = hash * 59 + this.CreatedAt.GetHashCode();
                 if (this.EmailAddress != null)
                     hash = hash * 59 + this.EmailAddress.GetHashCode();
+                if (this.EmailConfirmed != null)
+                    hash = hash * 59 + this.EmailConfirmed.GetHashCode();
                 if (this.Guid != null)
                     hash = hash * 59 + this.Guid.GetHashCode();
                 if (this.Id != null)
@@ -373,6 +468,8 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.IsAdmin.GetHashCode();
                 if (this.IsOwner != null)
                     hash = hash * 59 + this.IsOwner.GetHashCode();
+                if (this.IsSubscribed != null)
+                    hash = hash * 59 + this.IsSubscribed.GetHashCode();
                 if (this.JobTitle != null)
                     hash = hash * 59 + this.JobTitle.GetHashCode();
                 if (this.LastIp != null)
@@ -383,14 +480,22 @@ namespace UserVoiceSdk.Models
                     hash = hash * 59 + this.Links.GetHashCode();
                 if (this.Name != null)
                     hash = hash * 59 + this.Name.GetHashCode();
+                if (this.Permissions != null)
+                    hash = hash * 59 + this.Permissions.GetHashCode();
                 if (this.Region != null)
                     hash = hash * 59 + this.Region.GetHashCode();
                 if (this.SatisfactionScore != null)
                     hash = hash * 59 + this.SatisfactionScore.GetHashCode();
+                if (this.StatusNotifications != null)
+                    hash = hash * 59 + this.StatusNotifications.GetHashCode();
                 if (this.SuggestionVotes != null)
                     hash = hash * 59 + this.SuggestionVotes.GetHashCode();
+                if (this.SupportCreatedAt != null)
+                    hash = hash * 59 + this.SupportCreatedAt.GetHashCode();
                 if (this.SupportedSuggestionsCount != null)
                     hash = hash * 59 + this.SupportedSuggestionsCount.GetHashCode();
+                if (this.Traits != null)
+                    hash = hash * 59 + this.Traits.GetHashCode();
                 if (this.UpdatedAt != null)
                     hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 return hash;

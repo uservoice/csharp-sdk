@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 **Category** | **long?** |  | [optional] 
 **CreatedBy** | **long?** |  | [optional] 
 **Forum** | **long?** |  | [optional] 
+**Labels** | **List&lt;long?&gt;** |  | [optional] 
 **LastStatusUpdate** | **long?** |  | [optional] 
 **ParentSuggestion** | **long?** |  | [optional] 
+**ParentSuggestions** | **List&lt;long?&gt;** |  | [optional] 
 **Status** | **long?** |  | [optional] 
 **Ticket** | **long?** |  | [optional] 
 

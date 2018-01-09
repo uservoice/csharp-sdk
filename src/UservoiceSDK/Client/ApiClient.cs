@@ -155,6 +155,17 @@ namespace UserVoiceSdk.Client
 			} 
 		}
 
+        private Filtered_columnsApi _Filtered_columns;
+        public Filtered_columnsApi Filtered_columns 
+        { 
+			get 
+			{
+				if (_Filtered_columns == null)
+					_Filtered_columns = new Filtered_columnsApi(this);
+				return _Filtered_columns;
+			} 
+		}
+
         private Forum_invitationsApi _Forum_invitations;
         public Forum_invitationsApi Forum_invitations 
         { 
@@ -240,6 +251,17 @@ namespace UserVoiceSdk.Client
 				if (_Oauth == null)
 					_Oauth = new OauthApi(this);
 				return _Oauth;
+			} 
+		}
+
+        private SegmentsApi _Segments;
+        public SegmentsApi Segments 
+        { 
+			get 
+			{
+				if (_Segments == null)
+					_Segments = new SegmentsApi(this);
+				return _Segments;
 			} 
 		}
 
@@ -380,9 +402,13 @@ namespace UserVoiceSdk.Client
 			{
 				throw new ApiException(400, "Missing required paramater clientSecret");
 			}
-			var token = Oauth.GetOauthToken("client_credentials",
-											clientId,
-			                                clientSecret: clientSecret);
+			var token = Oauth.GetOauthToken(
+				new Models.Request55(
+					ClientId: clientId, 
+					ClientSecret: clientSecret, 
+					GrantType: Models.Request55.GrantTypeEnum.Clientcredentials
+				)
+			);
 			this.Configuration.AccessToken = token.AccessToken;
 		}
 
@@ -403,10 +429,14 @@ namespace UserVoiceSdk.Client
 			{
 				throw new ApiException(400, "Missing required paramater password");
 			}
-			var token = Oauth.GetOauthToken("password",
-			                                clientId,
-			                                username: username,
-			                                password: password);
+            var token = Oauth.GetOauthToken(
+				new Models.Request55(
+					ClientId: clientId,
+					Username: username,
+					Password: password,
+					GrantType: Models.Request55.GrantTypeEnum.Password
+				)
+			);
 			this.Configuration.AccessToken = token.AccessToken;
 		}
 

@@ -76,18 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string body = null;
-            //string channel = null;
-            //long? linksSuggestion = null;
-            //long? linksUser = null;
-            //string bodyMimeType = null;
-            //string sourceUrl = null;
-            //string sourceType = null;
-            //string sourceGuid = null;
-            //bool? subscribe = null;
-            //long? linksTicket = null;
-            //List<string> includes = null;
-            //var response = instance.Create(body, channel, linksSuggestion, linksUser, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksTicket, includes);
+            //Request21 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<FeedbackResponse> (response, "response is FeedbackResponse");
         }
         
@@ -99,8 +89,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request23 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<FeedbackResponse> (response, "response is FeedbackResponse");
         }
         
@@ -113,6 +103,7 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //string channel = null;
             //string sourceUrl = null;
@@ -121,7 +112,7 @@ namespace UserVoiceSdk.Test
             //List<int?> suggestion = null;
             //List<int?> ticket = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, channel, sourceUrl, sourceType, sourceGuid, suggestion, ticket, includes);
             //Assert.IsInstanceOf<FeedbackResponsePaginated> (response, "response is FeedbackResponsePaginated");
         }
         
@@ -146,16 +137,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string body = null;
-            //string bodyMimeType = null;
-            //string sourceUrl = null;
-            //string sourceType = null;
-            //string sourceGuid = null;
-            //bool? subscribe = null;
-            //long? linksSuggestion = null;
-            //long? linksUser = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, body, bodyMimeType, sourceUrl, sourceType, sourceGuid, subscribe, linksSuggestion, linksUser, includes);
+            //Request22 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<FeedbackResponse> (response, "response is FeedbackResponse");
         }
         

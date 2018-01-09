@@ -81,6 +81,14 @@ namespace UserVoiceSdk.Test
             // TODO unit test for the property 'CountLifetime'
         }
         /// <summary>
+        /// Test the property 'CountPercentDelta'
+        /// </summary>
+        [Test]
+        public void CountPercentDeltaTest()
+        {
+            // TODO unit test for the property 'CountPercentDelta'
+        }
+        /// <summary>
         /// Test the property 'CountPeriod1'
         /// </summary>
         [Test]

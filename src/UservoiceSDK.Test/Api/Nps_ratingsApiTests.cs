@@ -76,13 +76,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //long? rating = null;
-            //long? linksUser = null;
-            //string prompt = null;
-            //string body = null;
-            //DateTime? date = null;
-            //List<string> includes = null;
-            //var response = instance.Create(rating, linksUser, prompt, body, date, includes);
+            //Request35 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<NPSRatingResponse> (response, "response is NPSRatingResponse");
         }
         
@@ -95,13 +90,14 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //DateTime? periodStart = null;
             //DateTime? periodEnd = null;
             //List<int?> user = null;
             //List<int?> ticket = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, periodStart, periodEnd, user, ticket, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, periodStart, periodEnd, user, ticket, includes);
             //Assert.IsInstanceOf<NPSRatingResponsePaginated> (response, "response is NPSRatingResponsePaginated");
         }
         

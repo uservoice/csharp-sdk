@@ -7,7 +7,7 @@ Method | HTTP request | Description
 
 <a name="getoauthtoken"></a>
 # **GetOauthToken**
-> Token GetOauthToken (string grantType, string clientId, string username = null, string password = null, string clientSecret = null)
+> Token GetOauthToken (Request55 request = null)
 
 
 
@@ -44,16 +44,12 @@ namespace Example
 			//client.Login(ApiKey, ApiSecret);
 			//client.LoginAsUser(ApiKey, Username, Password);
 
-            var grantType = grantType_example;  // string | 
-            var clientId = clientId_example;  // string | 
-            var username = username_example;  // string |  (optional) 
-            var password = password_example;  // string |  (optional) 
-            var clientSecret = clientSecret_example;  // string |  (optional) 
+            var request = new Request55(); // Request55 | Payload for this request (optional) 
 
             try
             {
                 // 
-                Token result = client.Oauth.GetOauthToken(grantType, clientId, username, password, clientSecret);
+                Token result = client.Oauth.GetOauthToken(request);
                 Debug.WriteLine(result);
             }
             catch (RateLimitException rle)
@@ -74,11 +70,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grantType** | **string**|  | 
- **clientId** | **string**|  | 
- **username** | **string**|  | [optional] 
- **password** | **string**|  | [optional] 
- **clientSecret** | **string**|  | [optional] 
+ **request** | [**Request55**](request_55.md)| Payload for this request | [optional] 
 
 ### Return type
 
@@ -86,11 +78,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2_password](../README.md#oauth2_password), [oauth2_client_credentials](../README.md#oauth2_client_credentials)
+[oauth2_client_credentials](../README.md#oauth2_client_credentials), [oauth2_password](../README.md#oauth2_password)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

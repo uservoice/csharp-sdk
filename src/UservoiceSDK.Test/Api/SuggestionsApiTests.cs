@@ -77,8 +77,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.ApproveById(id, includes);
+            //Request44 request = null;
+            //var response = instance.ApproveById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -90,8 +90,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.ConvertToTicketById(id, includes);
+            //Request45 request = null;
+            //var response = instance.ConvertToTicketById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -102,15 +102,8 @@ namespace UserVoiceSdk.Test
         public void CreateTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string title = null;
-            //long? linksForum = null;
-            //string body = null;
-            //string bodyMimeType = null;
-            //string attachmentTokens = null;
-            //long? linksCategory = null;
-            //long? linksStatus = null;
-            //List<string> includes = null;
-            //var response = instance.Create(title, linksForum, body, bodyMimeType, attachmentTokens, linksCategory, linksStatus, includes);
+            //Request40 request = null;
+            //var response = instance.Create(request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -122,8 +115,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.DeleteById(id, includes);
+            //Request43 request = null;
+            //var response = instance.DeleteById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -136,6 +129,7 @@ namespace UserVoiceSdk.Test
             // TODO uncomment below to test the method and replace null with proper value
             //long? page = null;
             //long? perPage = null;
+            //string pageToken = null;
             //string sort = null;
             //List<int?> forum = null;
             //List<int?> creator = null;
@@ -157,7 +151,7 @@ namespace UserVoiceSdk.Test
             //DateTime? periodEnd = null;
             //string q = null;
             //List<string> includes = null;
-            //var response = instance.Get(page, perPage, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
+            //var response = instance.Get(page, perPage, pageToken, sort, forum, creator, uncategorizedInForum, categoryNone, category, statusNone, status, state, label, supporter, externalAccount, feature, hasResponse, hasSmartvoteScore, noEngagementSince, engagementSince, periodStart, periodEnd, q, includes);
             //Assert.IsInstanceOf<SuggestionResponsePaginated> (response, "response is SuggestionResponsePaginated");
         }
         
@@ -181,19 +175,8 @@ namespace UserVoiceSdk.Test
         public void ImportTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string title = null;
-            //long? linksForum = null;
-            //string body = null;
-            //string bodyMimeType = null;
-            //string userName = null;
-            //string userEmail = null;
-            //string state = null;
-            //string attachmentTokens = null;
-            //long? linksUser = null;
-            //long? linksCategory = null;
-            //long? linksStatus = null;
-            //List<string> includes = null;
-            //var response = instance.Import(title, linksForum, body, bodyMimeType, userName, userEmail, state, attachmentTokens, linksUser, linksCategory, linksStatus, includes);
+            //Request41 request = null;
+            //var response = instance.Import(request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -205,8 +188,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.PublishById(id, includes);
+            //Request46 request = null;
+            //var response = instance.PublishById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -218,8 +201,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.SpamById(id, includes);
+            //Request47 request = null;
+            //var response = instance.SpamById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -231,8 +214,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //List<string> includes = null;
-            //var response = instance.UnremoveById(id, includes);
+            //Request48 request = null;
+            //var response = instance.UnremoveById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
@@ -244,15 +227,8 @@ namespace UserVoiceSdk.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //long? id = null;
-            //string title = null;
-            //string body = null;
-            //string bodyMimeType = null;
-            //string attachmentTokens = null;
-            //long? linksForum = null;
-            //long? linksCategory = null;
-            //long? linksStatus = null;
-            //List<string> includes = null;
-            //var response = instance.UpdateById(id, title, body, bodyMimeType, attachmentTokens, linksForum, linksCategory, linksStatus, includes);
+            //Request42 request = null;
+            //var response = instance.UpdateById(id, request);
             //Assert.IsInstanceOf<SuggestionResponse> (response, "response is SuggestionResponse");
         }
         
